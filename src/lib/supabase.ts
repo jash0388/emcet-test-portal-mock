@@ -30,6 +30,7 @@ export interface SupabaseQuestion {
   marks: number;
   sort_order: number;
   explanation?: string | null;
+  difficulty?: "easy" | "medium" | "hard" | null;
   created_at: string;
 }
 

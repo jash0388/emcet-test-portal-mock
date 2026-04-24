@@ -197,6 +197,19 @@ export default function TakeTest() {
     [answers]
   );
 
+  // Map every "easy" question id -> "A" or "B" (first half = A, second half = B).
+  const easyPartByQuestionId = useMemo(() => {
+    const map = new Map<string, "A" | "B">();
+    if (!questions) return map;
+    const easy = questions.filter((q) => q.difficulty === "easy");
+    if (easy.length === 0) return map;
+    const half = Math.ceil(easy.length / 2);
+    easy.forEach((q, i) => {
+      map.set(q.id, i < half ? "A" : "B");
+    });
+    return map;
+  }, [questions]);
+
   if (!studentInfo) return null;
 
   if (examLoading || questionsLoading) {
@@ -478,11 +491,20 @@ export default function TakeTest() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-white/15 backdrop-blur-sm">
-                <Award className="w-3.5 h-3.5 text-white" />
-                <span className="text-xs font-black text-white uppercase tracking-widest">
-                  {currentQuestion.marks} {currentQuestion.marks === 1 ? "Mark" : "Marks"}
-                </span>
+              <div className="flex items-center space-x-2">
+                {easyPartByQuestionId.get(currentQuestion.id) && (
+                  <div className="flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-emerald-400/25 backdrop-blur-sm border border-emerald-200/40">
+                    <span className="text-[10px] font-black text-white uppercase tracking-widest">
+                      Easy · Part {easyPartByQuestionId.get(currentQuestion.id)}
+                    </span>
+                  </div>
+                )}
+                <div className="flex items-center space-x-2 px-3 py-1.5 rounded-lg bg-white/15 backdrop-blur-sm">
+                  <Award className="w-3.5 h-3.5 text-white" />
+                  <span className="text-xs font-black text-white uppercase tracking-widest">
+                    {currentQuestion.marks} {currentQuestion.marks === 1 ? "Mark" : "Marks"}
+                  </span>
+                </div>
               </div>
             </div>
 
