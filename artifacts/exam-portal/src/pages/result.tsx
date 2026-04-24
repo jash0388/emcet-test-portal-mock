@@ -16,8 +16,11 @@ import {
   ListChecks,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { motion } from "framer-motion";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { motion, AnimatePresence } from "framer-motion";
+import { format } from "date-fns";
+import { QuestionContent } from "@/components/QuestionContent";
+import { ArrowRight } from "lucide-react";
 
 export default function Result() {
   const { attemptId: submissionId } = useParams<{ attemptId: string }>();
@@ -276,97 +279,59 @@ export default function Result() {
             <div className="space-y-4">
               {questions && questions.length > 0 ? (
                 questions.map((q, idx) => {
-                  const studentAnswer = studentAnswers[q.id];
-                  const hasAnswer =
-                    studentAnswer !== undefined && studentAnswer.trim() !== "";
-                  const isCorrect =
-                    hasAnswer &&
-                    q.correct_answer &&
-                    studentAnswer.trim() === q.correct_answer.trim();
-
+                  const studentAnswer = submission.student_answers?.[q.id];
+                  const isCorrect = studentAnswer === q.correct_answer;
+                  
                   return (
-                    <Card
-                      key={q.id}
-                      className="border border-slate-200 bg-white rounded-2xl shadow-sm overflow-hidden"
-                    >
-                      <div
-                        className={`h-1.5 w-full ${
-                          !hasAnswer
-                            ? "bg-slate-300"
-                            : isCorrect
-                            ? "bg-emerald-500"
-                            : "bg-rose-500"
-                        }`}
-                      />
-                      <div className="p-5 md:p-6">
-                        <div className="flex items-start justify-between mb-4 gap-3">
-                          <div className="flex items-center space-x-3 flex-1 min-w-0">
-                            <span className="w-9 h-9 shrink-0 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white text-xs font-black flex items-center justify-center shadow-md shadow-blue-500/30">
-                              {String(idx + 1).padStart(2, "0")}
+                    <motion.div key={q.id} variants={item}>
+                      <Card className="border-none shadow-2xl bg-white/90 overflow-hidden group">
+                        <div className={`h-1.5 w-full ${studentAnswer ? (isCorrect ? "bg-emerald-500" : "bg-rose-500") : "bg-muted"}`} />
+                        <CardHeader className="p-8 pb-4">
+                          <div className="flex justify-between items-start mb-4">
+                            <span className="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/5 px-2 py-1 rounded-lg border border-primary/10">
+                              Question {String(idx + 1).padStart(2, '0')}
                             </span>
-                            <p className="font-bold text-slate-900 leading-snug">
-                              {q.question}
-                            </p>
+                            <span className="text-xs font-bold text-muted-foreground">{q.marks} Points</span>
                           </div>
-                          <span className="text-[10px] font-black text-blue-700 bg-blue-50 border border-blue-100 px-2.5 py-1 rounded-lg uppercase tracking-widest whitespace-nowrap">
-                            {q.marks} pts
-                          </span>
-                        </div>
+                          <div className="text-xl font-bold leading-relaxed">
+                            <QuestionContent content={q.question} />
+                          </div>
+                        </CardHeader>
+                        <CardContent className="p-8 pt-4 space-y-6">
+                          <div className="grid md:grid-cols-2 gap-4">
+                            <div className={`p-4 rounded-2xl border ${studentAnswer ? (isCorrect ? "bg-emerald-500/[0.03] border-emerald-500/10" : "bg-rose-500/[0.03] border-rose-500/10") : "bg-muted/10 border-border"}`}>
+                              <p className="text-[9px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-2 flex items-center">
+                                <User className="w-3 h-3 mr-1.5" /> Your Submission
+                              </p>
+                                <p className={`font-bold ${studentAnswer ? (isCorrect ? "text-emerald-700" : "text-rose-700") : "text-muted-foreground"}`}>
+                                  {studentAnswer ? <QuestionContent content={studentAnswer} /> : "No Response"}
+                                </p>
+                            </div>
+                            <div className="p-4 rounded-2xl bg-primary/[0.03] border border-primary/10">
+                              <p className="text-[9px] font-black uppercase tracking-[0.2em] text-primary mb-2 flex items-center">
+                                <CheckCircle2 className="w-3 h-3 mr-1.5" /> Ideal Outcome
+                              </p>
+                                <p className="font-bold text-primary">
+                                  <QuestionContent content={q.correct_answer || ""} />
+                                </p>
+                            </div>
+                          </div>
 
-                        <div className="grid md:grid-cols-2 gap-3 mt-4">
-                          <div
-                            className={`p-4 rounded-xl border ${
-                              !hasAnswer
-                                ? "bg-slate-50 border-slate-200"
-                                : isCorrect
-                                ? "bg-emerald-50 border-emerald-200"
-                                : "bg-rose-50 border-rose-200"
-                            }`}
-                          >
-                            <p className="text-[9px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-1.5 flex items-center">
-                              {!hasAnswer ? (
-                                <Info className="w-3 h-3 mr-1.5" />
-                              ) : isCorrect ? (
-                                <CheckCircle2 className="w-3 h-3 mr-1.5 text-emerald-600" />
-                              ) : (
-                                <XCircle className="w-3 h-3 mr-1.5 text-rose-600" />
-                              )}
-                              Your Answer
-                            </p>
-                            <p
-                              className={`font-bold ${
-                                !hasAnswer
-                                  ? "text-slate-500"
-                                  : isCorrect
-                                  ? "text-emerald-700"
-                                  : "text-rose-700"
-                              }`}
-                            >
-                              {hasAnswer ? studentAnswer : "No answer provided."}
-                            </p>
-                          </div>
-                          <div className="p-4 rounded-xl bg-blue-50 border border-blue-100">
-                            <p className="text-[9px] font-black uppercase tracking-[0.2em] text-blue-700 mb-1.5 flex items-center">
-                              <CheckCircle2 className="w-3 h-3 mr-1.5" />
-                              Marking Guide (Correct)
-                            </p>
-                            <p className="font-bold text-blue-800">
-                              {q.correct_answer || "—"}
-                            </p>
-                          </div>
-                        </div>
-
-                        {q.explanation && (
-                          <div className="mt-4 p-3 rounded-xl bg-amber-50 border border-amber-200/70 flex items-start space-x-2">
-                            <Info className="w-3.5 h-3.5 text-amber-600 mt-0.5 shrink-0" />
-                            <p className="text-xs text-amber-900 leading-relaxed">
-                              {q.explanation}
-                            </p>
-                          </div>
-                        )}
-                      </div>
-                    </Card>
-                  );
+                          {q.explanation && (
+                            <div className="p-4 rounded-2xl bg-surface-sunken/50 border-dashed border flex items-start space-x-3">
+                              <Info className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
+                              <div>
+                                  <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-1">Analytical Insight</p>
+                                  <div className="text-sm text-muted-foreground leading-relaxed italic">
+                                    <QuestionContent content={q.explanation} />
+                                  </div>
+                              </div>
+                            </div>
+                          )}
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  )
                 })
               ) : (
                 <div className="py-16 bg-white border-dashed border-2 border-slate-200 rounded-2xl flex flex-col items-center justify-center space-y-3">

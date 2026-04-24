@@ -11,6 +11,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 import { motion, AnimatePresence } from "framer-motion";
+import { QuestionContent } from "@/components/QuestionContent";
+import { Shield } from "lucide-react";
 
 type ExamPhase = "pre-form" | "instructions" | "in-progress";
 
@@ -24,6 +26,9 @@ export default function ExamTaking() {
   const [phase, setPhase] = useState<ExamPhase>("pre-form");
   const [studentName, setStudentName] = useState("");
   const [rollNumber, setRollNumber] = useState("");
+  const [fatherName, setFatherName] = useState("");
+  const [fatherPhone, setFatherPhone] = useState("");
+  const [studentPhone, setStudentPhone] = useState("");
   const [nameError, setNameError] = useState("");
   const [rollError, setRollError] = useState("");
 
@@ -31,6 +36,7 @@ export default function ExamTaking() {
   const [breachOverlay, setBreachOverlay] = useState(false);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [activePart, setActivePart] = useState("A");
   const [violationCount, setViolationCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [startTime] = useState(() => Date.now());
@@ -51,12 +57,25 @@ export default function ExamTaking() {
     if (existing) setLocation(`/result/${existing.id}`);
   }, [mySubmissions, examId, setLocation]);
 
-  // Pre-fill from profile
+  // Pre-fill from profile and localStorage
   useEffect(() => {
+    try {
+      const stored = localStorage.getItem("studentInfo");
+      if (stored) {
+        const data = JSON.parse(stored);
+        if (data.studentName) setStudentName(data.studentName);
+        if (data.fatherName) setFatherName(data.fatherName);
+        if (data.fatherPhone) setFatherPhone(data.fatherPhone);
+        if (data.studentPhone) setStudentPhone(data.studentPhone);
+      }
+    } catch (e) {
+      // Ignore parse errors
+    }
+    
     if (profile) {
-      if (profile.full_name) setStudentName(profile.full_name);
-      else if (user?.displayName) setStudentName(user.displayName);
-      else if (user?.email) setStudentName(user.email.split("@")[0]);
+      if (!studentName && profile.full_name) setStudentName(profile.full_name);
+      else if (!studentName && user?.displayName) setStudentName(user.displayName);
+      else if (!studentName && user?.email) setStudentName(user.email.split("@")[0]);
       if (profile.name) setRollNumber(profile.name);
     }
   }, [profile, user]);
@@ -116,6 +135,9 @@ export default function ExamTaking() {
         status: forced ? "terminated" : "completed",
         student_name: studentName || user.email || "Unknown",
         roll_number: rollNumber,
+        father_name: fatherName,
+        father_phone: fatherPhone,
+        student_phone: studentPhone,
         student_answers: currentAnswers,
         question_snapshots: questionSnapshots,
       }, {
@@ -144,6 +166,14 @@ export default function ExamTaking() {
   // Keep refs in sync with state
   useEffect(() => { violationRef.current = violationCount; }, [violationCount]);
   useEffect(() => { breachOverlayRef.current = breachOverlay; }, [breachOverlay]);
+
+  useEffect(() => {
+    if (currentQuestionIndex < 15) {
+      setActivePart("A");
+    } else {
+      setActivePart("B");
+    }
+  }, [currentQuestionIndex]);
 
   const handleSubmitExamRef = useRef(handleSubmitExam);
   useEffect(() => { handleSubmitExamRef.current = handleSubmitExam; }, [handleSubmitExam]);
@@ -406,6 +436,25 @@ export default function ExamTaking() {
         {/* Main Question Area */}
         <main className="flex-1 overflow-y-auto p-12 bg-surface-sunken/50 relative">
           <div className="max-w-3xl mx-auto space-y-12 pb-24">
+            
+            {/* Part Tabs */}
+            <div className="flex space-x-4 border-b border-border/50 pb-4">
+              <Button
+                variant={activePart === "A" ? "default" : "outline"}
+                className={`rounded-full px-8 font-black tracking-widest uppercase transition-all ${activePart === "A" ? "premium-gradient shadow-lg shadow-primary/20" : "bg-white/50 text-muted-foreground hover:text-foreground"}`}
+                onClick={() => { setActivePart("A"); setCurrentQuestionIndex(0); }}
+              >
+                Part A (Easy)
+              </Button>
+              <Button
+                variant={activePart === "B" ? "default" : "outline"}
+                className={`rounded-full px-8 font-black tracking-widest uppercase transition-all ${activePart === "B" ? "premium-gradient shadow-lg shadow-primary/20" : "bg-white/50 text-muted-foreground hover:text-foreground"}`}
+                onClick={() => { setActivePart("B"); setCurrentQuestionIndex(15); }}
+              >
+                Part B (Hard)
+              </Button>
+            </div>
+
             <div className="space-y-6">
               <div className="flex items-center justify-between">
                 <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest border border-primary/20">
@@ -416,9 +465,9 @@ export default function ExamTaking() {
                 </span>
               </div>
               
-              <h3 className="text-3xl font-bold leading-tight tracking-tight">
-                {currentQuestion.question}
-              </h3>
+              <div className="text-3xl font-bold leading-tight tracking-tight">
+                <QuestionContent content={currentQuestion.question} />
+              </div>
 
               <div className="mt-12">
                 {currentQuestion.question_type === "mcq" && currentQuestion.options && (
@@ -438,7 +487,7 @@ export default function ExamTaking() {
                       >
                         <RadioGroupItem value={opt} id={`opt-${i}`} className="w-6 h-6 border-2" />
                         <Label htmlFor={`opt-${i}`} className="flex-1 text-lg font-medium cursor-pointer leading-relaxed">
-                          {opt}
+                          <QuestionContent content={opt} />
                         </Label>
                       </div>
                     ))}

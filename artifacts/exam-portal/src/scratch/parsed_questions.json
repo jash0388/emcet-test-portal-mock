@@ -1,0 +1,951 @@
+[
+  {
+    "question": "The radius of second orbit of hydrogen atom is same as that of orbit (n) of an ion (x), n and x are respectively.",
+    "options": [
+      "4, Be²⁺",
+      "3, Li²⁺",
+      "4, Be³⁺",
+      "2, He⁺"
+    ],
+    "correct_answer": "4, Be³⁺",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 1
+  },
+  {
+    "question": "An electromagnetic radiation of wavelength 331.5 nm is made to strike the surface of a metal. Electrons are emitted with a kinetic energy of $12 \\times 10^5$ J mol$^{-1}$. The work function (in eV) of the metal is ($h = 6.63 \\times 10^{-34}$ Js, $N_A = 6 \\times 10^{23}$ mol$^{-1}$)",
+    "options": [
+      "1.5",
+      "3.0",
+      "3.5",
+      "2.5"
+    ],
+    "correct_answer": "2.5",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 2
+  },
+  {
+    "question": "Match the following<br/><br/>List-I (Element)\tList-II (Block)<br/>(A) Cd\tI f-block<br/>(B) Eu\tII s-block<br/>(C) Se\tIII d-block<br/>(D) Ba\tIV p-block<br/>The correct answer is",
+    "options": [
+      "A-IV, B-III, C-II, D-I",
+      "A-II, B-IV, C-I, D-III",
+      "A-III, B-IV, C-II, D-I",
+      "A-III, B-I, C-IV, D-II"
+    ],
+    "correct_answer": "A-III, B-I, C-IV, D-II",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 3
+  },
+  {
+    "question": "In long form of periodic table an element ' E ' has atomic number 78 . The period and group number of the element are x and y respectively. (x + y) is equal to",
+    "options": [
+      "18",
+      "15",
+      "17",
+      "16"
+    ],
+    "correct_answer": "16",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 4
+  },
+  {
+    "question": "In which of the following options, the molecules are correctly arranged in the increasing order of their bond angles?",
+    "options": [
+      "NH₃ < O₃ < H₂O < SO₂",
+      "H₂O < O₃ < NH₃ < SO₂",
+      "H₂O < NH₃ < SO₂ < O₃",
+      "H₂O < NH₃ < O₃ < SO₂"
+    ],
+    "correct_answer": "H₂O < NH₃ < O₃ < SO₂",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 5
+  },
+  {
+    "question": "In which of the following the compounds are correctly arranged in the decreasing order of boiling points?",
+    "options": [
+      "HF > H₂O > NH₃ > PH₃",
+      "H₂O > HF > NH₃ > PH₃",
+      "H₂O > HF > PH₃ > NH₃",
+      "HF > NH₃ > H₂O > PH₃"
+    ],
+    "correct_answer": "H₂O > HF > NH₃ > PH₃",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 6
+  },
+  {
+    "question": "The force (F) required to maintain the flow of layers of a liquid is equal to<br/><br/>( A = area of contact of layers<br/><br/><br/>$dz = distance \\ between \\ the \\ layers$<br/><br/>$du = change \\ in \\ velocity$<br/><br/>$\\eta = coefficient \\ of \\ viscosity)$",
+    "options": [
+      "$\\eta \\frac{du}{dz} \\cdot \\frac{1}{A}$",
+      "$\\eta \\frac{dz}{du} \\cdot A$",
+      "$\\eta A \\frac{du}{dz}$",
+      "$\\eta \\frac{dz}{A} \\cdot \\frac{1}{du}$"
+    ],
+    "correct_answer": "$\\eta A \\frac{du}{dz}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 7
+  },
+  {
+    "question": "Consider the following redox reaction in basic medium.<br/><br/>$xCr(OH)_3 + y(IO_3)^- + z(OH)^- \\rightarrow a(CrO_4)^{2-} + b(I)^- + c(H_2O)$<br/><br/>The incorrect option about it is",
+    "options": [
+      "$x + y = 3$",
+      "a + b = 7",
+      "z = 4",
+      "b = 1"
+    ],
+    "correct_answer": "a + b = 7",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 8
+  },
+  {
+    "question": "The entropy and enthalpy changes for the reaction CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g) at 300 K and 1 atm are respectively -42.4 J K⁻¹ and -41.2 kJ. The temperature at which the reaction will go in the reverse direction is",
+    "options": [
+      "761.8 K",
+      "671.8 K",
+      "961.8 K",
+      "971.8 K"
+    ],
+    "correct_answer": "971.8 K",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 9
+  },
+  {
+    "question": "Identify the correct statement from the following<br/><br/>I. LiF is less soluble in water than NaF II. Both LiCl and $MgCl_2$ are insoluble in ethanol III. Both Li and Mg form nitrides IV. $Na_2CO_3$ gives $CO_2$ on heating",
+    "options": [
+      "I and IV",
+      "I and III",
+      "I and II",
+      "II and III"
+    ],
+    "correct_answer": "I and III",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 10
+  },
+  {
+    "question": "Consider the following sequence of reaction<br/><br/><br/>2CH₃Cl + Si $\\xrightarrow[\\text{573 K}]{\\text{Cu}}$ X $\\xrightarrow{\\text{H}_2\\text{O}}$ Y $\\xrightarrow{\\text{Polymerisation}}$ Z<br/><br/>The repeating structural unit in Z is",
+    "options": [
+      "<img>Structural unit A: [CH₃Si-O⁻] with two O⁻ ions attached to Si</img>",
+      "<img>Structural unit B: [(CH₃)₂Si-O]</img>",
+      "<img>Structural unit C: [CH₃-Si-O-CH₃] with two CH₃ groups attached to Si</img>",
+      "<img>Structural unit D: [CH₂-Si-O-CH₃] with CH₂ and CH₃ groups attached to Si</img>"
+    ],
+    "correct_answer": "<img>Structural unit B: [(CH₃)₂Si-O]</img>",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 11
+  },
+  {
+    "question": "Which of the following is not the common component of photochemical smog?",
+    "options": [
+      "Ozone",
+      "Formaldehyde",
+      "Acrolein",
+      "Sulphur dioxide"
+    ],
+    "correct_answer": "Sulphur dioxide",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 12
+  },
+  {
+    "question": "Identify the compound (Z) in the following reaction sequence<br/><br/><img>Reaction sequence starting with 1,2-dibromopropane. Step 1: (i) Alc. KOH, (ii) NaNH₂ yields Propyne (X). Step 2: H₂O, Hg²⁺/H⁺, 333 K yields Propanone (Y). Step 3: Isomerisation yields Propanone (Z).</img>",
+    "options": [
+      "propanal",
+      "propanone",
+      "propanoic acid",
+      "propanamide"
+    ],
+    "correct_answer": "propanone",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 13
+  },
+  {
+    "question": "The correct IUPAC name of the following compound is <img>Chemical structure of a compound with a bromine atom, a cyano group, a ketone group, a hydroxyl group, and an amino group.</img>",
+    "options": [
+      "5-amino-4-hydroxy-1-bromo-1-cyanopentan-4-ol",
+      "1-amino-6-bromo-3-hydroxy-4-oxopentanenitrile",
+      "6-amino-2-bromo-5-hydroxy-3-oxohexanenitrile",
+      "6-amino-2-bromo-5-hydroxy-3-oxopentanenitrile"
+    ],
+    "correct_answer": "6-amino-2-bromo-5-hydroxy-3-oxohexanenitrile",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 14
+  },
+  {
+    "question": "Which purification method is generally used for a high boiling organic liquid compound which decompose below its boiling point?",
+    "options": [
+      "Distillation",
+      "Distillation under reduced pressure",
+      "Steam distillation",
+      "Fractional distillation"
+    ],
+    "correct_answer": "Distillation under reduced pressure",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 15
+  },
+  {
+    "question": "Match the following<br/><br/>List-I<br/>(Reaction)\tList-II<br/>(Major product)<br/>(A) CH₃ - C = CH₂<br/>H₂O<br/>Hg²⁺, H⁺, 333K\tI CH₃ - CH - CH₃<br/>|<br/>OH<br/>(B) CH₃COONa<br/>H₂O, Pt<br/>Electrolysis\tII CH₃ - C - CH₃<br/>||<br/>O<br/>(C) CH₃ - CH - CH₂<br/>H₂O, OH⁻\tIII CH₃ - CH - CH₂<br/>|<br/>OH OH<br/>(D) CH₃ - CH = CH₂<br/>H₂O<br/>Dil KMnO₄, 273K\tIV CH₃ - CH₃<br/>V CH₄<br/><br/>The correct answer is",
+    "options": [
+      "A-II, B-IV, C-I, D-III",
+      "A-II, B-V, C-I, D-III",
+      "A-III, B-IV, C-II, D-I",
+      "A-II, B-III, C-IV, D-I"
+    ],
+    "correct_answer": "A-II, B-IV, C-I, D-III",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 16
+  },
+  {
+    "question": "Sodium metal crystallises in a body centred cubic lattice with edge length of $x\\AA$. If the radius of sodium atom is $1.86\\AA$ the value of $x$ is",
+    "options": [
+      "4.29",
+      "3.29",
+      "2.39",
+      "3.93 Å"
+    ],
+    "correct_answer": "4.29",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 17
+  },
+  {
+    "question": "In a mixture of liquids A and B, if the mole fractions of component A in vapour phase and liquid mixture are $x_1$ and $x_2$ respectively, then the total vapour pressure of liquid mixture is (Where $p_A^0$ and $p_B^0$ are the vapour pressure of pure A and B)",
+    "options": [
+      "$\\frac{P_B^0 X_1}{X_2}$",
+      "$\\frac{p_3^0 x_2}{x_1}$",
+      "$\\frac{p_A^0 x_2}{x_1}$",
+      "$\\frac{p_A^0 x_1}{x_2}$"
+    ],
+    "correct_answer": "$\\frac{p_A^0 x_2}{x_1}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 18
+  },
+  {
+    "question": "A current of 0.5 ampere is passed through molten AlCl₃ for 96.5 seconds. The mass of aluminium deposited at cathode is xmg and volume of chlorine liberated (at STP) at anode is y mL. x and y are respectively.",
+    "options": [
+      "18.0, 22.4",
+      "13.5, 16.8",
+      "9.0, 11.2",
+      "4.5, 5.6"
+    ],
+    "correct_answer": "4.5, 5.6",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 19
+  },
+  {
+    "question": "$R \\rightarrow P$ is a first order reaction. For this reaction a graph of $\\ln[R]$ (on y-axis) and time (on x-axis) gave a straight line with negative slope. The intercept on y-axis is equal to ( $k$ = rate constant)",
+    "options": [
+      "$\\ln[R]_0$",
+      "$[R]_0$",
+      "$k \\times 2.303$",
+      "$\\frac{k}{2.303}$"
+    ],
+    "correct_answer": "$\\ln[R]_0$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 20
+  },
+  {
+    "question": "The correct statements about the properties of colloidal solutions are<br/><br/><br/>A. Tyndall effect is used to distinguish between a colloidal solution and a true solution.<br/><br/>B. Zeta potential is related to movement of colloidal particles.<br/><br/>C. Brownian motion in colloidal solution is faster if the viscosity of the solution is very high.<br/><br/>D. Brownian motion stabilises the sols.",
+    "options": [
+      "A and B",
+      "B and C",
+      "A and D",
+      "B and D"
+    ],
+    "correct_answer": "A and D",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 21
+  },
+  {
+    "question": "The ore of which metal is concentrated by leaching?",
+    "options": [
+      "Zn",
+      "Cu",
+      "Al",
+      "Fe"
+    ],
+    "correct_answer": "Al",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 22
+  },
+  {
+    "question": "Arrange the following molecules in the correct order of their bond angles<br/><br/>S8\tP4\tS6\tO3<br/>A\tB\tC\tD",
+    "options": [
+      "$A < B < C < D$",
+      "$B < C < A < D$",
+      "$C < B < A < D$",
+      "$B < C < D < A$"
+    ],
+    "correct_answer": "$B < C < D < A$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 23
+  },
+  {
+    "question": "What are the products formed when ammonium dichromate is thermally decomposed?",
+    "options": [
+      "NO₂, Cr₂O₃, H₂",
+      "N₂O, Cr₂O₃, H₂O",
+      "N₂, CrO₃, H₂O",
+      "N₂, Cr₂O₃, H₂O"
+    ],
+    "correct_answer": "N₂, Cr₂O₃, H₂O",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 24
+  },
+  {
+    "question": "Sulphur dioxide on reaction with chlorine in the presence of charcoal gives compound (A). This on reaction with white phosphorus gives SO₂ and compound (B). The correct statement about 'B' is",
+    "options": [
+      "the shape of 'B' is pyramidal.",
+      "'B' on hydrolysis gives phosphorus acid.",
+      "'B' in solid state exists as an ionic soli",
+      "C. 'B' in solid state exists as an ionic solid. D. In 'B' all bonds are equivalent."
+    ],
+    "correct_answer": "'B' in solid state exists as an ionic soli",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 25
+  },
+  {
+    "question": "In which of the following transition metal ion (aquated) is not correctly matched with its colour?",
+    "options": [
+      "Fe²⁺-Green",
+      "Cu²⁺ - Blue",
+      "Fe³⁺ - Pink",
+      "V³⁺-Green"
+    ],
+    "correct_answer": "Fe³⁺ - Pink",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 26
+  },
+  {
+    "question": "Which one of the following complex ions is diamagnetic in nature?",
+    "options": [
+      "[CoF₆]³⁻",
+      "[Co(Ox)₃]³⁻",
+      "[Mn(CN)₆]³⁻",
+      "[Fe(CN)₆]³⁻"
+    ],
+    "correct_answer": "[Co(Ox)₃]³⁻",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 27
+  },
+  {
+    "question": "Polymer X is an example of polyester and Y is an example of polyamide X and Y are respectively",
+    "options": [
+      "novolac, terylene",
+      "dacron, nylon 6,6",
+      "nylon 6, terylene",
+      "teflon, terylene"
+    ],
+    "correct_answer": "dacron, nylon 6,6",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 28
+  },
+  {
+    "question": "The general structure of alpha amino acid can be represented as <img>General structure of alpha amino acid: H₂N-CH-CO₂H with R attached to the central carbon</img><br/><br/>Which amino acid is not correctly matched with R given?",
+    "options": [
+      "R = -CH₂ - C₆H₄ - OH(p) - (Tyrosine)",
+      "$R = -\\text{CH}_2 - \\text{SH} - (\\text{Cysteine})$",
+      "$R = -\\text{CH}_2 - \\text{CH}_2 - \\text{S} - \\text{CH}_3 - (\\text{Serine})$",
+      "$$R = -\\text{CH}_2 - \\underset{\\text{||}}{\\text{C}} - \\text{NH}_2 - (\\text{Asparagine})$$ $$\\quad \\quad \\quad \\quad \\quad \\text{O}$$"
+    ],
+    "correct_answer": "$R = -\\text{CH}_2 - \\text{CH}_2 - \\text{S} - \\text{CH}_3 - (\\text{Serine})$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 29
+  },
+  {
+    "question": "Chlorobenzene when subjected to fittig reaction gives a compound ' X '. The sum of σ and π - bonds in X is",
+    "options": [
+      "30",
+      "28",
+      "18",
+      "29"
+    ],
+    "correct_answer": "29",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 30
+  },
+  {
+    "question": "Cumene on oxidation in air gives a compound, X. This on reaction with dilute acid gives Y and Z. Y reacts with sodium metal and not Z. What is Z?",
+    "options": [
+      "<img>Chemical structure of acetaldehyde: CH₃-C(=O)-H</img>",
+      "<img>Chemical structure of acetone: CH₃-CH₂-C(=O)-CH₃</img>",
+      "<img>CH3-C-CH3 with a double bond O above the C</img>",
+      "<img>CH3-C-O-CH3 with a double bond O above the C</img>"
+    ],
+    "correct_answer": "<img>CH3-C-CH3 with a double bond O above the C</img>",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 31
+  },
+  {
+    "question": "The reaction of benzene with CO and HCl in the presence of anhydrous AlCl₃ gives a compound X. X can also be obtained from which of the following reaction?",
+    "options": [
+      "<img>Chemical reaction: Benzonitrile (C6H5CN) reacting with (i) LiAlH4 and (ii) H3O+ to form a product.</img>",
+      "<img>Chemical reaction: Toluene (C6H5CH3) reacting with (i) KMnO4/OH- and heat (Δ) to form a product.</img>",
+      "<img>Chemical reaction: Benzoyl chloride (C6H5COCl) reacting with H2-Pd and BaSO4 to form a product.</img>",
+      "<img>Chemical reaction: Benzyl alcohol (C6H5CH2OH) reacting with CrO3-H2SO4 to form a product.</img>"
+    ],
+    "correct_answer": "<img>Chemical reaction: Benzoyl chloride (C6H5COCl) reacting with H2-Pd and BaSO4 to form a product.</img>",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 32
+  },
+  {
+    "question": "What is the product 'Z' in the given sequence of reactions?<br/><br/><img>Reaction sequence: Aniline reacts with (i) NaNO₂/HCl at 273-278 K and (ii) H₂O warm to form X. X reacts with (i) NaOH, (ii) CO₂, (iii) H⁺ to form Y. Y reacts with (CH₃CO)₂O to form Z.</img>",
+    "options": [
+      "<img>Structure of methyl salicylate (methyl 2-hydroxybenzoate)</img>",
+      "<img>Chemical structure of a benzene ring with OCOCH3 and COOH groups</img>",
+      "<img>Chemical structure of a benzene ring with OCH3 and OH groups</img>",
+      "<img>Chemical structure of a benzene ring with COCH3 and OH groups</img>"
+    ],
+    "correct_answer": "<img>Chemical structure of a benzene ring with OCOCH3 and COOH groups</img>",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 33
+  },
+  {
+    "question": "The ratio of σ bonds to π bonds in Q is<br/><br/><img>Chemical reaction scheme showing the conversion of benzenesulfonic acid to compound P using (i) NaOH and (ii) H+, and then to compound Q using Na2Cr2O7 and H2SO4.</img>",
+    "options": [
+      "3 : 1",
+      "1 : 3",
+      "4 : 1",
+      "2 : 1"
+    ],
+    "correct_answer": "3 : 1",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 34
+  },
+  {
+    "question": "What is the major product ' Z ' in the given reaction sequence?<br/><br/><img>Reaction sequence starting with nitrobenzene. The first step is Fe/HCl to form X. The second step is NaNO2/HCl at 273 K to form Y. The third step is H3PO2/H2O to form Z.</img>",
+    "options": [
+      "<img>Chemical structure of benzene.</img>",
+      "<img>Chemical structure of phenol</img>",
+      "<img>Chemical structure of para-benzoquinone</img>",
+      "<img>Chemical structure of 2-chlorophenol</img>"
+    ],
+    "correct_answer": "<img>Chemical structure of benzene.</img>",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 35
+  },
+  {
+    "question": "Match the \"Technology\" given in List-I with the \"Principle of physics\" given in List-II.<br/><br/>List-I (Technology)\t\tList-II (Principle of physics)<br/>(A)\tSteam engine\tI\tMagnetic confinement of plasma<br/>(B)\tElectron microscope\tII\tLaws of thermodynamics<br/>(C)\tNon-reflecting coatings\tIII\tWave nature of electrons<br/>(D)\tTokamak\tIV\tInterference of light",
+    "options": [
+      "A-I, B-II, C-III, D-IV",
+      "A-II, B-III, C-IV, D-I",
+      "A-II, B-IV, C-III, D-I",
+      "A-II, B-I, C-III, D-IV"
+    ],
+    "correct_answer": "A-II, B-III, C-IV, D-I",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 36
+  },
+  {
+    "question": "In an experiment, the coefficient of viscosity (in mPa. s) of a liquid was determined as 2.62, 2.68, 2.58, 2.57, 2.54 and 2.55 . The mean absolute error in the determination of the coefficient of viscosity of the liquid is",
+    "options": [
+      "0.08 mPa s",
+      "0.12 mPa s",
+      "0.06 mPa s",
+      "0.04 mPa s"
+    ],
+    "correct_answer": "0.04 mPa s",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 37
+  },
+  {
+    "question": "The relation between the displacement ' x ' (in metre) and the time ' t ' (in second) of a particle is $t = 2x^2 + 3x$. If the displacement of the particle is 25 cm from the origin (x = 0), then the acceleration of the particle is",
+    "options": [
+      "$$ +\\frac{1}{16} \\text{ ms}^{-2} $$",
+      "$$ -\\frac{1}{16} \\text{ ms}^{-2} $$",
+      "$+\\frac{1}{8} \\text{ ms}^{-2}$",
+      "$-\\frac{1}{8} \\text{ ms}^{-2}$"
+    ],
+    "correct_answer": "$$ -\\frac{1}{16} \\text{ ms}^{-2} $$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 38
+  },
+  {
+    "question": "A body projected at certain angle ($\\neq 90^\\circ$) from the ground crosses a point in its path at a time of 2.3 s and from there it reaches the ground after a time of 5.7 s. The maximum heigh reached by the body is (Acceleration due to gravity = $10 \\text{ ms}^{-2}$)",
+    "options": [
+      "80 m",
+      "120 m",
+      "40 m",
+      "160 m"
+    ],
+    "correct_answer": "80 m",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 39
+  },
+  {
+    "question": "A circular path of radius 75 m is banked at an angle of tan⁻¹(0.2). If the coefficient of static friction between the tyres of the car and the circular path is 0.1, then the maximum permissible speed of the car to avoid slipping is",
+    "options": [
+      "10 ms⁻¹",
+      "20 ms⁻¹",
+      "15 ms⁻¹",
+      "30 ms⁻¹"
+    ],
+    "correct_answer": "15 ms⁻¹",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 40
+  },
+  {
+    "question": "A horizontal force of 10 N is applied on a block of mass 1.5 kg which is initially at rest on a rough horizontal surface. The work done by the applied force in a time of 6 s from the beginning of the motion is (Acceleration due to gravity = 10 ms⁻²; the coefficient of kinetic friction between the block and the surface is 0.2)",
+    "options": [
+      "588 J",
+      "360 J",
+      "840 J",
+      "420 J"
+    ],
+    "correct_answer": "840 J",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 41
+  },
+  {
+    "question": "A thin uniform wire of mass 'm' and linear density 'ρ' is bent in the form of a circular ring. The moment of inertia of the ring about a tangent parallel to its diameter is 'm'",
+    "options": [
+      "$\\frac{3m^3}{8\\pi^2\\rho^2}$",
+      "$\\frac{8m^3}{3\\pi^2\\rho^2}$",
+      "$\\frac{8\\pi^2m^3}{3\\rho^2}$",
+      "$\\frac{3\\pi^2m^3}{8\\rho^2}$"
+    ],
+    "correct_answer": "$\\frac{3m^3}{8\\pi^2\\rho^2}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 42
+  },
+  {
+    "question": "A solid sphere and a thin uniform circular disc of same radius are rolling down an inclined plane without slipping. If the acceleration of the sphere is 3 ms⁻², then the acceleration of the disc is",
+    "options": [
+      "4 ms⁻²",
+      "2.8 ms⁻²",
+      "3 ms⁻²",
+      "3.2 ms⁻²"
+    ],
+    "correct_answer": "2.8 ms⁻²",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 43
+  },
+  {
+    "question": "If the amplitudes of a damped harmonic oscillator at times $t = 0, t_1$ and $t_2$ are $A_0, A_1$ and $A_2$ respectively, then the amplitude of the oscillator at a time of $(t_1 + t_2)$ is",
+    "options": [
+      "$\\frac{A_0 + A_1 + A_2}{3}$",
+      "$\\frac{A_2 A_0}{A_1}$",
+      "$\\frac{A_1 A_0}{A_2}$",
+      "$\\frac{A_1 A_2}{A_0}$"
+    ],
+    "correct_answer": "$\\frac{A_1 A_2}{A_0}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 44
+  },
+  {
+    "question": "A meteor of mass ' m ' having a speed ' V ' at infinity reaches the surface of the Earth with a speed of ( ve is escape speed from the Earth's surface)",
+    "options": [
+      "$\\sqrt{2}v_e$",
+      "$v_e$",
+      "$2\\sqrt{v^2 + v_e^2}$",
+      "$\\sqrt{v^2 + v_0^2}$"
+    ],
+    "correct_answer": "$\\sqrt{v^2 + v_0^2}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 45
+  },
+  {
+    "question": "The work to be done to produce a strain of $10^{-3}$ in a steel wire of mass 2.96 kg and density $7.4 \\text{ g cm}^{-3}$ is (Young's modulus of steel = $2 \\times 10^{11} \\text{ Nm}^{-2}$)",
+    "options": [
+      "0.04 kJ",
+      "0.04 J",
+      "100 kJ",
+      "400 J"
+    ],
+    "correct_answer": "0.04 kJ",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 46
+  },
+  {
+    "question": "A wooden block of outer volume 1 litre and specific gravity $\\frac{3}{4}$ having a cavity floats with half of its volume immersed in water. Then, the volume of the cavity is",
+    "options": [
+      "250 mL",
+      "500 mL",
+      "333.3 mL",
+      "666.6 mL"
+    ],
+    "correct_answer": "333.3 mL",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 47
+  },
+  {
+    "question": "When 'n' identical mercury drops combine to form a single big drop",
+    "options": [
+      "surface area increases and heat is released.",
+      "surface area decreases and heat is released.",
+      "surface area increases and heat is absorbe",
+      "B. surface area decreases and heat is released. C. surface area increases and heat is absorbed. D. surface area decreases and heat is absorbed."
+    ],
+    "correct_answer": "surface area decreases and heat is released.",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 48
+  },
+  {
+    "question": "The temperature of a body shown by a faulty Celsius thermometer is 49°C and by a correct Fahrenheit thermometer is 122°F. The correction to be applied to the faulty thermometer is",
+    "options": [
+      "-12°C",
+      "+1°C",
+      "+12°C",
+      "-1°C"
+    ],
+    "correct_answer": "+1°C",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 49
+  },
+  {
+    "question": "If the radiation emitted by a perfect radiator has maximum intensity at a wavelength of $2900\\AA$, the intensity of radiation emitted by it is<br/><br/>(Stefan-Boltzmann's constant $= 5.67 \\times 10^{-8} Wm^{-2} K^{-4}$ and Wein's constant $= 2.9 \\times 10^{-3} mK$)",
+    "options": [
+      "$5.67 \\times 10^8 Wm^{-2}$",
+      "$5.67 Wm^{-2}$",
+      "$5670 Wm^{-2}$",
+      "$2.9 Wm^{-2}$"
+    ],
+    "correct_answer": "$5.67 \\times 10^8 Wm^{-2}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 50
+  },
+  {
+    "question": "The ratio of the work done, change in internal energy and heat absorbed when a diatomic gas expands at constant pressure is",
+    "options": [
+      "2 : 3 : 5",
+      "7 : 5 : 2",
+      "5 : 3 : 2",
+      "2 : 5 : 7"
+    ],
+    "correct_answer": "2 : 5 : 7",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 51
+  },
+  {
+    "question": "If the temperature of a gas is increased from 127°C to 527°C, then the rms speed of the gas molecules",
+    "options": [
+      "increases by 4 times",
+      "becomes $\\sqrt{2}$ times",
+      "becomes half",
+      "decreases by $\\sqrt{2}$ times"
+    ],
+    "correct_answer": "becomes $\\sqrt{2}$ times",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 52
+  },
+  {
+    "question": "An air column in a tube of length 50 cm, closed at one end is vibrating in its fifth harmonic. The phase difference between a particle at the open end and a particle at 42 cm from the open end is",
+    "options": [
+      "90°",
+      "18°",
+      "0°",
+      "270°"
+    ],
+    "correct_answer": "18°",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 53
+  },
+  {
+    "question": "A metal rod of length 125 cm is clamped at its midpoint. If the speed of the sound in the metal is 5000 ms$^{-1}$, then the fundamental frequency of the longitudinal vibrations of the rod is",
+    "options": [
+      "2 kHz",
+      "20 kHz",
+      "0.2 kHz",
+      "200 kHz"
+    ],
+    "correct_answer": "2 kHz",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 54
+  },
+  {
+    "question": "If the distances of the object and its real image from the principal focus of a concave mirror are 16 cm and 9 cm respectively, then the focal length of the mirror is",
+    "options": [
+      "30 cm",
+      "12 cm",
+      "18 cm",
+      "24 cm"
+    ],
+    "correct_answer": "12 cm",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 55
+  },
+  {
+    "question": "If the angle of minimum deviation produced by an equilateral prism is equal to the angle of the prism, then the refractive index of the material of the prism is nearly",
+    "options": [
+      "1.515",
+      "1.414",
+      "1.732",
+      "1.625"
+    ],
+    "correct_answer": "1.732",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 56
+  },
+  {
+    "question": "When two light waves of equal intensity superimpose, the maximum intensity obtained is I. If the intensity of one of the waves is quadrupled, then the maximum intensity obtained is",
+    "options": [
+      "$\\frac{41}{9}$",
+      "$\\frac{9}{4}$",
+      "$\\frac{21}{3}$",
+      "$\\frac{31}{2}$"
+    ],
+    "correct_answer": "$\\frac{9}{4}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 57
+  },
+  {
+    "question": "The electric field due to an infinitely long thin straight wire with uniform linear charge density of $2.5 \\times 10^{-7} \\text{ cm}^{-1}$ at a radial distance of $x$ from the wire is $7.5 \\times 10^4 \\text{ NC}^{-1}$. Then, $x = $",
+    "options": [
+      "2 cm",
+      "3 cm",
+      "4 cm",
+      "6 cm"
+    ],
+    "correct_answer": "6 cm",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 58
+  },
+  {
+    "question": "A parallel plate capacitor of capacitance 10μ F is charged by a 220 V supply. The capacitor is then disconnected from the supply and is connected to another uncharged parallel plate capacitor of capacitance 12μ F. The loss of electrostatic energy in this process is",
+    "options": [
+      "132 mJ",
+      "220 mJ",
+      "66 mJ",
+      "110 mJ"
+    ],
+    "correct_answer": "132 mJ",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 59
+  },
+  {
+    "question": "The lengths of two wires made of the same material are in the ratio 2 : 3 and their radii are in the ratio 1 : 2. If the two wires are connected in parallel to a battery, then the ratio of the drift velocities of free electrons in the two wires is",
+    "options": [
+      "2 : 1",
+      "3 : 1",
+      "3 : 2",
+      "3 : 4"
+    ],
+    "correct_answer": "3 : 2",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 60
+  },
+  {
+    "question": "In a potentiometer experiment for the determination of the internal resistance of a cell, when an external resistance of $R$ is connected parallel to the cell, the balancing length decreases by 10%. The internal resistance of the cell is",
+    "options": [
+      "$\\frac{R}{9}$",
+      "$\\frac{R}{7}$",
+      "$\\frac{R}{5}$",
+      "$\\frac{R}{11}$"
+    ],
+    "correct_answer": "$\\frac{R}{9}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 61
+  },
+  {
+    "question": "The number of turns of two circular coils A and B are 300 and 200 respectively. The magnetic moments of the two coils A and B are in the ratio 1 : 2. If the two coils carry equal currents, then the ratio of radii of coils A and B is",
+    "options": [
+      "$2 : \\sqrt{3}$",
+      "$2 : 3$",
+      "$1 : 2$",
+      "$1 : \\sqrt{3}$"
+    ],
+    "correct_answer": "$1 : \\sqrt{3}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 62
+  },
+  {
+    "question": "Two long straight parallel wires carry currents of 8 A and 10 A in opposite directions. If the distance of separation between the wires is 9 cm, then the net magnetic field at a point between the two wires, which is at a perpendicular distance of 4 cm from the wire carrying 8 A current is",
+    "options": [
+      "zero",
+      "$4 \\times 10^{-5}$ T",
+      "$8 \\times 10^{-5}$ T",
+      "$12 \\times 10^{-5}$ T"
+    ],
+    "correct_answer": "$8 \\times 10^{-5}$ T",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 63
+  },
+  {
+    "question": "A short bar magnet of magnetic moment $2.5 Am^2$ is kept in a uniform magnetic field of $4 \\times 10^{-5} T$. The work done in moving the magnet from its most stable position to most unstable position is",
+    "options": [
+      "$40 \\times 10^{-5} J$",
+      "$25 \\times 10^{-5} J$",
+      "$10 \\times 10^{-5} \\text{ J}$",
+      "$20 \\times 10^{-5} \\text{ J}$"
+    ],
+    "correct_answer": "$20 \\times 10^{-5} \\text{ J}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 64
+  },
+  {
+    "question": "The radius of a coil of N turns is R. If the plane of the coil is placed parallel to a uniform magnetic field B, then the flux linked with the coil is",
+    "options": [
+      "$\\pi BNR^2$",
+      "$2\\pi BNR^2$",
+      "$\\frac{\\pi BNR^2}{2}$",
+      "zero"
+    ],
+    "correct_answer": "zero",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 65
+  },
+  {
+    "question": "The inductance $L$, capacitance $C$ and resistance $R$ are the values of the components connected in series to an AC source of angular frequency $\\omega$. The inductive and capacitive reactances are $X_L$ and $X_C$ respectively. If the circuit is purely resistive, then",
+    "options": [
+      "$L = C$",
+      "$X_L = X_C$",
+      "$\\omega L = \\omega C$",
+      "$R = L = C$"
+    ],
+    "correct_answer": "$X_L = X_C$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 66
+  },
+  {
+    "question": "If the rate of change of electric field across the plates of a parallel plate capacitor is $E$ and the displacement current is $I$, then the area of one plate of the capacitor is ( $\\epsilon_0$ is permittivity of free space)",
+    "options": [
+      "$\\frac{1}{2\\epsilon_0 E}$",
+      "$\\frac{2I}{\\epsilon_0 E}$",
+      "$\\epsilon_0 E$",
+      "$\\frac{1}{\\epsilon_0 E}$"
+    ],
+    "correct_answer": "$\\frac{1}{\\epsilon_0 E}$",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 67
+  },
+  {
+    "question": "The work done to accelerate an electron from rest so that it can have a de-Broglie wavelength of 6600Å is nearly<br/><br/>(Planck's constant = 6.6 × 10⁻³⁴ Js and mass of electron = 9 × 10⁻³¹ kg)",
+    "options": [
+      "5.56 × 10⁻²⁵ eV",
+      "1.88 eV",
+      "5.56 × 10⁻²⁵ J",
+      "1.88 J"
+    ],
+    "correct_answer": "5.56 × 10⁻²⁵ J",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 68
+  },
+  {
+    "question": "If the total energy of an electron in an orbit is positive, then",
+    "options": [
+      "electron will revolve in a circular orbit.",
+      "electron will revolve in an elliptical orbit.",
+      "electron will not follow a closed orbit.",
+      "electron will fall into the nucleus."
+    ],
+    "correct_answer": "electron will not follow a closed orbit.",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 69
+  },
+  {
+    "question": "If 87.5% of atoms of a radioactive element decay in 6 days, then the fraction of atoms of the element that decay in 8 days is",
+    "options": [
+      "1/8",
+      "7/8",
+      "1/16\n\n<page_number>1/16</page_number>",
+      "15/16"
+    ],
+    "correct_answer": "15/16",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 70
+  },
+  {
+    "question": "At absolute zero temperature, a semiconductor behaves like",
+    "options": [
+      "semiconductor",
+      "superconductor",
+      "conductor",
+      "insulator"
+    ],
+    "correct_answer": "insulator",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 71
+  },
+  {
+    "question": "Three logic gates are connected as shown in the figure. If the inputs are $A = 1, B = 0$ and $C = 1$, then the values of $y_1, y_2$ and $y_3$ respectively are<br/><br/><img>A logic circuit diagram showing three inputs A, B, C. Input A and B are connected to an AND gate, whose output is y1. Input C is connected to an OR gate, whose output is y2. The outputs y1 and y2 are then connected to another AND gate, whose output is y3.</img>",
+    "options": [
+      "1, 0, 0",
+      "0, 1, 0",
+      "1, 1, 0",
+      "1, 0, 1"
+    ],
+    "correct_answer": "1, 0, 0",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 72
+  },
+  {
+    "question": "The radio horizon of a transmitting antenna of height 39.2 m is (Radius of the Earth = 6400 km)",
+    "options": [
+      "44.8 km",
+      "19.6 km",
+      "22.4 km",
+      "78.4 km"
+    ],
+    "correct_answer": "22.4 km",
+    "question_type": "mcq",
+    "marks": 1,
+    "sort_order": 73
+  }
+]

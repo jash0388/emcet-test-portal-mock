@@ -44,6 +44,9 @@ export interface SupabaseSubmission {
   status: "completed" | "terminated" | "pending";
   student_name: string;
   roll_number: string;
+  father_name?: string;
+  father_phone?: string;
+  student_phone?: string;
   submitted_at: string;
   student_answers?: Record<string, any>;
   question_snapshots?: SupabaseQuestion[];

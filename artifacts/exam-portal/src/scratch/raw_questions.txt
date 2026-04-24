@@ -1,0 +1,1972 @@
+Question1
+
+The radius of second orbit of hydrogen atom is same as that of orbit (n) of an ion (x), n and x are respectively.
+
+Options:
+
+A. 4, Be²⁺ B. 3, Li²⁺ C. 4, Be³⁺ D. 2, He⁺
+
+Answer: C
+
+Solution:
+
+Formula for orbit radius:
+
+The radius of the nth orbit in a hydrogen-like ion is:
+
+$r_n = \frac{n^2 a_0}{Z}$
+
+Here, $r_n$ is the radius of the orbit, $n$ is the orbit number, $a_0$ is the Bohr radius, and $Z$ is the atomic number.
+
+Radius for Hydrogen atom (Z = 1):
+
+For the second orbit of hydrogen (n = 2):
+
+$r_H = \frac{2^2 a_0}{1} = 4a_0$
+
+Radius for other ion:
+
+For an ion x with atomic number Z and orbit number n:
+
+$r_x = \frac{n^2 a_0}{Z}$
+
+Set radii equal to each other:
+
+Page 2
+Since the radii are equal: $$ \frac{n^2 a_0}{Z} = 4a_0 $$ Solve for $n^2$: Divide both sides by $a_0$: $$ \frac{n^2}{Z} = 4 $$ Multiply both sides by $Z$: $$ n^2 = 4Z $$ Find values for $n$ and $Z$: Try $Z = 4$ (which is for Be$^{3+}$): $$ n^2 = 4 \times 4 = 16 $$ So, $n = 4$. Answer: The orbit number $n$ is 4, and the ion $x$ is Be$^{3+}$.
+Question2
+
+An electromagnetic radiation of wavelength 331.5 nm is made to strike the surface of a metal. Electrons are emitted with a kinetic energy of $12 \times 10^5$ J mol$^{-1}$. The work function (in eV) of the metal is ($h = 6.63 \times 10^{-34}$ Js, $N_A = 6 \times 10^{23}$ mol$^{-1}$)
+
+Options: A. 1.5 B. 3.0 C. 3.5 D. 2.5 Answer: D Solution:
+
+Page 3
+According to the question, given values are Planck's constant, $h = 6.63 \times 10^{-34} \text{Js}$ $N_A = 6 \times 10^{23} \text{mol}^{-1}$ Wavelength, $\lambda = 331.5 \text{nm} = 331.5 \times 10^{-9} \text{m}$ Kinetic energy (per mole) $= 1.2 \times 10^5 \text{J/mol}$ The energy of a single photon is given by the formula, $E = \frac{hc}{\lambda}$ Substituting the given values, $E = \frac{6.63 \times 10^{-34} \times 3 \times 10^8}{331.5 \times 10^{-9}}$ $= 6.00 \times 10^{-19} \text{J}$ Energy per mole of photons, $E_{\text{mol}} = 6.00 \times 10^{-19} \times 6 \times 10^{23}$ $= 3.6 \times 10^5 \text{J/mol}$ Using photoelectric equation (per mole) Work function (mol) $= E_{\text{mol}} - \text{KE}$ $= 3.6 \times 10^{-5} - 1.2 \times 10^5$ $= 2.4 \times 10^5 \text{J/mol}$ Since, $1\text{eV} = 96,485 \text{J/mol}$ $\phi = \frac{2.4 \times 10^5}{96485} \approx 2.5\text{eV}$
+
+Question3
+
+Match the following
+
+List-I (Element)	List-II (Block)
+(A) Cd	I f-block
+(B) Eu	II s-block
+(C) Se	III d-block
+(D) Ba	IV p-block
+The correct answer is
+
+Options:
+
+Page 4
+A. A-IV, B-III, C-II, D-I B. A-II, B-IV, C-I, D-III C. A-III, B-IV, C-II, D-I D. A-III, B-I, C-IV, D-II
+
+Answer: D
+
+Solution:
+
+Let's determine the block for each element provided:
+
+(A) Cd (Cadmium) Cadmium (atomic number 48) is located in Group 12, Period 5 of the periodic table. Its electron configuration is [Kr] 4d¹⁰ 5s². Elements in Groups 3 through 12, where the d-orbitals are being filled, are known as d-block elements. Cadmium fits this description. So, (A) Cd matches with (III) d-block.
+
+(B) Eu (Europium) Europium (atomic number 63) is a lanthanide element. Lanthanides and actinides are typically placed below the main body of the periodic table and comprise the f-block elements, where the f-orbitals are being filled. Its electron configuration is [Xe] 4f⁷ 6s². So, (B) Eu matches with (I) f-block.
+
+(C) Se (Selenium) Selenium (atomic number 34) is located in Group 16, Period 4 of the periodic table. Its electron configuration is [Ar] 3d¹⁰ 4s² 4p⁴. Elements in Groups 13 through 18, where the p-orbitals are being filled, are known as p-block elements. Selenium fits this description. So, (C) Se matches with (IV) p-block.
+
+(D) Ba (Barium) Barium (atomic number 56) is located in Group 2, Period 6 of the periodic table. Its electron configuration is [Xe] 6s².
+
+Page 5
+Elements in Group 1 (alkali metals) and Group 2 (alkaline earth metals), where the s-orbitals are being filled, are known as s-block elements. Barium fits this description.
+
+So, (D) Ba matches with (II) s-block.
+
+Combining the matches:
+
+A - III B - I C - IV D - II
+
+Question4
+In long form of periodic table an element ' E ' has atomic number 78 . The period and group number of the element are x and y respectively. (x + y) is equal to
+
+Options:
+
+A. 18 B. 15 C. 17 D. 16
+
+Answer: D
+
+Solution:
+
+The given atomic number 78 corresponds to the element platinum (Pt).
+
+The electronic configuration of platinum is
+
+Pt(Z = 78) = [Xe]4f¹⁴5d⁹6s¹
+
+From the electronic configuration, the highest principal quantum number is 6 (from 6s¹), so the period number x = 6 For d-block elements, the group number is obtained by adding the electrons that is present in the (n - 1)d and ns-orbitals.
+
+Here, 5d⁹6s¹, 10 electrons
+
+Page 6
+Hence, the group number $y = 10$ Therefore, the sum $x + y = 6 + 10 = 16$.
+
+Question5
+
+In which of the following options, the molecules are correctly arranged in the increasing order of their bond angles?
+
+Options:
+
+A. NH₃ < O₃ < H₂O < SO₂
+
+B. H₂O < O₃ < NH₃ < SO₂
+
+C. H₂O < NH₃ < SO₂ < O₃
+
+D. H₂O < NH₃ < O₃ < SO₂
+
+Answer: D
+
+Solution:
+
+The structure of the given molecules with their bond angles are given below.
+
+<img>Structure of H₂O with bond angle 104.5°</img> <img>Structure of NH₃ with bond angle 107°</img> <img>Structure of O₃ with bond angle 116.8°</img> <img>Structure of SO₂ with bond angle 119°</img>
+
+Page 7
+Hence, the increasing order of bond angle is
+
+H₂O < NH₃ < O₃ < SO₂ (≈104.5) (≈107)(≈116.8) ≈1199 ≈SO₂
+
+Question6
+
+In which of the following the compounds are correctly arranged in the decreasing order of boiling points?
+
+Options:
+
+A. HF > H₂O > NH₃ > PH₃
+
+B. H₂O > HF > NH₃ > PH₃
+
+C. H₂O > HF > PH₃ > NH₃
+
+D. HF > NH₃ > H₂O > PH₃
+
+Answer: B
+
+Solution:
+
+The boiling point order is primarily determined by hydrogen bonding strength and network. H₂O forms the most extensive hydrogen bond network due to two lone pairs.
+
+HF possesses very strong individual hydrogen bonds, but a less extensive network.
+
+NH₃ exhibits weaker hydrogen bonding compared to H₂O and HF.
+
+PH₃ lacks hydrogen bonding, having only weaker dipole-dipole forces.
+
+Hence, the correct order is
+
+H₂O > HF > NH₃ > PH₃
+
+Question7
+
+The force (F) required to maintain the flow of layers of a liquid is equal to
+
+( A = area of contact of layers
+
+Page 8
+$dz = distance \ between \ the \ layers$
+
+$du = change \ in \ velocity$
+
+$\eta = coefficient \ of \ viscosity)$
+
+Options:
+
+A. $\eta \frac{du}{dz} \cdot \frac{1}{A}$
+
+B. $\eta \frac{dz}{du} \cdot A$
+
+C. $\eta A \frac{du}{dz}$
+
+D. $\eta \frac{dz}{A} \cdot \frac{1}{du}$
+
+Answer: C
+
+Solution:
+
+The force (F) required to maintain the steady flow of liquid layers is defined by Newton's law of viscosity. This force is directly proportional to the area of contact (A) and the velocity gradient ($\frac{du}{dz}$), with the proportionality constant being the coefficient of viscosity ($\eta$). Mathematically, this relationship is expressed as
+
+$F = \eta A \frac{du}{dz}$
+
+Question8
+
+Consider the following redox reaction in basic medium.
+
+$xCr(OH)_3 + y(IO_3)^- + z(OH)^- \rightarrow a(CrO_4)^{2-} + b(I)^- + c(H_2O)$
+
+The incorrect option about it is
+
+Options:
+
+A. $x + y = 3$
+
+B.
+
+Page 9
+a + b = 7
+
+C. z = 4
+
+D. b = 1
+
+Answer: B
+
+Solution:
+
+The balanced chemical equation: 2Cr(OH)₃ + IO₃⁻ + 4OH⁻ → 2CrO₄²⁻ + I⁻ + 5H₂O
+
+Match the given general form to the balanced equation: xCr(OH)₃ + y(IO₃)⁻ + z(OH)⁻ → a(CrO₄)²⁻ + b(I)⁻ + c(H₂O)
+
+Compare the numbers of each substance: From the balanced equation, x = 2, y = 1, z = 4, a = 2, b = 1, c = 5
+
+Check the answer: Option (b) is wrong because a + b = 2 + 1 = 3, not 7.
+
+Question9
+
+The entropy and enthalpy changes for the reaction CO(g) + H₂O(g) ⇌ CO₂(g) + H₂(g) at 300 K and 1 atm are respectively -42.4 J K⁻¹ and -41.2 kJ. The temperature at which the reaction will go in the reverse direction is
+
+Options: A. 761.8 K
+
+B. 671.8 K
+
+C. 961.8 K
+
+D. 971.8 K
+
+Page 10
+Answer: D
+
+Solution:
+
+Given, $\Delta S = -42.4 \text{ J K}^{-1}$
+
+$\Delta H = -41.2 \text{ kJ} = -41200 \text{ J}$
+
+Using the equation, $\Delta G = \Delta H - T\Delta S$
+
+At equilibrium, $\Delta G = 0$, So $T_{eq} = \frac{\Delta H}{\Delta S}$.
+
+$T_{eq} = \frac{-41200 \text{ J}}{-42.4 \text{ J K}^{-1}} \approx 971.8 \text{ K}$
+
+Question 10
+
+The volume of water required to dissolve 0.1 gPbCl₂ to get a saturated solution (in mL) is (Given $K_{sp}(\text{PbCl}_2) = 3.2 \times 10^{-8}$; Atomic mass of Pb = 207u)
+
+Options:
+
+A. 150
+
+B. 100
+
+C. 120
+
+D. 180
+
+Answer: D
+
+Solution:
+
+Given that, Mass of PbCl₂ to dissolve = 0.1 g
+
+$K_{sp}(\text{PbCl}_2) = 3.2 \times 10^{-8}$
+
+Atomic mass of Pb = 207u
+
+Atomic mass of Cl = 35.5u
+
+For PbCl₂(s) ⇌ Pb²⁺(aq) + 2Cl⁻(aq), the $K_{sp}$ expression is
+
+Page 11
+$K_{sp} = [Pb^{2+}][Cl^-]^2 = (S)(2S)^2 = 4S^3$ $3.2 \times 10^{-8} = 4S^3$ $S^3 = 8 \times 10^{-9}$ $S = 2 \times 10^{-3} \text{ mol/L}$ $= (2 \times 10^{-3} \text{ mol/L}) \times (278.0 \text{ g/mol})$ $= 0.556 \text{ g/L}$ Volume (L) $= \frac{\text{Mass of PbCl}_2}{\text{Solubility (g/L)}}$ $= \frac{0.1 \text{ g}}{0.556 \text{ g/L}} \approx 0.17985 \text{ L}$ So, volume $\approx 180 \text{ mL}$
+
+Question 11
+
+1 mL of "x volume" H₂O₂ solution on heating gives 20 mL of oxygen gas at STP. The (w/v)% corresponding to "x volume" of H₂O₂ is
+
+Options:
+
+A. 3.03 B. 6.06 C. 9.09 D. 30.3
+
+Answer: B
+
+Solution:
+
+The problem states that 1 mL of the H₂O₂ solution yields 20 mL of oxygen gas at STP. By definition, "x volume" H₂O₂ means that 1 mL of the solution produces x mL of O₂ at STP. Therefore, the volume strength, x, is 20.
+
+The decomposition of hydrogen peroxide is: $2H_2O_2 \rightarrow 2H_2O + O_2$
+
+From the stoichiometry, 2 moles of H₂O₂ ($2 \times 34 \text{ g} = 68 \text{ g}$) produce 1 mole of O₂ (22.4 L at STP).
+
+If an H₂O₂ solution has a volume strength of 'x', it means 1 L (1000 mL) of the solution produces 'x' L of O₂ at STP.
+
+Mass of H₂O₂ required to produce 'x' L of O₂.
+
+Page 12
+\begin{align*} Mass\ of\ H_2O_2 &= \left(\frac{68\ gH_2O_2}{22.4\ LO_2}\right) \times (x\ LO_2) \ &= \frac{68x}{22.4}\ g \end{align*}
+
+This mass of $H_2O_2$ is present in 1000 mL of the solution.
+
+The $(w/v)%$ is calculated as \begin{align*} (w/v)% &= \frac{\text{Mass of solute (g)}}{\text{Volume of solution (mL)}} \times 100 \ (w/v)% &= \frac{\frac{68x}{22.4}}{1000} \times 100 \ (w/v)% &= \frac{68x}{22.4 \times 10} = \frac{68x}{224} = \frac{17x}{56} \end{align*}
+
+By substituting $x = 20$, $(w/V)% = 6.06%$.
+
+Question12
+
+Identify the correct statement from the following
+
+I. LiF is less soluble in water than NaF II. Both LiCl and $MgCl_2$ are insoluble in ethanol III. Both Li and Mg form nitrides IV. $Na_2CO_3$ gives $CO_2$ on heating
+
+Options:
+
+A. I and IV B. I and III C. I and II D. II and III
+
+Answer: B
+
+Solution:
+
+Page 13
+Statement I and III are correct while II and IV are incorrect. The correct forms of II and IV are as follows.
+
+II. LiCl is soluble in ethanol due to its polar nature and small size. MgCl₂ is sparingly soluble but not completely insoluble.
+
+IV. Na₂CO₃ does not decompose to CO₂ just by heating under normal conditions.
+
+Question 13
+The major ingredient (51%) in Portland cement is
+
+Options:
+
+A. Ca₂SiO₄
+
+B. Ca₃SiO₅
+
+C. Ca₃Al₃O₆
+
+D. CaSO₄ · 2H₂O
+
+Answer: B
+
+Solution:
+
+The major ingredient (~ 51%) in Portland cement is tricalcium silicate Ca₃SiO₅, also called C₃S). It is mainly responsible for the early strength development of cement by rapidly reacting with water to form calcium silicate hydrate and calcium hydroxide. Its high percentage ensures quick setting and hardening of concrete structure.
+
+Question 14
+Boron trifluoride on reaction with lithium aluminium hydride in ether gives LiF° AlF₃ and X. X on reaction with NH₃ gives Y. Y on further heating gives a compound Z. The number of σ-bonds and π-bonds in Z are x and y respectively. (x + y) is equal to
+
+Options:
+
+A. 15
+
+Page 14
+B. 12 C. 14 D. 18
+
+Answer: A
+
+Solution:
+
+Step 1: Reaction with Lithium Aluminium Hydride
+
+When boron trifluoride (BF₃) reacts with lithium aluminium hydride (LiAlH₄) in ether, it forms lithium fluoride (LiF), aluminium fluoride (AlF₃), and diborane (B₂H₆):
+
+4BF₃ + 3LiAlH₄ $\xrightarrow{Ether}$ 3LiF + 3AlF₃ + B₂H₆
+
+Step 2: Naming the Product X
+
+So, here X = B₂H₆ (which is called diborane).
+
+Step 3: Reaction of X with Ammonia
+
+Diborane (B₂H₆) reacts with ammonia (NH₃) to first form an adduct, which is a combined compound: [B₂H₆ · 2NH₃].
+
+Step 4: Heating to Get Z
+
+When this adduct is heated, it breaks down to give borazine (B₃N₃H₆), which is compound Z, and hydrogen gas (H₂):
+
+2 B₂H₆ + 2 NH₃ → [B₂H₆ · 2 NH₃] → 2 B₃N₃H₆(Z) + H₂
+
+Step 5: Counting Sigma (σ) and Pi (π) Bonds in Z
+
+Borazine (B₃N₃H₆) is a ring, and its bonds are:
+
+There are 6 sigma (σ) bonds between B and N in the ring. There are 3 sigma (σ) bonds between B and H. There are 3 sigma (σ) bonds between N and H.
+
+So, the total number of σ bonds (x) is: 6 + 3 + 3 = 12.
+
+There are 3 pi (π) bonds (y) in the ring.
+
+So, x + y = 12 + 3 = 15.
+
+Question15
+
+Consider the following sequence of reaction
+
+Page 15
+2CH₃Cl + Si $\xrightarrow[\text{573 K}]{\text{Cu}}$ X $\xrightarrow{\text{H}_2\text{O}}$ Y $\xrightarrow{\text{Polymerisation}}$ Z
+
+The repeating structural unit in Z is
+
+Options:
+
+A. <img>Structural unit A: [CH₃Si-O⁻] with two O⁻ ions attached to Si</img>
+
+B. <img>Structural unit B: [(CH₃)₂Si-O]</img>
+
+C. <img>Structural unit C: [CH₃-Si-O-CH₃] with two CH₃ groups attached to Si</img>
+
+D. <img>Structural unit D: [CH₂-Si-O-CH₃] with CH₂ and CH₃ groups attached to Si</img>
+
+Page 16
+Answer: B
+
+Solution: The reaction involved is as follows 2CH₃Cl + Si $\xrightarrow[573 \text{ K}]{\text{Cu}}$ (CH₃)₂SiCl₂ (X) $\xrightarrow{\text{H}_2\text{O}}$ (CH₃)₂Si(OH)₂(Y) + 2HCl
+
+(CH₃)₂Si(OH)₂(Y) $\xrightarrow{\text{Polymerisation}}$ - [Si(CH₃)₂ - O]- Thus, repeating unit in Z is - [Si(CH₃)₂ - O]-
+Question16 Which of the following is not the common component of photochemical smog?
+
+Options: A. Ozone B. Formaldehyde C. Acrolein D. Sulphur dioxide
+
+Answer: D
+
+Solution: Photochemical smog is formed by the reaction of sunlight with pollutants like nitrogen oxides (NOₓ) and hydrocarbons (VOCs). Among the given compounds, only sulphur dioxide (SO₂) is not a typical component of photochemical smog. Instead, it is mainly associated with classical smog.
+Page 17
+Question17 Identify the compound (Z) in the following reaction sequence
+
+<img>Reaction sequence starting with 1,2-dibromopropane. Step 1: (i) Alc. KOH, (ii) NaNH₂ yields Propyne (X). Step 2: H₂O, Hg²⁺/H⁺, 333 K yields Propanone (Y). Step 3: Isomerisation yields Propanone (Z).</img>
+
+Options: A. propanal B. propanone C. propanoic acid D. propanamide
+
+Answer: B
+
+Solution: The reaction sequence is as follows
+
+<img>Reaction sequence showing the conversion of 1,2-dibromopropane to propanone (Z). Step 1: (i) Alc. KOH, (ii) NaNH₂ converts 1,2-dibromopropane to Propyne (X). Step 2: H₂O, Hg²⁺/H⁺, 333 K converts Propyne to Propanone (Y). Step 3: Isomerisation converts Propanone (Y) to Propanone (Z).</img>
+
+So, Z is propanone.
+
+Page 18
+Question18 The correct IUPAC name of the following compound is <img>Chemical structure of a compound with a bromine atom, a cyano group, a ketone group, a hydroxyl group, and an amino group.</img>
+
+Options: A. 5-amino-4-hydroxy-1-bromo-1-cyanopentan-4-ol B. 1-amino-6-bromo-3-hydroxy-4-oxopentanenitrile C. 6-amino-2-bromo-5-hydroxy-3-oxohexanenitrile D. 6-amino-2-bromo-5-hydroxy-3-oxopentanenitrile
+
+Answer: C
+
+Solution: The IUPAC nomenclature of the given compound <img>Chemical structure of a compound with a bromine atom, a cyano group, a ketone group, a hydroxyl group, and an amino group.</img> 6-amino-2-bromo-5-hydroxy-3-oxohexanenitrile.
+
+Page 19
+Question19
+
+Which purification method is generally used for a high boiling organic liquid compound which decompose below its boiling point?
+
+Options:
+
+A. Distillation
+
+B. Distillation under reduced pressure
+
+C. Steam distillation
+
+D. Fractional distillation
+
+Answer: B
+
+Solution:
+
+Distillation under reduced pressure (vacuum distillation) is generally used for the purification of high-boiling organic liquids that decompose at or below their normal boiling points.
+
+In this method, the external pressure is reduced so that the liquid boils at a lower temperature than its normal boiling point. This prevents thermal decomposition and allows safe purification of heat-sensitive liquids such as glycerol, aniline, and nitrobenzene.
+
+Question20
+
+Match the following
+
+List-I
+(Reaction)	List-II
+(Major product)
+(A) CH₃ - C = CH₂
+H₂O
+Hg²⁺, H⁺, 333K	I CH₃ - CH - CH₃
+|
+OH
+(B) CH₃COONa
+H₂O, Pt
+Electrolysis	II CH₃ - C - CH₃
+||
+O
+(C) CH₃ - CH - CH₂
+H₂O, OH⁻	III CH₃ - CH - CH₂
+|
+OH OH
+(D) CH₃ - CH = CH₂
+H₂O
+Dil KMnO₄, 273K	IV CH₃ - CH₃
+V CH₄
+Page 20
+The correct answer is
+
+Options: A. A-II, B-IV, C-I, D-III B. A-II, B-V, C-I, D-III C. A-III, B-IV, C-II, D-I D. A-II, B-III, C-IV, D-I
+
+Answer: A
+
+Solution: The correct match is A-II, B-IV, C-I, D-III.
+Question21
+
+Sodium metal crystallises in a body centred cubic lattice with edge length of $x\AA$. If the radius of sodium atom is $1.86\AA$ the value of $x$ is
+
+Options: A. 4.29 B. 3.29
+
+Page 21
+C. 2.39 D. 3.93 Å Answer: A Solution: Sodium crystallises in a body centred cubic (bcc) lattice with an atomic radius of 1.86Å. Let, the edge length of the unit cell be xÅ. In a bcc lattice, the body diagonal is equal to 4r, where r is the atomic radius. The body diagonal is also equal to $\sqrt{3}x$. So, $\sqrt{3}x = 4 \times 1.86$ $\sqrt{3}x = 7.44$ $x = \frac{7.44}{\sqrt{3}} = \frac{7.44}{1.732} \approx 4.29Å$. Therefore, the edge length x is 4.29Å.
+Question22 In a mixture of liquids A and B, if the mole fractions of component A in vapour phase and liquid mixture are $x_1$ and $x_2$ respectively, then the total vapour pressure of liquid mixture is (Where $p_A^0$ and $p_B^0$ are the vapour pressure of pure A and B)
+
+Page 22
+Options: A. $\frac{P_B^0 X_1}{X_2}$ B. $\frac{p_3^0 x_2}{x_1}$ C. $\frac{p_A^0 x_2}{x_1}$ D. $\frac{p_A^0 x_1}{x_2}$
+
+Answer: C
+
+Solution:
+
+Dalton's Law: The fraction of vapour pressure from A in the total vapour is equal to its mole fraction in the vapour. $\frac{p_A}{p_{Total}} = x_1$ So, $p_A = x_1 p_{Total}$ ... (i)
+
+Raoult's Law: The vapour pressure of A above the liquid equals its mole fraction in the liquid multiplied by its pure vapour pressure. $p_A = p_A^0 x_2$ ... (ii)
+
+Combine Both Laws: From equation (i) and (ii), set $p_A$ equal: $x_1 p_{Total} = p_A^0 x_2$
+
+Solve for the total vapour pressure: $p_{Total} = \frac{p_A^0 x_2}{x_1}$
+
+Page 23
+Question23
+
+A current of 0.5 ampere is passed through molten AlCl₃ for 96.5 seconds. The mass of aluminium deposited at cathode is xmg and volume of chlorine liberated (at STP) at anode is y mL. x and y are respectively.
+
+Options:
+
+A. 18.0, 22.4 B. 13.5, 16.8 C. 9.0, 11.2 D. 4.5, 5.6
+
+Answer: D
+
+Solution:
+
+Given, Current I = 0.5 A Time t = 96.5 s Q = i × t = 0.5 × 96.5 = 48.25C
+
+Aluminium at cathode Al³⁺ + 3e⁻ → Al Equivalents of Al = Q/F = 48.25/96500 = 5 × 10⁻⁴ Mass = Equivalent weight × Equivalents = 9 × 5 × 10⁻⁴ = 4.5mg
+
+Chlorine at anode 2Cl⁻ → Cl₂ + 2e⁻ Moles Cl₂ = (5 × 10⁻⁴)/2 = 2.5 × 10⁻⁴
+
+Page 24
+Volume at STP = $2.5 \times 10^{-4} \times 22.4 \times 1000$ = 5.6 mL
+
+Question24
+$R \rightarrow P$ is a first order reaction. For this reaction a graph of $\ln[R]$ (on y-axis) and time (on x-axis) gave a straight line with negative slope. The intercept on y-axis is equal to ( $k$ = rate constant)
+
+Options:
+
+A. $\ln[R]_0$
+
+B. $[R]_0$
+
+C. $k \times 2.303$
+
+D. $\frac{k}{2.303}$
+
+Answer: A
+
+Solution:
+
+Given, $R \rightarrow P$ (first order)
+
+Integrated rate law for first order is given by the equation, $\ln[R] = \ln[R]_0 - kt$
+
+Comparing with $y = mx + c$ $\ln[R] = -kt + \ln[R]_0$
+
+Slope = $-k$ (negative)
+
+Intercept on y-axis = $\ln[R]_0$
+
+Question25
+The correct statements about the properties of colloidal solutions are
+
+Page 25
+A. Tyndall effect is used to distinguish between a colloidal solution and a true solution.
+
+B. Zeta potential is related to movement of colloidal particles.
+
+C. Brownian motion in colloidal solution is faster if the viscosity of the solution is very high.
+
+D. Brownian motion stabilises the sols.
+
+Options: A. A and B B. B and C C. A and D D. B and D
+
+Answer: C
+
+Solution: Statement A and D are correct while B and C are incorrect. The correct form of B and C are B as follow. (B) Zeta potential is related to stability of colloidal particles (C) Brownian motion becomes slower if the viscosity is high. Higher viscosity resists the random motion of particles.
+
+Question26 The ore of which metal is concentrated by leaching?
+
+Options: A. Zn B.
+
+Page 26
+Cu C. Al D. Fe Answer: C Solution: Aluminium is extracted from its ore bauxite. The concentration of bauxite is done by the leaching process using concentrated NaOH.
+Question27 Arrange the following molecules in the correct order of their bond angles
+
+S8	P4	S6	O3
+A	B	C	D
+Options: A. $A < B < C < D$ B. $B < C < A < D$ C. $C < B < A < D$ D. $B < C < D < A$ Answer: D Solution: The structure of S8, P4, S6 and O3 are given below.
+Page 27
+<img>S8 (Crown like structure)</img> <img>P4 (Tetrahedral)</img> <img>S6 (Chair like structure)</img> <img>O3 (Bent)</img>
+
+So, the increasing order of their bond angles is P₄ < S₆ < S₈ < O₃.
+
+Question28
+
+What are the products formed when ammonium dichromate is thermally decomposed?
+
+Options:
+
+A. NO₂, Cr₂O₃, H₂
+
+B. N₂O, Cr₂O₃, H₂O
+
+C. N₂, CrO₃, H₂O
+
+D. N₂, Cr₂O₃, H₂O
+
+Answer: D
+
+Solution:
+
+When ammonium dichromate is thermally decomposed, it produces nitrogen gas, chromium (III) oxide and water vapour.
+
+(NH₄)₂Cr₂O₇(s) → Cr₂O₃(s) + N₂(g) + 4H₂O(g)
+
+Page 28
+Question29
+
+Sulphur dioxide on reaction with chlorine in the presence of charcoal gives compound (A). This on reaction with white phosphorus gives SO₂ and compound (B). The correct statement about 'B' is
+
+Options: A. the shape of 'B' is pyramidal. B. 'B' on hydrolysis gives phosphorus acid. C. 'B' in solid state exists as an ionic solid. D. In 'B' all bonds are equivalent.
+
+Answer: C
+
+Solution:
+
+The reactions involved are as follows.
+
+<img>Reaction scheme showing SO₂ + Cl₂ → SO₂Cl₂ (A) in the presence of charcoal, and P₄ (white phosphorus) + SO₂Cl₂ → PCl₅ + SO₂ (B)</img>
+
+PCl₅ (B) in solid state exists as [PCl₄⁺] [PCl₆⁻] as ionic lattice. PCl₅ on hydrolysis gives phosphoric acid. PCl₅ + 4H₂O → H₃PO₄ + 5HCl (Phosphoric acid)
+
+In PCl₅, the all bonds are not equivalent.
+
+Page 29
+<img>Cl Cl Cl P 120° 90° Cl Cl</img>
+
+Trigonal bipyramidal Paining of electrons takes place. Thus, option (c) is correct.
+
+Question30
+
+In which of the following transition metal ion (aquated) is not correctly matched with its colour?
+
+Options:
+
+A. Fe²⁺-Green B. Cu²⁺ - Blue C. Fe³⁺ - Pink D. V³⁺-Green
+
+Answer: C
+
+Solution:
+
+Page 30
+Among the given ions, Fe²⁺, Cu²⁺ and V³⁺ are correctly matched with their colour. The colour of Fe³⁺ (aquated) is yellow.
+
+Question31
+
+Which one of the following complex ions is diamagnetic in nature?
+
+Options:
+
+A. [CoF₆]³⁻
+
+B. [Co(Ox)₃]³⁻
+
+C. [Mn(CN)₆]³⁻
+
+D. [Fe(CN)₆]³⁻
+
+Answer: B
+
+Solution:
+
+The atomic number of Co is 27. Its electronic configuration is [Ar]3d⁷4s².
+
+In [Co(ox)₃]³⁻, the oxidation state of Co is +3.
+
+Orbitals of Co³⁻
+
+↑	↑	↑	↑	↑	
+3d⁶	4s
+In the presence of C₂O₄²⁻ (strong field ligand in case of Co³⁺) pairing of electrons takes place.
+
+[Co(ox)₃]³⁻ =
+
+<img>Orbitals of Co³⁻ with pairing of electrons in 3d and 4p orbitals</img>
+
+It has no unpaired electron, so it is diamagnetic.
+
+Page 31
+Question32
+
+Polymer X is an example of polyester and Y is an example of polyamide X and Y are respectively
+
+Options: A. novolac, terylene B. dacron, nylon 6,6 C. nylon 6, terylene D. teflon, terylene
+
+Answer: B
+
+Solution: Dacron and nylon 6,6 are the examples of polyester and polyamides respectively.
+
+Question33
+
+The general structure of alpha amino acid can be represented as <img>General structure of alpha amino acid: H₂N-CH-CO₂H with R attached to the central carbon</img>
+
+Which amino acid is not correctly matched with R given?
+
+Options: A. R = -CH₂ - C₆H₄ - OH(p) - (Tyrosine)
+
+Page 32
+B. $R = -\text{CH}_2 - \text{SH} - (\text{Cysteine})$
+
+C. $R = -\text{CH}_2 - \text{CH}_2 - \text{S} - \text{CH}_3 - (\text{Serine})$
+
+D. $$R = -\text{CH}_2 - \underset{\text{||}}{\text{C}} - \text{NH}_2 - (\text{Asparagine})$$ $$\quad \quad \quad \quad \quad \text{O}$$
+
+Answer: C
+
+Solution:
+
+The given general formula is $$\text{H}_2\text{N} - \underset{\text{|}}{\text{CH}} - \text{COOH}$$ $$\quad \quad \quad \text{R}$$
+
+Then, $R = -\text{CH}_2 - \text{C}_6\text{H}_4\text{OH}$ (para position) gives tyrosine.
+
+When $R = \text{CH}_2 - \text{SH} \rightarrow \text{Cysteine}$
+
+When $R = \text{CH}_2 - \text{CONH}_2 \rightarrow \text{Asparagine}$.
+
+When $R = -\text{CH}_2 - \text{CH}_2 - \text{S} - \text{CH}_3 \rightarrow \text{Methionine}$ not serine.
+
+As serine has the $R$ group: $-\text{CH}_2 - \text{OH}$
+
+Question 34
+
+Consider the following.
+
+Assertion (A) Aspirin is useful in the prevention of heart attacks.
+
+Reason (R) Aspirin acts as anti-blood clotting agent The correct answer is
+
+Page 33
+Options: A. Both A and R are correct and R is the correct explanation of A. B. A is correct and R is not correct. C. Both A and R are correct and R is not the correct explanation of A. D. A is incorrect and R is correct.
+
+Answer: A
+
+Solution:
+
+Assertion (A): Aspirin is useful in the prevention of heart attacks. This assertion is correct. Low-dose aspirin is widely used to prevent heart attacks and strokes, especially in individuals at risk or Those who have already experienced such events.
+Reason (R): Aspirin acts as an anti-blood clotting agent. This reason is also correct. Aspirin works by inhibiting the aggregation (clumping) of platelets, which are components in the blood responsible for forming clots. By doing so, it reduces the risk of harmful blood clots forming in arteries, which can lead to heart attacks or strokes.
+Relationship between A and R: Heart attacks are often caused by blood clots blocking the flow of blood to the heart muscle. Since aspirin acts as an anti-blood clotting agent (by preventing platelet aggregation), it directly helps to prevent these clots from forming. Therefore, Reason (R) provides the correct explanation for why Aspirin is useful in the prevention of heart attacks (Assertion A).
+Thus, both A and R are correct, and R is the correct explanation for A. The final answer is Option A
+
+Question35
+
+Chlorobenzene when subjected to fittig reaction gives a compound ' X '. The sum of σ and π - bonds in X is
+
+Options: A. 30
+
+Page 34
+B. 28 C. 18 D. 29 Answer: D
+
+Solution:
+
+Fittig Reaction When chlorobenzene react with sodium metal in dry ether it gives biphenyl.
+
+2C₆H₅Cl + 2Na $\xrightarrow{\text{Dry ether}}$ C₆H₅ - C₆H₅ + 2Na (X)
+
+Structure of X is <img>Structure of X is a biphenyl molecule, consisting of two benzene rings connected by a single bond.</img>
+
+The number of σ and π bonds in both phenyl ring are 23 and 6 respectively. Therefore, their sum is 23 + 6 = 29.
+
+Question36
+
+Cumene on oxidation in air gives a compound, X. This on reaction with dilute acid gives Y and Z. Y reacts with sodium metal and not Z. What is Z?
+
+Options:
+
+A. <img>Chemical structure of acetaldehyde: CH₃-C(=O)-H</img>
+
+B. <img>Chemical structure of acetone: CH₃-CH₂-C(=O)-CH₃</img>
+
+Page 35
+C. <img>CH3-C-CH3 with a double bond O above the C</img>
+
+D. <img>CH3-C-O-CH3 with a double bond O above the C</img>
+
+Answer: C
+
+Solution: Cumene on oxidation in air gives cumene hydroperoxide via radical chain mechanism.
+
+<img>Chemical reaction: Cumene (H-C(CH3)2-C6H5) + O2 -> (X) (H3C-C-OH-C6H5) -> dil. acid -> Phenol (OH-C6H5) + Acetone (CH3-C-CH3 with a double bond O above the C)</img>
+
+Page 36
+Phenol (Y) reacts with sodium metal (Na) form sodium phenoxide and hydrogen gas. Acetone does not reacts with sodium metal. So Z is acetone (propanone).
+
+Question37
+
+The reaction of benzene with CO and HCl in the presence of anhydrous AlCl₃ gives a compound X. X can also be obtained from which of the following reaction?
+
+Options:
+
+A. <img>Chemical reaction: Benzonitrile (C6H5CN) reacting with (i) LiAlH4 and (ii) H3O+ to form a product.</img>
+
+B. <img>Chemical reaction: Toluene (C6H5CH3) reacting with (i) KMnO4/OH- and heat (Δ) to form a product.</img>
+
+C. <img>Chemical reaction: Benzoyl chloride (C6H5COCl) reacting with H2-Pd and BaSO4 to form a product.</img>
+
+D. <img>Chemical reaction: Benzyl alcohol (C6H5CH2OH) reacting with CrO3-H2SO4 to form a product.</img>
+
+Page 37
+Answer: C
+
+Solution: Benzene reacts with CO and HCl in presence of AlCl₃ gives a compound X (benzaldehyde).
+
+<img>Benzene reacts with CO and HCl in presence of AlCl₃ to form benzaldehyde (X)</img>
+
+X can also be obtained by the following given process.
+
+<img>Acetyl chloride (X) undergoes Rosenmund reduction with H₂/Pd-BaSO₄ to form benzaldehyde (X)</img>
+
+Hence, option (c) is correct.
+
+Question38 What is the product 'Z' in the given sequence of reactions?
+
+<img>Reaction sequence: Aniline reacts with (i) NaNO₂/HCl at 273-278 K and (ii) H₂O warm to form X. X reacts with (i) NaOH, (ii) CO₂, (iii) H⁺ to form Y. Y reacts with (CH₃CO)₂O to form Z.</img>
+
+Options: A. <img>Structure of methyl salicylate (methyl 2-hydroxybenzoate)</img>
+
+Page 38
+B. <img>Chemical structure of a benzene ring with OCOCH3 and COOH groups</img>
+
+C. <img>Chemical structure of a benzene ring with OCH3 and OH groups</img>
+
+D. <img>Chemical structure of a benzene ring with COCH3 and OH groups</img>
+
+Answer: B
+
+Solution: The reaction sequence involved is as follows.
+
+<img>Reaction sequence: Aniline (NH2) reacts with (i) NaNO2/HCl 273-278 K, (ii) H2O/warm to form product (X) which is a benzene ring with an OH group.</img>
+
+Page 39
+<img>Chemical reaction scheme showing the conversion of compound Y (2-hydroxybenzoic acid) to compound Z (methyl salicylate) using (CH3CO)2O, followed by a reaction with (i) NaOH and (ii) CO2.</img>
+
+Question39
+
+The ratio of σ bonds to π bonds in Q is
+
+<img>Chemical reaction scheme showing the conversion of benzenesulfonic acid to compound P using (i) NaOH and (ii) H+, and then to compound Q using Na2Cr2O7 and H2SO4.</img>
+
+Options:
+
+A. 3 : 1 B. 1 : 3 C. 4 : 1 D. 2 : 1
+
+Answer: A
+
+Solution:
+
+Page 40
+<img>Chemical reaction sequence showing the conversion of a benzene ring with a SO3H group to a phenol (P) and then to a quinone (Q) using NaOH, H+, Na2Cr2O7, and H2SO4.</img>
+
+The number of σ bonds is 12 and π bonds is 4. The ratio of σ and π bonds is 3 : 1.
+
+Question40
+
+What is the major product ' Z ' in the given reaction sequence?
+
+<img>Reaction sequence starting with nitrobenzene. The first step is Fe/HCl to form X. The second step is NaNO2/HCl at 273 K to form Y. The third step is H3PO2/H2O to form Z.</img>
+
+Options:
+
+A. <img>Chemical structure of benzene.</img>
+
+Page 41
+B. <img>Chemical structure of phenol</img>
+
+C. <img>Chemical structure of para-benzoquinone</img>
+
+D. <img>Chemical structure of 2-chlorophenol</img>
+
+Answer: A
+
+Solution: The reaction involved is as follows <img>Chemical reaction: Nitrobenzene (NO₂) is reduced to aniline (NH₂) using Fe/HCl. The product is labeled (X).</img>
+
+Page 42
+<img>Chemical reaction diagram showing the conversion of a chlorobenzene derivative to benzene. The reactant is a benzene ring with a chlorine atom and a positively charged nitrogen atom (N₂Cl⁺). The reagents are NaNO₂/HCl at 273 K, which converts it to intermediate (Y). Intermediate (Y) is then treated with H₃PO₂/H₂O to yield the final product (Z), which is benzene.</img>
+
+The major product Z is benzene.
+
+Physics
+
+Question1
+Match the "Technology" given in List-I with the "Principle of physics" given in List-II.
+
+List-I (Technology)		List-II (Principle of physics)
+(A)	Steam engine	I	Magnetic confinement of plasma
+(B)	Electron microscope	II	Laws of thermodynamics
+(C)	Non-reflecting coatings	III	Wave nature of electrons
+(D)	Tokamak	IV	Interference of light
+Options:
+
+A. A-I, B-II, C-III, D-IV
+
+B. A-II, B-III, C-IV, D-I
+
+C. A-II, B-IV, C-III, D-I
+
+D. A-II, B-I, C-III, D-IV
+
+Page 43
+Answer: B
+
+Solution:
+
+A) Steam engine: A steam engine operates by converting thermal energy (from steam) into mechanical work. This process is fundamentally governed by the Laws of thermodynamics, which describe how heat and work are related. Thus, A matches with II.
+B) Electron microscope: An electron microscope uses a beam of electrons instead of light to image a sample. The resolving power of an electron microscope is much higher than a light microscope because electrons, when accelerated, have a much shorter de Broglie wavelength than visible light. This relies on the wave nature of electrons, a concept from quantum mechanics (de Broglie hypothesis). Thus, B matches with III.
+C) Non-reflecting coatings: These coatings are thin films applied to optical surfaces to reduce reflection. They work by manipulating the phase of light waves. Light reflected from the top surface of the coating and light reflected from the bottom surface of the coating (at the coating-glass interface) interfere destructively, thereby reducing the overall reflected light. This phenomenon is Interference of light. Thus, C matches with IV.
+D) Tokamak: A Tokamak is a device that uses a strong magnetic field to confine plasma within a toroidal chamber for nuclear fusion research. The charged particles in the plasma are held in place by the magnetic field, preventing them from interacting with the reactor walls and maintaining the extremely high temperatures required for fusion. This principle is Magnetic confinement of plasma. Thus, D matches with I.
+Question2
+
+In an experiment, the coefficient of viscosity (in mPa. s) of a liquid was determined as 2.62, 2.68, 2.58, 2.57, 2.54 and 2.55 . The mean absolute error in the determination of the coefficient of viscosity of the liquid is
+
+Options:
+
+A. 0.08 mPa s B. 0.12 mPa s C. 0.06 mPa s D. 0.04 mPa s
+
+Page 44
+Answer: D
+
+Solution:
+
+Given, reading of viscosity (in mPa.s) 2.62, 2.68, 2.58, 2.57, 2.54, 2.55
+
+Mean $$ = \frac{2.62 + 2.68 + 2.58 + 2.57 + 2.54 + 2.55}{6} $$ $$ = \frac{15.54}{6} = 2.59(\text{mPa.s}) $$
+
+Absolute Errors 12.62 - 2.591 = 0.03 12.68 - 2.591 = 0.09 12.58 - 2.591 = 0.01 12.57 - 2.591 = 0.02 12.54 - 2.591 = 0.05 12.55 - 2.591 = 0.04
+
+The mean absolute error $$ = \frac{0.03 + 0.09 + 0.01 + 0.02 + 0.05 + 0.04}{6} $$ $$ = \frac{0.24}{6} = 0.04[\text{mPa.s}] $$
+
+Question3
+
+The relation between the displacement ' x ' (in metre) and the time ' t ' (in second) of a particle is $t = 2x^2 + 3x$. If the displacement of the particle is 25 cm from the origin (x = 0), then the acceleration of the particle is
+
+Options:
+
+A. $$ +\frac{1}{16} \text{ ms}^{-2} $$
+
+B. $$ -\frac{1}{16} \text{ ms}^{-2} $$
+
+Page 45
+C. $+\frac{1}{8} \text{ ms}^{-2}$
+
+D. $-\frac{1}{8} \text{ ms}^{-2}$
+
+Answer: B
+
+Solution: $t = 2x^2 + 3x$ $1 = 4x\frac{dx}{dt} + 3\frac{dx}{dt}$ $v = \frac{dx}{dt} = \frac{1}{4x + 3}$ $a = \frac{dv}{dt} = \frac{d}{dt}\left[\frac{1}{4x + 3}\right]$ $a = -\frac{4}{(4x + 3)^2} \cdot \frac{dx}{dt} = -\frac{4}{(4x + 3)^3}$ at $x = 25 \text{ cm} = 0.25 \text{ m}$ $a = -\frac{4}{(4)^3} = -\frac{1}{16} \text{ ms}^{-2}$
+
+Question4
+
+A body projected at certain angle ($\neq 90^\circ$) from the ground crosses a point in its path at a time of 2.3 s and from there it reaches the ground after a time of 5.7 s. The maximum heigh reached by the body is (Acceleration due to gravity = $10 \text{ ms}^{-2}$)
+
+Options:
+
+A. 80 m
+
+B. 120 m
+
+C. 40 m
+
+Page 46
+D.
+
+160 m
+
+Answer: A
+
+Solution:
+
+Step 1: Find the total time the object is in the air
+
+The question says the object crosses a certain point after 2.3 s, then takes 5.7 s from that point to reach the ground. So, the total time in the air is: $T = 2.3 \text{ s} + 5.7 \text{ s} = 8 \text{ s}$
+
+Step 2: Find the time taken to reach the maximum height
+
+For a projectile (an object thrown at an angle), the time to go up to the highest point is half of the total time in the air: $t_{\text{max}} = \frac{T}{2} = \frac{8 \text{ s}}{2} = 4 \text{ s}$
+
+Step 3: Find the starting upward speed using the motion formula
+
+At the highest point, the speed going up becomes zero. The formula is: $v_f = v_i - gt_{\text{max}}$
+
+Here, $v_f = 0$ (since upward speed is zero at the top), $g = 10 \text{ m/s}^2$, and $t_{\text{max}} = 4 \text{ s}$: $0 = v_i - (10 \times 4)$ $v_i = 40 \text{ m/s}$
+
+Step 4: Calculate the maximum height reached
+
+We use another formula to find the highest point: $H_{\text{max}} = v_i t_{\text{max}} - \frac{1}{2} g t_{\text{max}}^2$
+
+Plug in the values: $H_{\text{max}} = (40 \text{ m/s})(4 \text{ s}) - \frac{1}{2}(10 \text{ m/s}^2)(4 \text{ s})^2$ $(40 \times 4) = 160 \text{ m}$ $(4 \text{ s})^2 = 16 \text{ s}^2$ $\frac{1}{2} \times 10 \times 16 = 80 \text{ m}$ $H_{\text{max}} = 160 \text{ m} - 80 \text{ m} = 80 \text{ m}$
+
+Final Answer: The maximum height reached by the body is 80 m.
+
+Page 47
+Question5
+
+A circular path of radius 75 m is banked at an angle of tan⁻¹(0.2). If the coefficient of static friction between the tyres of the car and the circular path is 0.1, then the maximum permissible speed of the car to avoid slipping is
+
+Options:
+
+A. 10 ms⁻¹
+
+B. 20 ms⁻¹
+
+C. 15 ms⁻¹
+
+D. 30 ms⁻¹
+
+Answer: C
+
+Solution:
+
+To find the fastest speed at which the car can go without slipping, use this formula:
+
+v_max = √(Rg * (tanθ + μ_s) / (1 - μ_s * tanθ))
+
+Here:
+
+R = 75 m (radius of the path)
+g = 9.8 m/s² (acceleration due to gravity)
+tanθ = 0.2 (angle of banking)
+μ_s = 0.1 (friction coefficient)
+Now, put all the values into the formula: v_max = √(75 × 9.8 × (0.2 + 0.1) / (1 - 0.1 × 0.2))
+
+First, add 0.2 + 0.1 = 0.3 in the numerator.
+
+Multiply 0.1 × 0.2 = 0.02, so the denominator is 1 - 0.02 = 0.98.
+
+So, v_max = √(75 × 9.8 × 0.3 / 0.98)
+
+This gives v_max = √225 = 15 m/s
+
+Page 48
+The maximum speed the car can go without slipping is about 15 m/s.
+
+Question6
+
+A horizontal force of 10 N is applied on a block of mass 1.5 kg which is initially at rest on a rough horizontal surface. The work done by the applied force in a time of 6 s from the beginning of the motion is (Acceleration due to gravity = 10 ms⁻²; the coefficient of kinetic friction between the block and the surface is 0.2)
+
+Options:
+
+A. 588 J B. 360 J C. 840 J D. 420 J
+
+Answer: C
+
+Solution:
+
+F = 10 N m = 1.5 kg μ = 0.2 g = 10 ms⁻² t = 6 s
+
+Frictional force = μmg = 0.2 × 1.5 × 10 = 3 N
+
+Net force = Applied force - Frictional force F_N = 10 - 3 = 7 N
+
+Now, F_N = ma ⇒ 7 = 1.5 × a a = 7 / 1.5 = 4.67 ms⁻²
+
+Page 49
+Now, displacement in 6 seconds is given by $$s = ut + \frac{1}{2}at^2$$ $$s = (0 \times 6) + \left[\frac{1}{2} \times 4.67 \times 6 \times 6\right]$$ $$s = 84.06 \text{ m} \approx 84 \text{ m}$$ $$\therefore \text{Work done} = \text{Force} \times \text{Displacement}$$ $$= 10 \times 84 = 840 \text{ J}$$
+Question 7
+
+A ball is allowed to fall freely from a height of 42 m form the ground. If the coefficient of restitution between the ball and the ground is 0.4, then the total distance travelled by the ball before it comes to rest is
+
+Options:
+
+A. 84 m
+
+B. 87 m
+
+C. 72 m
+
+D. 58 m
+
+Answer: D
+
+Solution:
+
+The ball is dropped from a height of 42 m. The coefficient of restitution, e, is 0.4. This number tells us how much energy the ball keeps after bouncing.
+
+At first, the ball is dropped. So, its starting speed (u) is 0.
+
+Height after first bounce:
+
+The ball comes back up to a height equal to $e^2$ times the height it fell from. So: $$h_1 = (0.4)^2 \times 42$$ $$h_1 = 0.16 \times 42 = 6.72 \text{ m}$$
+
+Height after later bounces:
+
+Page 50
+Each time the ball bounces, it goes up to $e^2$ times the previous bounce's height.
+
+$h_2 = (0.4)^2 \times 6.72 = 0.16 \times 6.72$
+
+Total Distance:
+
+When the ball is dropped, it first travels 42 m down.
+
+After that, on every bounce, it goes up and then comes down the same height. So, for all the bounces, we call the sum of all the heights $h_1, h_2, h_3, \dots$.
+
+Total distance = distance of first fall + 2 × (sum of all bounce heights)
+
+$= 42 + 2 \times [h_1 + h_2 + h_3 + \dots]$
+
+<img>A diagram showing a ball dropped from a height of 42 M. A vertical line with an arrow indicates the 42 M height. A dashed line shows the path of the ball bouncing up and down.</img>
+
+Summing the Series:
+
+All the bounce heights make a series called a geometric progression (GP). The first term $a = 42$ and the common ratio $r = 0.16$.
+
+The sum of an infinite GP is given by:
+
+Sum = $\frac{a}{1-r} = \frac{42}{1-0.16}$
+
+Sum = $\frac{42}{0.84} = 50$
+
+Final Calculation:
+
+Now, total distance is:
+
+Total distance = $42 + 2 \times (0.4)^2 \times 50$
+
+$= 42 + 2 \times 0.16 \times 50$
+
+$= 42 + 16 = 58$ m
+
+Page 51
+Question8
+
+A thin uniform wire of mass 'm' and linear density 'ρ' is bent in the form of a circular ring. The moment of inertia of the ring about a tangent parallel to its diameter is 'm'
+
+Options:
+
+A. $\frac{3m^3}{8\pi^2\rho^2}$
+
+B. $\frac{8m^3}{3\pi^2\rho^2}$
+
+C. $\frac{8\pi^2m^3}{3\rho^2}$
+
+D. $\frac{3\pi^2m^3}{8\rho^2}$
+
+Answer: A
+
+Solution:
+
+Density ρ, the length of the wire is $L = \frac{m}{\rho}$
+
+Since, the wire is bent into a circular ring, its length is equal to the circumference $L = 2\pi R$
+
+Therefore, $R = \frac{L}{(2\pi)} = \frac{(\frac{m}{\rho})}{(2\pi)} = \frac{m}{(2\pi\rho)}$
+
+The moment of inertia of a circular ring about its diameter is given by $I_D = \frac{1}{2}mR^2$
+
+Using the parallel axis theorem, the moment of inertia about an axis parallel to the diameter at a distance R (the radius) from the centre is $I_T = I_D + mR^2$ $= \frac{1}{2}mR^2 + mR^2 = \frac{3}{2}mR^2$ $= \frac{3}{2}m\left(\frac{m}{2\pi\rho}\right)^2 = \frac{3m^3}{8\pi^2\rho^2}$
+
+Page 52
+Question9
+
+A solid sphere and a thin uniform circular disc of same radius are rolling down an inclined plane without slipping. If the acceleration of the sphere is 3 ms⁻², then the acceleration of the disc is
+
+Options:
+
+A. 4 ms⁻²
+
+B. 2.8 ms⁻²
+
+C. 3 ms⁻²
+
+D. 3.2 ms⁻²
+
+Answer: B
+
+Solution:
+
+The acceleration (a) of a body rolling down on an inclined plane without slipping $$a = \frac{g \sin \theta}{1 + \frac{I}{MR^2}}$$
+
+For solid sphere, $I = \frac{2}{5}MR^2$ $$\therefore a_s = \frac{g \sin \theta}{1 + \frac{\frac{2}{5}MR^2}{MR^2}} = \frac{g \sin \theta}{1 + \frac{2}{5}} = \frac{5}{7}g \sin \theta$$
+
+but $a_s = 3 \text{ m/s}^2$ $$\therefore 3 = \frac{5}{7}g \sin \theta \Rightarrow \sin \theta = \frac{21}{5g}$$
+
+Thus, for disc, $I = \frac{1}{2}MR^2$ $$\therefore a_d = \frac{g \sin \theta}{1 + \frac{\frac{1}{2}MR^2}{M}} = \frac{g \sin \theta}{1 + \frac{1}{2}\frac{MR^2}{M}} = \frac{g \sin \theta}{1 + \frac{1}{2}\frac{R^2}{1}} = \frac{g \sin \theta}{1 + \frac{1}{2}} = \frac{2}{3}g \sin \theta$$ $$= \frac{2}{3}g \times \frac{21}{5g} = \frac{14}{5} = 2.8 \text{ m/s}^2$$
+
+Page 53
+Question10
+
+If the amplitudes of a damped harmonic oscillator at times $t = 0, t_1$ and $t_2$ are $A_0, A_1$ and $A_2$ respectively, then the amplitude of the oscillator at a time of $(t_1 + t_2)$ is
+
+Options:
+
+A. $\frac{A_0 + A_1 + A_2}{3}$
+
+B. $\frac{A_2 A_0}{A_1}$
+
+C. $\frac{A_1 A_0}{A_2}$
+
+D. $\frac{A_1 A_2}{A_0}$
+
+Answer: D
+
+Solution:
+
+For a damped oscillator $A = A_0 e^{-bt}$ ... (i) ($b$ = damping constant)
+
+So, $A_1 = A_0 e^{-bt_1}$ ... (ii) and $A_2 = A_0 e^{-bt_2}$ ... (iii)
+
+Multiplying Eqs. (ii) and (iii) we get, $A_1 A_2 = A_0^2 \cdot e^{-b(t_1 + t_2)}$ $\Rightarrow \frac{A_1 A_2}{A_0} = A_0 e^{-b(t_1 + t_2)}$
+
+Comparing with Eq. (i), amplitude at time $(t_1 + t_2)$ is $\frac{A_1 A_2}{A_0}$
+
+Page 54
+Question11 A meteor of mass ' m ' having a speed ' V ' at infinity reaches the surface of the Earth with a speed of ( ve is escape speed from the Earth's surface)
+
+Options: A. $\sqrt{2}v_e$ B. $v_e$ C. $2\sqrt{v^2 + v_e^2}$ D. $\sqrt{v^2 + v_0^2}$
+
+Answer: D
+
+Solution: Escape speed from Earth's surface, $v_e = \sqrt{\frac{2GM}{R}}$ ... (i) where, M is mass of Earth and R its radius. Now, apply conservation of mechanical energy for Earth-meteor system. $KE_i + PE_i = KE_f + PE_f$ $\Rightarrow \frac{1}{2}mv^2 + 0 = \frac{1}{2}mv'^2 - \frac{GMm}{R}$ $\Rightarrow m\left[v^2 + \frac{2GM}{R}\right] = mv'^2$ $\Rightarrow v' = \sqrt{v^2 + v_e^2}$
+
+Question12 The work to be done to produce a strain of $10^{-3}$ in a steel wire of mass 2.96 kg and density $7.4 \text{ g cm}^{-3}$ is (Young's modulus of steel = $2 \times 10^{11} \text{ Nm}^{-2}$)
+
+Options:
+
+Page 55
+A. 0.04 kJ B. 0.04 J C. 100 kJ D. 400 J Answer: A Solution: Work = Elastic potential energy = $\frac{1}{2} \times Y \times (\text{strain})^2 \times \text{volume}$ $\Rightarrow W = \frac{1}{2} \times 2 \times 10^{11} \times (10^{-3})^2 \times \frac{2.96}{7.4 \times 10^3}$ $\Rightarrow W = 40 \text{ J or } 0.04 \text{ kJ}$
+Question13 A wooden block of outer volume 1 litre and specific gravity $\frac{3}{4}$ having a cavity floats with half of its volume immersed in water. Then, the volume of the cavity is Options: A. 250 mL B. 500 mL C. 333.3 mL D. 666.6 mL Answer: C
+
+Page 56
+Solution:
+
+<img>A diagram showing a rectangular block floating in a liquid. The block is labeled with a 'V' inside a circle. The liquid level is indicated by horizontal lines.</img>
+
+As block is floating ⇒ Weight of block = Weight of water displaced. ⇒ (1 - V) * 3/4 * ρw * g = 1/2 * ρw * g ⇒ 1 - V = 4/6 ⇒ V = 1 - 4/6 = 2/6 = 1/3 Ltr = 1000/3 mL = 333.33 mL
+
+Question14
+
+When 'n' identical mercury drops combine to form a single big drop
+
+Options: A. surface area increases and heat is released. B. surface area decreases and heat is released. C. surface area increases and heat is absorbed. D. surface area decreases and heat is absorbed.
+
+Answer: B
+
+Solution:
+
+Page 57
+On combining of drop, surface area decreases, hence, heat get released, $$v_f = v_i = v$$ $$\frac{4}{3}\pi R^3 = n \times \frac{4}{3}\pi r^3 = v$$ $$\Rightarrow R = n^{1/3}r$$ Heat released, $H = S[A_i - A_f]$ $$= S[4\pi r^2 \times n - 4\pi R^2]$$ $$= 3S\left[\frac{4\pi r^3 \times n}{3r} - \frac{4\pi R^3}{3R}\right]$$ $$= 3S\left[\frac{V}{r} - \frac{V}{R}\right] = 3SV\left[\frac{1}{r} - \frac{n^{-1/3}}{r}\right]$$ $$H = \frac{35V}{r}[1 - n^{-1/3}]$$
+Question15
+
+The temperature of a body shown by a faulty Celsius thermometer is 49°C and by a correct Fahrenheit thermometer is 122°F. The correction to be applied to the faulty thermometer is
+
+Options: A. -12°C B. +1°C C. +12°C D. -1°C
+
+Answer: B
+
+Solution: The faulty thermometer shows 49°C. To compare, let's first change 49°C to Fahrenheit using the formula: $F = (\frac{9}{5} \times C) + 32$ So, $F = (\frac{9}{5} \times 49) + 32 = 88.2 + 32 = 120.2°F$ The correct Fahrenheit thermometer shows 122°F.
+
+Page 58
+The difference between the correct value and the faulty value is called the error: $122 - 120.2 = 1.8^\circ F$.
+
+We need to find out what this error in Fahrenheit means in Celsius.
+
+Use the formula: $F = \frac{9}{5}C + 32$. For a difference or correction, we use only the change part: $\Delta F = \frac{9}{5}\Delta C$.
+
+That means $\Delta C = \Delta F \times \frac{5}{9}$.
+
+So, substitute the error: $\Delta C = 1.8 \times \frac{5}{9} = 1^\circ C$
+
+The faulty thermometer is $1^\circ C$ lower than it should be, so $+1^\circ C$ should be added to its readings.
+
+Question16
+
+If the radiation emitted by a perfect radiator has maximum intensity at a wavelength of $2900\AA$, the intensity of radiation emitted by it is
+
+(Stefan-Boltzmann's constant $= 5.67 \times 10^{-8} Wm^{-2} K^{-4}$ and Wein's constant $= 2.9 \times 10^{-3} mK$)
+
+Options:
+
+A. $5.67 \times 10^8 Wm^{-2}$
+
+B. $5.67 Wm^{-2}$
+
+C. $5670 Wm^{-2}$
+
+D. $2.9 Wm^{-2}$
+
+Answer: A
+
+Solution:
+
+Using $\lambda_{max}T = 2.9 \times 10^{-3}$
+
+$\Rightarrow T = \frac{2.9 \times 10^{-3}}{2.9 \times 10^{-7}} = 10^4 K$
+
+Intensity of radiation $= \sigma T^4$
+
+$= 5.67 \times 10^{-8} \times (10^4)^4$
+
+$= 5.67 \times 10^8 W/m^2$
+
+Page 59
+Question17
+
+The ratio of the work done, change in internal energy and heat absorbed when a diatomic gas expands at constant pressure is
+
+Options:
+
+A. 2 : 3 : 5
+
+B. 7 : 5 : 2
+
+C. 5 : 3 : 2
+
+D. 2 : 5 : 7
+
+Answer: D
+
+Solution:
+
+At constant pressure
+
+$\Delta U = \frac{nfR\Delta T}{2} = \frac{5}{2}nR\Delta T$ ... (i)
+
+$\Delta Q = nC_p\Delta T = \frac{7}{2}nR\Delta T$ ... (ii)
+
+$\Delta W = \Delta Q - \Delta U = nR\Delta T \left[\frac{7}{2} - \frac{5}{2}\right]$
+
+$= nR\Delta T$
+
+Now, ratio of
+
+$\Delta W : \Delta U : \Delta Q = 1 : \frac{5}{2} : \frac{7}{2}$
+
+or 2 : 5 : 7
+
+Question18
+
+If the temperature of a gas is increased from 127°C to 527°C, then the rms speed of the gas molecules
+
+Options:
+
+A. increases by 4 times
+
+Page 60
+B. becomes $\sqrt{2}$ times C. becomes half D. decreases by $\sqrt{2}$ times Answer: B Solution: $v_{rms} = \sqrt{\frac{3RT}{M}}$ $\Rightarrow v_{rms} \propto \sqrt{T}$ $\Rightarrow \frac{(v_{rms})2}{(v{rms})1} = \sqrt{\frac{T_2}{T_1}} = \sqrt{\frac{(273+527)}{(273+127)}}$ $= \sqrt{\frac{800}{400}} = \sqrt{2}$ $\therefore (v{rms})2 = \sqrt{2}(v{rms})_1$
+Question19 An air column in a tube of length 50 cm, closed at one end is vibrating in its fifth harmonic. The phase difference between a particle at the open end and a particle at 42 cm from the open end is Options: A. 90° B. 18° C. 0° D. 270°
+
+Page 61
+Answer: B
+
+Solution:
+
+The tube is 50 cm long and is closed at one end.
+
+Finding the Wavelength:
+
+For the fifth harmonic in a closed pipe, the formula is: $$ \frac{5\lambda}{4} = L $$ This means five-fourths of the wavelength fits into the total length (L) of the tube.
+
+Let's solve for wavelength ($\lambda$): $$ \lambda = \frac{4L}{5} = \frac{4 \times 50}{5} = 40 \text{ cm} $$
+
+Calculating the Phase Difference:
+
+The phase difference ($\Delta\phi$) between two points separated by a distance $x$ is: $$ \Delta\phi = \frac{2\pi}{\lambda} \times x $$ Here, $x = 42$ cm (the distance from the open end to the other particle) and $\lambda = 40$ cm: $$ \Delta\phi = \frac{2\pi}{40} \times 42 $$ This can be calculated as: $$ \Delta\phi = \frac{2\pi \times 42}{40} = \frac{84\pi}{40} = \frac{21\pi}{10} $$ If you convert this to degrees: $$ \Delta\phi = \frac{21\pi}{10} \times \frac{180^\circ}{\pi} = 378^\circ $$ But phases repeat every 360°. So, we subtract 360° to get the simpler value: $$ 378^\circ - 360^\circ = 18^\circ $$ So, the phase difference is 18°.
+
+Question20
+
+A metal rod of length 125 cm is clamped at its midpoint. If the speed of the sound in the metal is 5000 ms$^{-1}$, then the fundamental frequency of the longitudinal vibrations of the rod is
+
+Options:
+
+A. 2 kHz
+
+B.
+
+Page 62
+20 kHz C. 0.2 kHz D. 200 kHz Answer: A Solution: <img>A diagram of a horizontal beam labeled A, B, and C, supported by a triangular fulcrum at its center.</img> For fundamental frequency, at points A and B, there should be an antinode and at point C, there should be a node. => $\frac{\lambda}{4} + \frac{\lambda}{4} = L$ => $\lambda = 2L = 2 \times 125 = 250$ cm For frequency, $v = \frac{v}{\lambda} = \frac{5000}{250 \times 10^{-2}}$ = 2000 Hz or 2kHz
+Question21 If the distances of the object and its real image from the principal focus of a concave mirror are 16 cm and 9 cm respectively, then the focal length of the mirror is Options: A. 30 cm B. 12 cm
+
+Page 63
+C. 18 cm D. 24 cm Answer: B
+
+Solution:
+
+From the figure,
+
+<img>A diagram of a concave mirror with a horizontal principal axis. Points O, I, and F are marked on the axis. O is the center of curvature, I is the object position, and F is the focal point. The distance from I to F is labeled 9cm. The distance from O to I is labeled as f+16, and the distance from O to F is labeled as f+9.</img>
+
+u = -(f + 16) v = -(f + 9) Using mirror formula $\frac{1}{v} + \frac{1}{u} = \frac{1}{f}$ $-\frac{1}{f+9} - \frac{1}{f+16} = -\frac{1}{f}$ $\Rightarrow \frac{-f-16-f-9}{(f+9)(f+16)} = -\frac{1}{f}$ $\Rightarrow +2f^2 + 25f = f^2 + 25f + 144$ $\Rightarrow f^2 = 144$ $\Rightarrow f = 12$ cm
+
+Question22
+
+If the angle of minimum deviation produced by an equilateral prism is equal to the angle of the prism, then the refractive index of the material of the prism is nearly
+
+Options: A. 1.515 B.
+
+Page 64
+1.414 C. 1.732 D. 1.625 Answer: C Solution: For equilateral prism, $A = 60^\circ$ $\therefore \delta_m = A = 60^\circ$ $\mu = \frac{\sin\left(\frac{A+\delta_m}{2}\right)}{\sin\frac{A}{2}}$ $= \frac{\sin\left(\frac{60+60}{2}\right)}{\sin\frac{60}{2}} = \frac{\sin 60^\circ}{\sin 30^\circ}$ $= \frac{\frac{\sqrt{3}}{2}}{\frac{1}{2}} = \sqrt{3} = 1.732$
+
+Question23 When two light waves of equal intensity superimpose, the maximum intensity obtained is I. If the intensity of one of the waves is quadrupled, then the maximum intensity obtained is
+
+Options: A. $\frac{41}{9}$ B. $\frac{9}{4}$ C. $\frac{21}{3}$ D. $\frac{31}{2}$ Answer: B
+
+Page 65
+Solution:
+
+The highest intensity when two light waves mix is given by: $$I_{max} = (\sqrt{I_1} + \sqrt{I_2})^2$$
+
+Case 1: Both waves have the same intensity
+
+If both intensities are equal, let them be $I_1 = I_2 = I_0$. $$I = (2\sqrt{I_0})^2 = 4I_0$$ This means the maximum intensity is 4 times the intensity of one wave. So, we can write: $I_0 = \frac{I}{4}$
+
+Case 2: One wave is four times stronger
+
+If the first wave is four times stronger, $I_1 = 4I_0$ and $I_2 = I_0$. Maximum intensity becomes: $$I' = (\sqrt{4I_0} + \sqrt{I_0})^2$$ $$I' = (2\sqrt{I_0} + \sqrt{I_0})^2 = (3\sqrt{I_0})^2 = 9I_0$$ Now, substitute $I_0 = \frac{I}{4}$: $$I' = 9 \times \frac{I}{4} = \frac{9I}{4}$$
+
+Question24
+
+The electric field due to an infinitely long thin straight wire with uniform linear charge density of $2.5 \times 10^{-7} \text{ cm}^{-1}$ at a radial distance of $x$ from the wire is $7.5 \times 10^4 \text{ NC}^{-1}$. Then, $x = $
+
+Options:
+
+A. 2 cm B. 3 cm C. 4 cm D. 6 cm
+
+Page 66
+Answer: D
+
+Solution:
+
+Step 1: Formula for electric field around a long wire The electric field (E) at a distance x from a very long straight wire with charge per unit length (λ) is given by: $E = \frac{2K\lambda}{x}$ Here, K is Coulomb's constant ($K = 9 \times 10^9$ N m² C⁻²).
+
+Step 2: Substitute the given values We are given:
+
+$E = 7.5 \times 10^4$ N/C
+$\lambda = 2.5 \times 10^{-7}$ C/m
+$K = 9 \times 10^9$ N m² C⁻²
+So, $7.5 \times 10^4 = \frac{2 \times 9 \times 10^9 \times 2.5 \times 10^{-7}}{x}$
+
+Step 3: Solve for x Multiply the numbers on the right side first:
+
+$2 \times 9 = 18$
+$18 \times 2.5 = 45$
+So, top becomes: $45 \times 10^9 \times 10^{-7} = 45 \times 10^2 = 4500$
+So: $7.5 \times 10^4 = \frac{4500}{x}$
+
+Step 4: Rearrange to find x Multiply both sides by x and divide both sides by $7.5 \times 10^4$: $x = \frac{4500}{7.5 \times 10^4} = \frac{4500}{75000} = 0.06$ m
+
+Step 5: Convert meters to centimeters 0.06 m = 6 cm
+
+Question25
+
+A parallel plate capacitor of capacitance 10μ F is charged by a 220 V supply. The capacitor is then disconnected from the supply and is connected to another uncharged parallel plate capacitor of capacitance 12μ F. The loss of electrostatic energy in this process is
+
+Options:
+
+A. 132 mJ
+
+B. 220 mJ
+
+C. 66 mJ
+
+Page 67
+D. 110 mJ Answer: A Solution: From figure I, <img>Figure I: A circuit diagram showing a 10μF capacitor connected to a 220 V voltage source.</img> $Q = CV$ $= 10 \times 220$ $= 2200\mu C$ ... (i) From figure II, <img>Figure II: A circuit diagram showing two capacitors in series, a 10μF capacitor with charge Q1 and -Q1, and a 12μF capacitor with charge Q2 and -Q2.</img> and $Q_1 + Q_2 = 2200\mu C$ ... (ii) $\frac{Q_1}{C_1} = \frac{Q_2}{C_2}$ $\frac{Q_1}{10} = \frac{Q_2}{12} \Rightarrow 6Q_1 = 5Q_2$ or $Q_2 = \frac{6}{5}Q_1$ ... (iii) Putting Eq. (iii) in Eq. (ii)
+
+Page 68
+$Q_1 + \frac{6}{5}Q_1 = 2200$ $\Rightarrow Q_1 = \frac{5 \times 2200}{11} = 1000\mu C$ and $Q_2 = \frac{6}{5} \times 1000 = 1200\mu C$
+
+Now, initial energy, $\Sigma_i = \frac{1}{2} \frac{Q^2}{C} = \frac{1}{2} \times \frac{(2200)^2 \times 10^{-6}}{10}$
+
+Final energy, $\Sigma_f = \frac{1}{2} \left[ \frac{(1000)^2}{10} + \frac{(1200)^2}{12} \right] \times 10^{-6}$
+
+Loss of energy, $\Delta E = E_i - E_f$ $= \frac{1}{2} \times 10^{-6} \left[ \frac{(2200)^2}{10} - \frac{(1000)^2}{10} - \frac{(1200)^2}{12} \right]$ $= 132 \text{ mJ}$
+
+Question26
+
+The lengths of two wires made of the same material are in the ratio 2 : 3 and their radii are in the ratio 1 : 2. If the two wires are connected in parallel to a battery, then the ratio of the drift velocities of free electrons in the two wires is
+
+Options:
+
+A. 2 : 1 B. 3 : 1 C. 3 : 2 D. 3 : 4
+
+Answer: C
+
+Solution:
+
+Page 69
+Same material: This implies that the resistivity ($\rho$) and the number density of free electrons ($n$) are the same for both wires. Also, the charge of an electron ($e$) is a constant.
+
+Lengths ratio: $L_1 : L_2 = 2 : 3$, which means $L_1/L_2 = 2/3$.
+
+Radii ratio: $r_1 : r_2 = 1 : 2$.
+
+Connected in parallel to a battery: This means the potential difference (voltage $V$) across both wires is the same, i.e., $V_1 = V_2 = V$.
+
+We need to find the ratio of the drift velocities ($v_{d1} : v_{d2}$).
+
+The relationship between current ($I$), number density of free electrons ($n$), cross-sectional area ($A$), charge of an electron ($e$), and drift velocity ($v_d$) is given by: $$I = nAev_d$$
+
+From this, the drift velocity can be expressed as: $$v_d = \frac{I}{nAe} \quad \text{(Equation 1)}$$
+
+According to Ohm's Law, the current in a wire is related to the potential difference ($V$) and resistance ($R$): $$I = \frac{V}{R} \quad \text{(Equation 2)}$$
+
+The resistance of a wire is given by: $$R = \frac{\rho L}{A} \quad \text{(Equation 3)}$$ where $\rho$ is the resistivity, $L$ is the length, and $A$ is the cross-sectional area.
+
+Now, substitute Equation 3 into Equation 2: $$I = \frac{V}{\rho L / A} = \frac{VA}{\rho L} \quad \text{(Equation 4)}$$
+
+Finally, substitute Equation 4 into Equation 1 for $I$: $$v_d = \frac{VA/(\rho L)}{nAe}$$
+
+Notice that the cross-sectional area ($A$) appears in both the numerator and the denominator, so it cancels out: $$v_d = \frac{V}{n e \rho L}$$
+
+This derived formula shows that the drift velocity ($v_d$) depends on the applied voltage ($V$), the number density of free electrons ($n$), the electron charge ($e$), the resistivity ($\rho$), and the length of the wire ($L$).
+
+Since the wires are made of the same material, $n$ and $\rho$ are constant. The charge of an electron $e$ is also a constant. When connected in parallel, the voltage $V$ across both wires is the same.
+
+Therefore, for these two wires, $V$, $n$, $e$, and $\rho$ are all constant. This means the drift velocity is inversely proportional to the length of the wire: $$v_d \propto \frac{1}{L}$$
+
+So, the ratio of the drift velocities will be: $$\frac{v_{d1}}{v_{d2}} = \frac{1/L_1}{1/L_2} = \frac{L_2}{L_1}$$
+
+We are given the ratio of lengths $L_1 : L_2 = 2 : 3$.
+
+This means $\frac{L_1}{L_2} = \frac{2}{3}$.
+
+Therefore, $\frac{L_2}{L_1} = \frac{3}{2}$.
+
+Page 70
+Substituting this into the ratio of drift velocities: $$ \frac{v_{d1}}{v_{d2}} = \frac{3}{2} $$ The ratio of the drift velocities is 3 : 2.
+
+Note that the information about the radii ratio was not needed for this calculation, as the cross-sectional area cancels out in the final expression for drift velocity when the voltage across the wire is constant.
+
+The final answer is 3:2.
+
+Question27
+
+In a potentiometer experiment for the determination of the internal resistance of a cell, when an external resistance of $R$ is connected parallel to the cell, the balancing length decreases by 10%. The internal resistance of the cell is
+
+Options:
+
+A. $\frac{R}{9}$
+
+B. $\frac{R}{7}$
+
+C. $\frac{R}{5}$
+
+D. $\frac{R}{11}$
+
+Answer: A
+
+Solution:
+
+We use the formula: $$ \frac{r}{R} = \frac{l_1 - l_2}{l_2} $$ where $r$ is internal resistance, $R$ is the external resistance, $l_1$ is the first balancing length, and $l_2$ is the new balancing length when $R$ is connected.
+
+Since the balancing length decreases by 10%, $l_2 = 0.9l_1$.
+
+Substitute $l_2 = 0.9l_1$ into the formula: $$ \frac{r}{R} = \frac{l_1 - 0.9l_1}{0.9l_1} $$
+
+Page 71
+Simplify the numerator: $l_1 - 0.9l_1 = 0.1l_1$. So, $\frac{r}{R} = \frac{0.1l_1}{0.9l_1} = \frac{0.1}{0.9} = \frac{1}{9}$ Therefore, $r = \frac{R}{9}$
+
+Question28
+
+The number of turns of two circular coils A and B are 300 and 200 respectively. The magnetic moments of the two coils A and B are in the ratio 1 : 2. If the two coils carry equal currents, then the ratio of radii of coils A and B is
+
+Options: A. $2 : \sqrt{3}$ B. $2 : 3$ C. $1 : 2$ D. $1 : \sqrt{3}$
+
+Answer: D
+
+Solution:
+
+Magnetic moment, $\mu = nI \times A$
+
+For $\frac{\mu_1}{\mu_2} = \frac{n_1 I_1 A_1}{n_2 I_2 A_2} = \frac{300}{200} \times \frac{I}{I} \times \frac{\pi r_1^2}{\pi r_2^2}$ $\frac{1}{2} = \frac{3}{2} \times \left(\frac{r_1}{r_2}\right)^2 \Rightarrow \frac{r_1}{r_2} = \frac{1}{\sqrt{3}}$
+
+Page 72
+Question29
+
+Two long straight parallel wires carry currents of 8 A and 10 A in opposite directions. If the distance of separation between the wires is 9 cm, then the net magnetic field at a point between the two wires, which is at a perpendicular distance of 4 cm from the wire carrying 8 A current is
+
+Options: A. zero B. $4 \times 10^{-5}$ T C. $8 \times 10^{-5}$ T D. $12 \times 10^{-5}$ T
+
+Answer: C
+
+Solution:
+
+Step 1: Find the magnetic field due to the first wire (8 A)
+
+The formula for the magnetic field at a distance r from a straight wire carrying current I is: $B = \frac{\mu_0 I}{2\pi r}$ For the first wire: $I_1 = 8 A, r_1 = 4 cm = 4 \times 10^{-2} m$ So, $B_1 = \frac{\mu_0 \times 8}{2\pi \times 4 \times 10^{-2}} (-\hat{k})$ (The $-\hat{k}$ shows the direction of the field.)
+
+<img>A diagram showing two parallel wires, I and II. Wire I carries a current of 8A upwards. Wire II carries a current of 10A downwards. The distance between the wires is 9 cm. A point P is located 4 cm from wire I and 5 cm from wire II. The direction of the magnetic field at P due to wire I is indicated by a vector pointing into the page (represented by a cross).</img>
+
+Page 73
+Step 2: Find the magnetic field due to the second wire (10 A)
+
+The second wire has $I_2 = 10 A$ and is $r_2 = 5 cm = 5 \times 10^{-2} m$ away from the point. (Since the wires are 9 cm apart and the point is 4 cm from the first wire, it must be 5 cm from the second wire.)
+
+So, $B_{II} = \frac{\mu_0 \times 10}{2\pi \times 5 \times 10^{-2}} (-\hat{k})$
+
+Step 3: Add the two magnetic fields
+
+Both fields point in the same direction ($-\hat{k}$), so add their values:
+
+$B_{net} = B_1 + B_{II} = \frac{\mu_0}{2\pi \times 10^{-2}} [\frac{8}{4} + \frac{10}{5}] (-\hat{k})$
+
+Calculate inside the brackets:
+
+$\frac{8}{4} = 2, \frac{10}{5} = 2$
+
+So, $B_{net} = \frac{\mu_0}{2\pi \times 10^{-2}} [2 + 2] (-\hat{k}) = \frac{\mu_0}{2\pi \times 10^{-2}} \cdot 4 (-\hat{k})$
+
+Step 4: Substitute the value of $\mu_0$
+
+We know $\mu_0 = 4\pi \times 10^{-7} Tm/A$.
+
+So, $B_{net} = \frac{4\pi \times 10^{-7}}{2\pi \times 10^{-2}} \cdot 4 (-\hat{k})$
+
+The $\pi$ cancels: $\frac{4}{2} = 2$
+
+So, $= \frac{2 \times 10^{-7} \times 4}{10^{-2}} (-\hat{k}) = \frac{8 \times 10^{-7}}{10^{-2}} (-\hat{k}) = 8 \times 10^{-5} T (-\hat{k})$
+
+Question30
+
+A short bar magnet of magnetic moment $2.5 Am^2$ is kept in a uniform magnetic field of $4 \times 10^{-5} T$. The work done in moving the magnet from its most stable position to most unstable position is
+
+Options:
+
+A. $40 \times 10^{-5} J$
+
+B. $25 \times 10^{-5} J$
+
+Page 74
+C. $10 \times 10^{-5} \text{ J}$
+
+D. $20 \times 10^{-5} \text{ J}$
+
+Answer: D
+
+Solution: Angle for Stable position = $0^\circ$ Unstable position = $180^\circ$ $W = mB[\cos\theta_1 - \cos\theta_2]$ $= 2.5 \times 4 \times 10^{-5} [\cos 0^\circ - \cos 180^\circ]$ $= 10^{-4}[1 - (-1)] = 2 \times 10^{-4} \text{ J}$ $= 20 \times 10^{-5} \text{ J}$
+Question31
+
+The radius of a coil of N turns is R. If the plane of the coil is placed parallel to a uniform magnetic field B, then the flux linked with the coil is
+
+Options: A. $\pi BNR^2$
+
+B. $2\pi BNR^2$
+
+C. $\frac{\pi BNR^2}{2}$
+
+Page 75
+D. zero Answer: D Solution: We know that the angle $\theta$ between the area of the coil and the direction of the magnetic field is 90° when the coil is parallel to the field. The formula for magnetic flux is $\phi = NBA \cos \theta$, where $N$ is the number of turns, $B$ is the magnetic field, $A$ is the area, and $\theta$ is the angle. Substitute $\theta = 90^\circ$ into the formula. We get: $\phi = NBA \cos 90^\circ = 0$ This is because $\cos 90^\circ = 0$.
+Question32 The inductance $L$, capacitance $C$ and resistance $R$ are the values of the components connected in series to an AC source of angular frequency $\omega$. The inductive and capacitive reactances are $X_L$ and $X_C$ respectively. If the circuit is purely resistive, then Options: A. $L = C$ B. $X_L = X_C$ C. $\omega L = \omega C$ D. $R = L = C$ Answer: B Solution: For a series $L-C-R$ circuit:
+
+Page 76
+$Z = \sqrt{R^2 + (X_L - X_C)^2}$
+
+Step 1: What does “purely resistive” mean?
+
+If the circuit is purely resistive, it means only the resistor affects the circuit. So, the total impedance $Z$ should equal the resistance $R$.
+
+Step 2: Set impedance equal to resistance:
+
+$Z = R$
+
+So, $R = \sqrt{R^2 + (X_L - X_C)^2}$
+
+Step 3: Solve for $X_L$ and $X_C$:
+
+$R^2 = R^2 + (X_L - X_C)^2$
+
+Subtract $R^2$ from both sides: $0 = (X_L - X_C)^2$
+
+This means: $X_L = X_C$
+
+Conclusion:
+
+If the circuit is purely resistive, the inductive reactance $X_L$ must be equal to the capacitive reactance $X_C$.
+
+Question33
+
+If the rate of change of electric field across the plates of a parallel plate capacitor is $E$ and the displacement current is $I$, then the area of one plate of the capacitor is ( $\epsilon_0$ is permittivity of free space)
+
+Options:
+
+A. $\frac{1}{2\epsilon_0 E}$
+
+B. $\frac{2I}{\epsilon_0 E}$
+
+C. $\epsilon_0 E$
+
+D. $\frac{1}{\epsilon_0 E}$
+
+Answer: D
+
+Solution:
+
+Displacement current
+
+Page 77
+\begin{align*} I_d &= \varepsilon_0 \frac{d\phi}{dt} = \varepsilon_0 \frac{d}{dt}(E'A) \ I_d &= \varepsilon_0 A \frac{dE'}{dt} \ \text{Here, } \frac{dE'}{dt} &= E \ \therefore \quad I_d &= \varepsilon_0 AE \ \Rightarrow \quad A &= \frac{I_d}{\varepsilon_0 E} = \frac{I}{\varepsilon_0 E} \quad [\because I_d = I] \end{align*}
+
+Question34
+
+The work done to accelerate an electron from rest so that it can have a de-Broglie wavelength of 6600Å is nearly
+
+(Planck's constant = 6.6 × 10⁻³⁴ Js and mass of electron = 9 × 10⁻³¹ kg)
+
+Options:
+
+A. 5.56 × 10⁻²⁵ eV
+
+B. 1.88 eV
+
+C. 5.56 × 10⁻²⁵ J
+
+D. 1.88 J
+
+Answer: C
+
+Solution:
+
+Work Done = Change in Kinetic Energy
+
+The work needed is the same as how much the electron's kinetic energy increases.
+
+At the start, the electron is at rest, so its initial kinetic energy KEᵢ = 0.
+
+After speeding up, the electron's final kinetic energy KE_f = W, where W is the work done.
+
+So, W = KE_f - KEᵢ = KE_f = W
+
+Relating de-Broglie Wavelength to Kinetic Energy
+
+The de-Broglie wavelength formula is:
+
+Page 78
+$\lambda_d = \frac{h}{mv} = \frac{h}{p}$
+
+For an electron (or any particle), $p = \sqrt{2mKE}$.
+
+So, $\lambda_d = \frac{h}{\sqrt{2mKE}}$
+
+From above, $KE = W$ (work done).
+
+Therefore, $\lambda_d = \frac{h}{\sqrt{2mW}}$
+
+Now, solve for $W$: $\lambda_d^2 = \frac{h^2}{2mW}$ $W = \frac{h^2}{\lambda_d^2 \cdot 2m}$
+
+Plugging in the Numbers
+
+Given:
+
+Planck's constant, $h = 6.6 \times 10^{-34}$ Js
+Mass of electron, $m = 9 \times 10^{-31}$ kg
+de-Broglie wavelength, $\lambda_d = 6600$ Å $= 6.6 \times 10^{-7}$ m
+So, $W = \frac{(6.6 \times 10^{-34})^2}{(6.6 \times 10^{-7})^2 \times 2 \times 9.0 \times 10^{-31}}$ J
+
+Now calculate each step:
+
+Top: $(6.6 \times 10^{-34})^2 = 43.56 \times 10^{-68}$
+
+Bottom: $(6.6 \times 10^{-7})^2 \times 2 \times 9.0 \times 10^{-31} = (43.56 \times 10^{-14}) \times 18.0 \times 10^{-31} = 784.08 \times 10^{-45}$
+
+So, $W = \frac{43.56 \times 10^{-68}}{784.08 \times 10^{-45}}$
+
+This simplifies to: $W = \frac{1}{18.0} \times 10^{-23}$ J
+
+So, the answer is: $W = 5.56 \times 10^{-25}$ J
+
+Question35
+
+If the total energy of an electron in an orbit is positive, then
+
+Options:
+
+A. electron will revolve in a circular orbit.
+
+B. electron will revolve in an elliptical orbit.
+
+C. electron will not follow a closed orbit.
+
+D. electron will fall into the nucleus.
+
+Page 79
+Answer: C
+
+Solution:
+
+In classical mechanics, the total energy (E) of a particle moving under an inverse square law force (like the electrostatic force between an electron and a nucleus) determines the nature of its orbit:
+
+If E < 0 (Negative Total Energy): The particle is in a bound state. Its orbit is closed and elliptical (with a circular orbit being a special case of an ellipse). The particle is trapped by the central force.
+If E = 0 (Zero Total Energy): The particle is at the boundary between bound and unbound states. Its orbit is open and parabolic. The particle just barely escapes the influence of the central force (it reaches infinity with zero kinetic energy).
+If E > 0 (Positive Total Energy): The particle is in an unbound state. Its orbit is open and hyperbolic. The particle approaches the central force, is deflected, and then moves away to infinity, never to return. It has enough kinetic energy to overcome the attractive potential and escape.
+Given that the total energy of the electron is positive (E > 0), the electron is in an unbound state. This means it will not be trapped in a closed orbit around the nucleus. Instead, it will follow an open trajectory (a hyperbola).
+
+Let's evaluate the options:
+
+A. electron will revolve in a circular orbit. Circular orbits are closed orbits and correspond to E < 0. Incorrect.
+B. electron will revolve in an elliptical orbit. Elliptical orbits are closed orbits and correspond to E < 0. Incorrect.
+C. electron will not follow a closed orbit. This matches our understanding for E > 0, where the orbit is open (hyperbolic). Correct.
+D. electron will fall into the nucleus. Falling into the nucleus implies a highly negative energy or zero angular momentum, leading to a collision, or continuous energy loss through radiation. A positive energy means the electron has more than enough energy to escape, not fall in. Incorrect.
+The final answer is ☐C
+
+Question36
+
+If 87.5% of atoms of a radioactive element decay in 6 days, then the fraction of atoms of the element that decay in 8 days is
+
+Options: A. 1/8 B. 7/8 C. 1/16
+
+<page_number>1/16</page_number>
+
+Page 80
+D. 15/16 Answer: D
+
+Solution:
+
+Percentage of atoms left = 100 - 87.5 = 12.5%
+
+Using $\frac{N}{N_0} = (\frac{1}{2})^{\frac{t}{T_{1/2}}}$ $\frac{125}{100} = (\frac{1}{2})^{\frac{6}{T_{1/2}}}$ $(\frac{1}{2})^3 = (\frac{1}{2})^{\frac{6}{T_{1/2}}} \Rightarrow 3 = \frac{6}{T_{1/2}}$ $\Rightarrow T_{1/2} = 2$ day
+
+Now, in 8 days, 4 half-life get completed $\Rightarrow$ Fraction of atoms left = $\frac{100}{2^4 \times 100} = \frac{6.25}{100}$ $\Rightarrow$ Fraction of atoms decay = $\frac{100 - 6.25}{100}$ = $\frac{93.75}{100} = \frac{15}{16}$
+
+Question 37
+
+If the ratio of the mass numbers of two nuclei is 27 : 125, then the ratio of their surface areas is
+
+Options:
+
+A. 3 : 5 B. 9 : 25 C. 27 : 125 D. 1 : 1
+
+Page 81
+Answer: B
+
+Solution:
+
+The mass number of a nucleus is shown by A.
+
+The radius of a nucleus depends on the mass number as $R = R_0 A^{1/3}$, where $R_0$ is a constant.
+
+To compare the radii of two nuclei, use the formula:
+
+$\frac{R_1}{R_2} = \left(\frac{A_1}{A_2}\right)^{1/3}$
+
+Here, $\frac{A_1}{A_2} = \frac{27}{125}$.
+
+So,
+
+$\frac{R_1}{R_2} = \left(\frac{27}{125}\right)^{1/3} = \frac{3}{5}$
+
+because $27^{1/3} = 3$ and $125^{1/3} = 5$.
+
+The surface area of a sphere is $S = 4\pi R^2$.
+
+The ratio of their surface areas is:
+
+$\frac{S_1}{S_2} = \frac{4\pi R_1^2}{4\pi R_2^2} = \left(\frac{R_1}{R_2}\right)^2 = \left(\frac{3}{5}\right)^2 = \frac{9}{25}$
+
+So, the ratio of their surface areas is $S_1 : S_2 = 9 : 25$.
+
+Question38
+
+At absolute zero temperature, a semiconductor behaves like
+
+Options:
+
+A. semiconductor
+
+B. superconductor
+
+C. conductor
+
+D. insulator
+
+Answer: D
+
+Page 82
+Solution:
+
+At absolute zero temperature (0 Kelvin), there is no thermal energy available.
+
+Semiconductors and Energy Bands: In a semiconductor, electrons reside in the valence band at lower energy levels. For conduction to occur, electrons need to jump from the valence band to the conduction band, leaving behind holes in the valence band. The energy required for this jump is called the band gap energy.
+
+Effect of Temperature:
+
+At typical room temperatures, some electrons gain enough thermal energy to cross the band gap and move into the conduction band, contributing to electrical conductivity.
+As temperature decreases, the number of thermally excited electrons decreases.
+At absolute zero temperature (0 K), there is no thermal energy. Therefore, no electrons can gain enough energy to jump from the valence band to the conduction band.
+Result:
+
+The valence band remains completely filled.
+The conduction band remains completely empty.
+A material with a completely filled valence band and an empty conduction band, separated by a band gap, behaves as an insulator. There are no free charge carriers available for conduction.
+Therefore, at absolute zero temperature, a semiconductor behaves like an insulator.
+
+The final answer is D
+
+Question39
+
+Three logic gates are connected as shown in the figure. If the inputs are $A = 1, B = 0$ and $C = 1$, then the values of $y_1, y_2$ and $y_3$ respectively are
+
+<img>A logic circuit diagram showing three inputs A, B, C. Input A and B are connected to an AND gate, whose output is y1. Input C is connected to an OR gate, whose output is y2. The outputs y1 and y2 are then connected to another AND gate, whose output is y3.</img>
+
+Options:
+
+A. 1, 0, 0
+
+B. 0, 1, 0
+
+Page 83
+C. 1, 1, 0 D. 1, 0, 1 Answer: A Solution: A = 1, B = 0, C = 1
+
+<img>A logic circuit diagram with inputs A, B, C. A and B are connected to an AND gate producing Y1. C is connected to an OR gate producing Y2. Y1 and Y2 are connected to a final AND gate producing Y3.</img>
+
+y1 = AB = 1.0 = 0 = 1 y2 = B + C = 0 + 1 = 1 = 0 y3 = y1 · y2 = 1.0 = 0
+
+Question40 The radio horizon of a transmitting antenna of height 39.2 m is (Radius of the Earth = 6400 km)
+
+Options: A. 44.8 km B. 19.6 km C. 22.4 km D. 78.4 km
+
+Page 84
+Answer: C
+
+Solution:
+
+Step 1: Formula for Radio Horizon
+
+The distance to the radio horizon, $d$, can be found using the formula: $d = \sqrt{2Rh}$ Here, $R$ is the radius of the Earth and $h$ is the height of the antenna.
+
+Step 2: Plug in the Values
+
+Let $R = 6.4 \times 10^6$ meters (which is 6400 km) and $h = 39.2$ meters.
+
+Step 3: Calculate Inside the Square Root
+
+Multiply them: $2 \times 6.4 \times 10^6 \times 39.2$
+
+Step 4: Take the Square Root
+
+Find the square root of the product: $d = \sqrt{2 \times 6.4 \times 10^6 \times 39.2}$
+
+When calculated: $d = 22.4 \times 10^3$ meters
+
+This is the same as 22.4 kilometers.
+
+So, the radio horizon is 22.4 km away.

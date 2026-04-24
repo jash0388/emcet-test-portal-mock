@@ -123,6 +123,9 @@ export function useSubmitExam() {
       status: "completed" | "terminated";
       student_name: string;
       roll_number: string;
+      father_name?: string;
+      father_phone?: string;
+      student_phone?: string;
       student_answers?: Record<string, any>;
       question_snapshots?: any[];
     }) => {

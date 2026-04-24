@@ -41,7 +41,7 @@ export default function StudentInfoForm() {
         timestamp: new Date().toISOString(),
       };
       localStorage.setItem("studentInfo", JSON.stringify(studentData));
-      toast({ title: "Registration Complete", description: "Welcome to SPHN EMCET Mock Test!" });
+      toast({ title: "Registration Complete", description: "Welcome to SPHN EAMCET Mock Test!" });
       setLocation("/tests");
     } catch (err: any) {
       toast({ variant: "destructive", description: "Failed to save information." });
@@ -68,7 +68,7 @@ export default function StudentInfoForm() {
               <Shield className="w-7 h-7 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold tracking-tight">SPHN <span className="text-primary">EMCET</span></h1>
+              <h1 className="text-xl font-bold tracking-tight">SPHN <span className="text-primary">EAMCET</span></h1>
               <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">Mock Examination Portal</p>
             </div>
           </motion.div>
@@ -94,7 +94,7 @@ export default function StudentInfoForm() {
               <span className="text-gradient">Future</span> Today.
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Experience the most advanced mock testing platform designed to mirror the real EMCET environment with real-time analytics.
+              Experience the most advanced mock testing platform designed to mirror the real EAMCET environment with real-time analytics.
             </p>
           </motion.div>
 
