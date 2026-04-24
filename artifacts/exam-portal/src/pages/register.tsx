@@ -7,13 +7,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
-import { motion } from "framer-motion";
-import { RefreshCw, ShieldCheck, Landmark, BookOpen, Fingerprint, Shield, Mail, User } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { RefreshCw, ShieldCheck, Landmark, BookOpen, Fingerprint, Shield, Mail, User, ArrowRight, CheckCircle2, Building, GraduationCap } from "lucide-react";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { supabase } from "@/lib/supabase";
 
 const formSchema = z.object({
   college: z.string().min(2, "Institution is required"),
@@ -21,153 +20,6 @@ const formSchema = z.object({
   rollNumber: z.string().min(2, "Roll number is required"),
 });
 
-// --- Desktop Register (Old Style) ---
-function DesktopRegister({ form, onSubmit, user, createProfile }: any) {
-  return (
-    <div className="min-h-screen bg-background flex flex-col items-center justify-center p-4 relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary rounded-full blur-[150px] opacity-[0.04]" />
-      </div>
-
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-sm z-10">
-        <Card className="border-border bg-card/90 shadow-2xl">
-          <CardHeader className="space-y-2 pb-5">
-            <div className="flex items-center gap-3 mb-1">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center border border-primary/20 shrink-0">
-                <Shield className="w-5 h-5 text-primary" />
-              </div>
-              <div>
-                <CardTitle className="text-xl font-bold tracking-tight">Identity Verification</CardTitle>
-                <CardDescription className="text-xs mt-0.5">Complete your academic profile</CardDescription>
-              </div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <div className="p-3 bg-muted rounded-lg border border-border">
-                  <p className="text-xs text-muted-foreground mb-1 uppercase tracking-wider font-mono">Authenticated As</p>
-                  <p className="text-sm font-medium text-foreground truncate">{user.email}</p>
-                </div>
-                <FormField control={form.control} name="college" render={({ field }) => (
-                  <FormItem><FormLabel className="text-xs text-muted-foreground uppercase tracking-wider">Institution</FormLabel><FormControl><Input className="bg-background" placeholder="e.g. SPHN" {...field} /></FormControl><FormMessage /></FormItem>
-                )} />
-                <FormField control={form.control} name="department" render={({ field }) => (
-                  <FormItem><FormLabel className="text-xs text-muted-foreground uppercase tracking-wider">Department</FormLabel><FormControl><Input className="bg-background" placeholder="e.g. Computer Science" {...field} /></FormControl><FormMessage /></FormItem>
-                )} />
-                <FormField control={form.control} name="rollNumber" render={({ field }) => (
-                  <FormItem><FormLabel className="text-xs text-muted-foreground uppercase tracking-wider">Roll Number</FormLabel><FormControl><Input className="bg-background font-mono" placeholder="e.g. 24N81A6..." {...field} /></FormControl><FormMessage /></FormItem>
-                )} />
-                <Button type="submit" className="w-full mt-2" disabled={createProfile.isPending}>
-                  {createProfile.isPending ? <RefreshCw className="animate-spin w-4 h-4" /> : "Complete Registration"}
-                </Button>
-              </form>
-            </Form>
-          </CardContent>
-        </Card>
-      </motion.div>
-    </div>
-  );
-}
-
-// --- Mobile Register (Academic Atelier Style) ---
-function MobileRegister({ form, onSubmit, user, createProfile }: any) {
-  const inputStyle = {
-    background: "#ffffff",
-    border: "1px solid rgba(15,23,42,0.10)",
-    color: "inherit",
-    width: "100%",
-    borderRadius: "0.875rem",
-    padding: "1rem 1.25rem",
-    fontSize: "0.875rem",
-    outline: "none",
-    transition: "all 0.2s",
-  };
-  const focusInput = (e: any) => {
-    e.target.style.borderColor = "rgba(59,109,240,0.6)";
-    e.target.style.boxShadow = "0 0 0 3px rgba(59,109,240,0.12)";
-  };
-  const blurInput = (e: any) => {
-    e.target.style.borderColor = "rgba(15,23,42,0.10)";
-    e.target.style.boxShadow = "none";
-  };
-
-  return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col relative overflow-hidden font-body">
-      {/* Glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 -z-10 w-[320px] h-[320px] rounded-full" style={{ background: "radial-gradient(circle, rgba(59,109,240,0.10) 0%, transparent 70%)" }} />
-
-      <header className="w-full px-6 pt-14 pb-4 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(15,23,42,0.08)" }}>
-          <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
-        </div>
-        <span className="text-xl font-bold text-foreground font-headline tracking-tight">SPHN Web Test</span>
-      </header>
-
-      <main className="flex-grow flex items-end justify-center px-4 pb-0">
-        <div className="w-full max-w-sm">
-          <div className="mb-8 px-1">
-            <h1 className="text-4xl font-extrabold text-foreground font-headline tracking-tighter mb-2">Stage 02</h1>
-            <p className="text-muted-foreground text-sm">Identity Enrollment</p>
-          </div>
-
-          <div className="rounded-3xl p-6 pb-10 space-y-5" style={{ background: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)", border: "1px solid rgba(15,23,42,0.07)", boxShadow: "0 -8px 40px rgba(15,23,42,0.06), 0 4px 24px rgba(15,23,42,0.04)" }}>
-            {/* Current user chip */}
-            <div className="rounded-xl px-4 py-3 flex items-center gap-2" style={{ background: "#f1f5f9", border: "1px solid rgba(15,23,42,0.06)" }}>
-              <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Current User</span>
-              <span className="text-xs font-bold text-foreground truncate flex-1 text-right">{user.email}</span>
-            </div>
-
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-                <FormField control={form.control} name="college" render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Institution</FormLabel>
-                    <FormControl>
-                      <input style={inputStyle} placeholder="e.g. SPHN" onFocus={focusInput} onBlur={blurInput} {...field} />
-                    </FormControl>
-                    <FormMessage className="text-[10px] ml-1" />
-                  </FormItem>
-                )} />
-
-                <FormField control={form.control} name="department" render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Major</FormLabel>
-                    <FormControl>
-                      <input style={inputStyle} placeholder="e.g. DS" onFocus={focusInput} onBlur={blurInput} {...field} />
-                    </FormControl>
-                    <FormMessage className="text-[10px] ml-1" />
-                  </FormItem>
-                )} />
-
-                <FormField control={form.control} name="rollNumber" render={({ field }) => (
-                  <FormItem>
-                    <FormLabel className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground ml-1">Roll ID</FormLabel>
-                    <FormControl>
-                      <input style={{ ...inputStyle, fontFamily: "monospace" }} placeholder="24N81A6..." onFocus={focusInput} onBlur={blurInput} {...field} />
-                    </FormControl>
-                    <FormMessage className="text-[10px] ml-1" />
-                  </FormItem>
-                )} />
-
-                <button
-                  type="submit"
-                  className="w-full py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] mt-2"
-                  style={{ background: "linear-gradient(135deg, #3b6df0 0%, #2c56c9 100%)", boxShadow: "0 6px 20px rgba(59,109,240,0.32), 0 1px 0 rgba(255,255,255,0.2) inset" }}
-                  disabled={createProfile.isPending}
-                >
-                  {createProfile.isPending ? <RefreshCw className="animate-spin w-5 h-5" /> : "Secure Profile"}
-                </button>
-              </form>
-            </Form>
-          </div>
-        </div>
-      </main>
-    </div>
-  );
-}
-
-// --- Combined Register Page ---
 export default function Register() {
   const isMobile = useIsMobile();
   const [, setLocation] = useLocation();
@@ -187,38 +39,206 @@ export default function Register() {
   const onSubmit = (values: z.infer<typeof formSchema>) => {
     if (!user) return;
     
-    // Mapping to real columns found in diagnostic:
-    // display_name -> full_name
-    // roll_number -> name
-    // department -> role
-    // college -> college
-    
     createProfile.mutate({
       id: user.uid,
       email: user.email!,
       full_name: user.displayName || user.email?.split("@")[0] || "Student",
-      name: values.rollNumber, // Saving Roll Number into 'name' column
+      name: values.rollNumber, 
       college: values.college,
-      role: values.department, // Saving Department into 'role' column
+      role: values.department, 
       firebase_uid: user.uid,
       is_firebase_user: true,
     } as any, {
       onSuccess: () => {
-        toast({ title: "Enrollment Complete", description: "Welcome to DataNauts Hub." });
+        toast({ title: "Profile Secured", description: "Identity verification complete." });
         setLocation("/dashboard");
       },
-      onError: async (err: any) => {
-        console.error(err);
+      onError: (err: any) => {
         toast({ 
           variant: "destructive", 
           title: "Setup Failed", 
-          description: err.message || "Please try again later."
+          description: err.message || "Integrity check failed. Please retry."
         });
       },
     });
   };
 
-  if (authLoading || !user) return null;
+  if (authLoading || !user) return (
+    <div className="min-h-screen bg-background flex flex-col items-center justify-center space-y-6">
+      <div className="w-12 h-12 border-4 border-primary border-t-transparent rounded-full animate-spin" />
+      <p className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground animate-pulse">Establishing Secure Connection</p>
+    </div>
+  );
 
-  return isMobile ? <MobileRegister form={form} onSubmit={onSubmit} user={user} createProfile={createProfile} /> : <DesktopRegister form={form} onSubmit={onSubmit} user={user} createProfile={createProfile} />;
+  return (
+    <div className="min-h-screen bg-background flex items-stretch overflow-hidden">
+      {/* Visual Side (Hidden on Mobile) */}
+      {!isMobile && (
+        <div className="hidden lg:flex lg:w-1/2 relative bg-surface-sunken overflow-hidden items-center justify-center p-20">
+          <div className="absolute inset-0 bg-[#0A0A0A]" />
+          
+          {/* Cinematic Background Elements */}
+          <div className="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/[0.08] rounded-full blur-[120px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/[0.05] rounded-full blur-[100px]" />
+          
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="relative z-10 space-y-8 max-w-lg"
+          >
+            <div className="space-y-4">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-black uppercase tracking-widest">
+                <ShieldCheck className="w-3 h-3" />
+                <span>Verified Enrollment</span>
+              </div>
+              <h1 className="text-6xl font-black text-white tracking-tighter leading-none">
+                Finalize Your <span className="text-primary">Identity.</span>
+              </h1>
+              <p className="text-lg text-white/40 leading-relaxed font-medium">
+                Complete your profile to access premium assessments and verified certification paths.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 gap-4 pt-8">
+              {[
+                { icon: <GraduationCap className="w-5 h-5" />, title: "Academic Records", desc: "Verifiable institutional history." },
+                { icon: <Shield className="w-5 h-5" />, title: "Integrity Vault", desc: "Secured assessment environment." },
+              ].map((item, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + (i * 0.1) }}
+                  className="flex items-start space-x-4 p-6 rounded-3xl bg-white/[0.03] border border-white/10"
+                >
+                  <div className="p-3 rounded-2xl bg-primary/10 text-primary">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white mb-1">{item.title}</h4>
+                    <p className="text-sm text-white/30 font-medium">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      )}
+
+      {/* Registration Form Side */}
+      <div className={`w-full lg:w-1/2 flex items-center justify-center p-8 sm:p-12 relative ${isMobile ? "bg-background" : "bg-white"}`}>
+        {isMobile && (
+          <div className="absolute top-0 left-0 w-full h-[300px] bg-primary/[0.03] -z-10 blur-[80px]" />
+        )}
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="w-full max-w-md space-y-10"
+        >
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3 mb-2">
+              <div className="w-10 h-10 rounded-xl premium-gradient p-2">
+                <img src="/logo.png" alt="Logo" className="w-full h-full object-contain invert brightness-0" />
+              </div>
+              <span className="text-xl font-black tracking-tighter">SPHN PORTAL</span>
+            </div>
+            <h2 className="text-4xl font-black tracking-tighter leading-none">Complete Enrollment</h2>
+            <p className="text-muted-foreground font-medium">Link your academic identity to proceed.</p>
+          </div>
+
+          <Card className="border-none shadow-none bg-transparent">
+            <CardContent className="p-0">
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  {/* Authenticated Account Info */}
+                  <div className="p-4 rounded-2xl bg-surface-sunken border-dashed border flex items-center justify-between">
+                    <div>
+                      <p className="text-[9px] font-black uppercase tracking-widest text-muted-foreground mb-1">Signed In As</p>
+                      <p className="text-sm font-bold truncate max-w-[200px]">{user.email}</p>
+                    </div>
+                    <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-600">
+                      <CheckCircle2 className="w-5 h-5" />
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <FormField control={form.control} name="college" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-[10px] font-black uppercase tracking-widest ml-1">Institution Name</FormLabel>
+                        <FormControl>
+                          <div className="relative group">
+                            <Building className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                            <Input 
+                              className="h-14 pl-12 rounded-2xl bg-surface-sunken border-none focus-visible:ring-2 focus-visible:ring-primary/20 font-bold placeholder:text-muted-foreground/40" 
+                              placeholder="e.g. SPHN Institute" 
+                              {...field} 
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage className="text-[10px] ml-1 font-bold" />
+                      </FormItem>
+                    )} />
+
+                    <FormField control={form.control} name="department" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-[10px] font-black uppercase tracking-widest ml-1">Academic Department</FormLabel>
+                        <FormControl>
+                          <div className="relative group">
+                            <BookOpen className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                            <Input 
+                              className="h-14 pl-12 rounded-2xl bg-surface-sunken border-none focus-visible:ring-2 focus-visible:ring-primary/20 font-bold placeholder:text-muted-foreground/40" 
+                              placeholder="e.g. Computer Science" 
+                              {...field} 
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage className="text-[10px] ml-1 font-bold" />
+                      </FormItem>
+                    )} />
+
+                    <FormField control={form.control} name="rollNumber" render={({ field }) => (
+                      <FormItem>
+                        <FormLabel className="text-[10px] font-black uppercase tracking-widest ml-1">Candidate Roll ID</FormLabel>
+                        <FormControl>
+                          <div className="relative group">
+                            <Fingerprint className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+                            <Input 
+                              className="h-14 pl-12 rounded-2xl bg-surface-sunken border-none focus-visible:ring-2 focus-visible:ring-primary/20 font-bold font-mono placeholder:text-muted-foreground/40" 
+                              placeholder="24N81A6..." 
+                              {...field} 
+                            />
+                          </div>
+                        </FormControl>
+                        <FormMessage className="text-[10px] ml-1 font-bold" />
+                      </FormItem>
+                    )} />
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    className="w-full h-14 rounded-2xl premium-gradient text-white font-black text-lg shadow-2xl shadow-primary/20 hover:shadow-primary/30 transition-all group"
+                    disabled={createProfile.isPending}
+                  >
+                    {createProfile.isPending ? (
+                      <RefreshCw className="animate-spin w-6 h-6" />
+                    ) : (
+                      <>Secure My Profile <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" /></>
+                    )}
+                  </Button>
+                </form>
+              </Form>
+            </CardContent>
+          </Card>
+
+          <div className="pt-8 text-center">
+            <p className="text-xs text-muted-foreground font-medium">
+              Information provided must match institutional records.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </div>
+  );
 }
+

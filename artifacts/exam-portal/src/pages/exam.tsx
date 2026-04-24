@@ -3,7 +3,7 @@ import { useLocation, useParams } from "wouter";
 import { useAuth } from "@/hooks/useAuth";
 import { useProfile } from "@/hooks/useProfile";
 import { useExam, useExamQuestions, useSubmitExam, useMySubmissions } from "@/hooks/useExamData";
-import { AlertTriangle, Clock, ShieldAlert, CheckCircle2, User, Hash } from "lucide-react";
+import { AlertTriangle, Clock, ShieldAlert, CheckCircle2, User, Hash, ChevronRight, ChevronLeft, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
@@ -30,6 +30,7 @@ export default function ExamTaking() {
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [breachOverlay, setBreachOverlay] = useState(false);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [violationCount, setViolationCount] = useState(0);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [startTime] = useState(() => Date.now());
@@ -94,7 +95,6 @@ export default function ExamTaking() {
         }
       }
 
-      // Snapshot all question data so results survive future question deletions
       const questionSnapshots = questions.map((q) => ({
         id: q.id,
         question: q.question,
@@ -151,7 +151,7 @@ export default function ExamTaking() {
   const examMaxViolationsRef = useRef(exam?.max_violations ?? 3);
   useEffect(() => { if (exam) examMaxViolationsRef.current = exam.max_violations; }, [exam]);
 
-  // Security monitoring (only during in-progress) — uses refs to avoid stale closures
+  // Security monitoring
   useEffect(() => {
     if (phase !== "in-progress" || !exam) return;
 
@@ -201,7 +201,6 @@ export default function ExamTaking() {
       setPhase("in-progress");
     } catch (err) {
       console.error(err);
-      // Still proceed even if fullscreen fails (mobile)
       setPhase("in-progress");
     }
   };
@@ -233,222 +232,307 @@ export default function ExamTaking() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="max-w-sm w-full space-y-6"
+          className="max-w-md w-full space-y-8"
         >
-          <div className="text-center space-y-2">
-            <div className="w-14 h-14 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-4">
-              <User className="w-7 h-7 text-primary" />
+          <div className="text-center space-y-4">
+            <div className="w-20 h-20 premium-gradient rounded-3xl flex items-center justify-center mx-auto shadow-2xl shadow-primary/20">
+              <User className="w-10 h-10 text-white" />
             </div>
-            <h1 className="text-xl font-bold tracking-tight">{exam.title}</h1>
-            <p className="text-muted-foreground text-sm">Confirm your identity before starting</p>
+            <div>
+              <h1 className="text-3xl font-black tracking-tighter">{exam.title}</h1>
+              <p className="text-muted-foreground font-medium uppercase tracking-widest text-[10px] mt-1">Identity Verification</p>
+            </div>
           </div>
 
-          <form onSubmit={handlePreFormSubmit} className="space-y-4">
-            <div className="space-y-1.5">
-              <label className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Full Name</label>
-              <div className="relative">
-                <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <Input
-                  className="pl-9 bg-card"
-                  placeholder="Enter your full name"
-                  value={studentName}
-                  onChange={(e) => { setStudentName(e.target.value); setNameError(""); }}
-                />
+          <Card className="border-none shadow-2xl p-8 bg-white/90 backdrop-blur-xl">
+            <form onSubmit={handlePreFormSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <Label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Candidate Name</Label>
+                <div className="relative">
+                  <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    className="h-14 pl-12 bg-surface-sunken border-none text-lg font-bold"
+                    placeholder="Enter full name"
+                    value={studentName}
+                    onChange={(e) => { setStudentName(e.target.value); setNameError(""); }}
+                  />
+                </div>
+                {nameError && <p className="text-xs text-rose-500 font-bold">{nameError}</p>}
               </div>
-              {nameError && <p className="text-xs text-destructive">{nameError}</p>}
-            </div>
 
-            <div className="space-y-1.5">
-              <label className="text-xs text-muted-foreground uppercase tracking-wider font-medium">Roll Number / Student ID</label>
-              <div className="relative">
-                <Hash className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-                <Input
-                  className="pl-9 bg-card font-mono"
-                  placeholder="e.g. CS-2024-001"
-                  value={rollNumber}
-                  onChange={(e) => { setRollNumber(e.target.value); setRollError(""); }}
-                />
+              <div className="space-y-2">
+                <Label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Roll Number</Label>
+                <div className="relative">
+                  <Hash className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    className="h-14 pl-12 bg-surface-sunken border-none text-lg font-mono font-bold"
+                    placeholder="e.g. CS-2024-001"
+                    value={rollNumber}
+                    onChange={(e) => { setRollNumber(e.target.value); setRollError(""); }}
+                  />
+                </div>
+                {rollError && <p className="text-xs text-rose-500 font-bold">{rollError}</p>}
               </div>
-              {rollError && <p className="text-xs text-destructive">{rollError}</p>}
-            </div>
 
-            <div className="p-3 rounded-lg bg-muted/40 border border-border text-xs text-muted-foreground space-y-1">
-              <p><span className="text-foreground font-medium">Duration:</span> {exam.duration_minutes} minutes</p>
-              <p><span className="text-foreground font-medium">Questions:</span> {questions.length}</p>
-              <p><span className="text-foreground font-medium">Max violations:</span> {exam.max_violations} (auto-terminates)</p>
-            </div>
+              <div className="p-4 rounded-2xl bg-primary/[0.03] border border-primary/10 space-y-2">
+                <div className="flex justify-between text-xs">
+                  <span className="text-muted-foreground font-bold uppercase tracking-widest">Duration</span>
+                  <span className="font-black">{exam.duration_minutes}m</span>
+                </div>
+                <div className="flex justify-between text-xs">
+                  <span className="text-muted-foreground font-bold uppercase tracking-widest">Integrity Threshold</span>
+                  <span className="font-black text-rose-500">{exam.max_violations} Violations</span>
+                </div>
+              </div>
 
-            <Button type="submit" className="w-full" size="lg">
-              Confirm & Continue
-            </Button>
-            <Button type="button" variant="ghost" className="w-full text-muted-foreground" onClick={() => setLocation("/dashboard")}>
-              Cancel
-            </Button>
-          </form>
+              <Button type="submit" className="w-full h-14 rounded-2xl premium-gradient text-lg font-bold shadow-xl shadow-primary/20">
+                Continue to Instructions
+              </Button>
+            </form>
+          </Card>
         </motion.div>
       </div>
     );
   }
 
-  // ─── Phase 2: Instructions + fullscreen prompt ────────────────────────────────
+  // ─── Phase 2: Instructions ──────────────────────────────────────────────────
   if (phase === "instructions") {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, ease: "easeOut" }}
-          className="max-w-sm w-full text-center space-y-6"
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="max-w-xl w-full text-center space-y-10"
         >
-          <div className="w-16 h-16 rounded-full bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center mx-auto">
-            <AlertTriangle className="w-8 h-8 text-yellow-500" />
+          <div className="w-24 h-24 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center justify-center mx-auto animate-pulse">
+            <AlertTriangle className="w-12 h-12 text-amber-600" />
           </div>
-          <div className="space-y-2">
-            <h2 className="text-xl font-bold tracking-tight">Ready to Begin?</h2>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              This exam requires fullscreen mode. Exiting fullscreen or switching tabs is logged as a security violation.
+          <div className="space-y-4">
+            <h2 className="text-4xl font-black tracking-tighter">Security Protocol</h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              To ensure assessment integrity, this session will be locked in <span className="text-primary font-bold">Fullscreen Mode</span>. 
+              Any attempt to switch windows or exit fullscreen will be logged as a violation.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3 text-sm">
+          
+          <div className="grid grid-cols-2 gap-4">
             {[
-              { label: "Student", value: studentName },
-              { label: "Roll No.", value: rollNumber },
-              { label: "Duration", value: `${exam.duration_minutes} min` },
-              { label: "Violations", value: `0 / ${exam.max_violations}` },
+              { label: "Candidate", value: studentName },
+              { label: "Integrity", value: `0 / ${exam.max_violations}` },
             ].map((item) => (
-              <div key={item.label} className="bg-muted/50 rounded-lg p-3 border border-border text-left">
-                <p className="text-muted-foreground text-xs mb-0.5">{item.label}</p>
-                <p className="font-medium text-sm truncate">{item.value}</p>
+              <div key={item.label} className="bg-white/50 backdrop-blur-sm p-4 rounded-2xl border text-left">
+                <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-1">{item.label}</p>
+                <p className="font-black truncate">{item.value}</p>
               </div>
             ))}
           </div>
-          <Button size="lg" className="w-full" onClick={handleEnterFullscreen}>
-            Enter Fullscreen & Begin
-          </Button>
-          <button className="text-xs text-muted-foreground hover:text-foreground" onClick={() => setPhase("pre-form")}>
-            Edit details
-          </button>
+
+          <div className="space-y-4">
+            <Button size="lg" className="w-full h-16 rounded-2xl premium-gradient text-xl font-bold shadow-2xl" onClick={handleEnterFullscreen}>
+              I Understand & Begin
+            </Button>
+            <button className="text-xs font-bold text-muted-foreground hover:text-primary uppercase tracking-widest transition-colors" onClick={() => setPhase("pre-form")}>
+              Edit Candidate Details
+            </button>
+          </div>
         </motion.div>
       </div>
     );
   }
 
-  // ─── Phase 3: Exam in progress ────────────────────────────────────────────────
+  // ─── Phase 3: Exam In Progress (CBT Layout) ──────────────────────────────────
+  const currentQuestion = questions[currentQuestionIndex];
+
   return (
-    <div className="min-h-screen bg-background text-foreground flex flex-col cursor-default select-none">
+    <div className="min-h-screen bg-background text-foreground flex flex-col cursor-default select-none overflow-hidden">
       <AnimatePresence>
         {breachOverlay && (
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-destructive flex flex-col items-center justify-center text-destructive-foreground p-6 text-center"
+            className="fixed inset-0 z-[100] bg-rose-600 flex flex-col items-center justify-center text-white p-12 text-center backdrop-blur-2xl"
           >
-            <ShieldAlert className="w-16 h-16 sm:w-20 sm:h-20 mb-6 animate-pulse" />
-            <h1 className="text-3xl sm:text-5xl font-black tracking-tighter mb-3">INTEGRITY BREACH</h1>
-            <p className="text-base sm:text-xl opacity-90 max-w-md font-mono">
-              Unauthorized window activity detected. Violation logged.
+            <ShieldAlert className="w-24 h-24 mb-8 animate-bounce" />
+            <h1 className="text-6xl font-black tracking-tighter mb-4">SECURITY ALERT</h1>
+            <p className="text-2xl font-bold opacity-90 max-w-2xl leading-tight">
+              Window activity detected outside the secure environment. Violation has been recorded.
             </p>
-            <div className="mt-8 text-base font-mono opacity-70">
-              Violations: {violationCount} / {exam.max_violations}
+            <div className="mt-12 py-3 px-8 rounded-full bg-white/20 font-black text-xl tracking-widest">
+              STATUS: {violationCount} / {exam.max_violations}
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Mobile header */}
-      <header className="sticky top-0 z-40 bg-card border-b border-border/50 select-none">
-        <div className="flex sm:hidden items-center justify-between px-4 pt-3 pb-2">
-          <span className="font-bold text-sm truncate max-w-[55%]">{exam.title}</span>
-          <div className="flex items-center gap-1 text-destructive font-mono text-xs font-bold bg-destructive/10 px-2 py-1 rounded border border-destructive/20">
-            <ShieldAlert className="w-3 h-3" />
-            {violationCount}/{exam.max_violations}
+      {/* Header */}
+      <header className="h-20 glass border-b flex items-center justify-between px-8 shrink-0 z-50">
+        <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 premium-gradient rounded-xl flex items-center justify-center">
+              <Shield className="w-6 h-6 text-white" />
+            </div>
+            <span className="text-xl font-black tracking-tight hidden sm:block">{exam.title}</span>
+          </div>
+          <div className="h-8 w-px bg-border hidden sm:block" />
+          <div className="flex items-center space-x-3">
+            <div className="w-8 h-8 rounded-full bg-surface-sunken flex items-center justify-center overflow-hidden">
+              <User className="w-4 h-4 text-muted-foreground" />
+            </div>
+            <div className="hidden md:block">
+              <p className="text-xs font-black leading-none">{studentName}</p>
+              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">{rollNumber}</p>
+            </div>
           </div>
         </div>
-        <div className="flex sm:hidden items-center justify-between px-4 pb-3">
-          <div className="flex items-center gap-1.5 font-mono font-bold text-lg">
-            <Clock className="w-4 h-4 text-muted-foreground" />
-            <span className={timeLeft !== null && timeLeft < 300 ? "text-destructive animate-pulse" : "text-primary"}>
+
+        <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-3 bg-white/50 backdrop-blur-sm py-2 px-4 rounded-2xl border shadow-sm">
+            <Clock className={`w-5 h-5 ${timeLeft !== null && timeLeft < 300 ? "text-rose-500 animate-pulse" : "text-primary"}`} />
+            <span className={`text-2xl font-mono font-black tracking-wider ${timeLeft !== null && timeLeft < 300 ? "text-rose-500" : ""}`}>
               {timeLeft !== null ? formatTime(timeLeft) : "--:--"}
             </span>
           </div>
-          <Button size="sm" className="bg-primary hover:bg-primary/90 font-bold text-xs" onClick={() => handleSubmitExam(false)} disabled={submitExam.isPending}>
-            <CheckCircle2 className="w-3.5 h-3.5 mr-1" />
-            {submitExam.isPending ? "Submitting..." : "SUBMIT"}
+          <Button 
+            className="h-12 px-6 rounded-xl premium-gradient text-white font-black shadow-lg shadow-primary/20" 
+            onClick={() => handleSubmitExam(false)} 
+            disabled={submitExam.isPending}
+          >
+            <CheckCircle2 className="w-5 h-5 mr-2" />
+            SUBMIT
           </Button>
-        </div>
-
-        {/* Desktop header */}
-        <div className="hidden sm:flex items-center justify-between py-3 px-6">
-          <div className="flex items-center gap-4 min-w-0">
-            <span className="font-bold tracking-tight truncate max-w-xs">{exam.title}</span>
-            <div className="h-4 w-px bg-border" />
-            <div className="flex items-center gap-1.5 text-destructive font-mono text-sm font-bold bg-destructive/10 px-3 py-1 rounded border border-destructive/20 shrink-0">
-              <ShieldAlert className="w-4 h-4" />
-              VIOLATIONS: {violationCount}/{exam.max_violations}
-            </div>
-          </div>
-          <div className="flex items-center gap-4 shrink-0">
-            <div className="flex items-center gap-2 text-xl font-mono font-bold tracking-wider">
-              <Clock className="w-5 h-5 text-muted-foreground" />
-              <span className={timeLeft !== null && timeLeft < 300 ? "text-destructive animate-pulse" : "text-primary"}>
-                {timeLeft !== null ? formatTime(timeLeft) : "--:--"}
-              </span>
-            </div>
-            <Button className="bg-primary hover:bg-primary/90 font-bold tracking-wide" onClick={() => handleSubmitExam(false)} disabled={submitExam.isPending}>
-              <CheckCircle2 className="w-4 h-4 mr-2" />
-              {submitExam.isPending ? "Submitting..." : "SUBMIT EXAM"}
-            </Button>
-          </div>
         </div>
       </header>
 
-      <main className="flex-1 max-w-4xl w-full mx-auto px-4 sm:px-8 py-6 sm:py-10 space-y-10 pb-24">
-        {questions.map((q, idx) => (
-          <div key={q.id} className="space-y-4">
-            <div className="flex gap-3 sm:gap-4">
-              <div className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-muted flex items-center justify-center text-xs sm:text-sm font-bold font-mono border border-border mt-0.5">
-                {idx + 1}
+      <div className="flex-1 flex overflow-hidden">
+        {/* Main Question Area */}
+        <main className="flex-1 overflow-y-auto p-12 bg-surface-sunken/50 relative">
+          <div className="max-w-3xl mx-auto space-y-12 pb-24">
+            <div className="space-y-6">
+              <div className="flex items-center justify-between">
+                <span className="px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-widest border border-primary/20">
+                  Question {currentQuestionIndex + 1} of {questions.length}
+                </span>
+                <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">
+                  Points: {currentQuestion.marks}
+                </span>
               </div>
-              <div className="flex-1 min-w-0 space-y-4">
-                <div className="flex justify-between items-start gap-3">
-                  <h3 className="text-base sm:text-lg font-medium leading-relaxed">{q.question}</h3>
-                  <span className="text-xs font-mono text-muted-foreground bg-muted px-2 py-1 rounded border border-border shrink-0">
-                    {q.marks} pts
-                  </span>
-                </div>
+              
+              <h3 className="text-3xl font-bold leading-tight tracking-tight">
+                {currentQuestion.question}
+              </h3>
 
-                {q.question_type === "mcq" && q.options && (
+              <div className="mt-12">
+                {currentQuestion.question_type === "mcq" && currentQuestion.options && (
                   <RadioGroup
-                    className="space-y-2 mt-3"
-                    value={answers[q.id] || ""}
-                    onValueChange={(val) => handleAnswerChange(q.id, val)}
+                    className="space-y-4"
+                    value={answers[currentQuestion.id] || ""}
+                    onValueChange={(val) => handleAnswerChange(currentQuestion.id, val)}
                   >
-                    {q.options.map((opt, i) => (
+                    {currentQuestion.options.map((opt, i) => (
                       <div
                         key={i}
-                        className="flex items-center space-x-3 bg-card p-3 sm:p-4 rounded-lg border border-border/50 hover:border-primary/50 transition-colors cursor-pointer active:bg-muted/40"
-                        onClick={() => handleAnswerChange(q.id, opt)}
+                        className={`flex items-center space-x-4 p-6 rounded-3xl border-2 transition-all cursor-pointer group
+                          ${answers[currentQuestion.id] === opt 
+                            ? "bg-primary/5 border-primary shadow-lg shadow-primary/5" 
+                            : "bg-white border-transparent hover:border-primary/20 shadow-sm"}`}
+                        onClick={() => handleAnswerChange(currentQuestion.id, opt)}
                       >
-                        <RadioGroupItem value={opt} id={`q${q.id}-opt${i}`} />
-                        <Label htmlFor={`q${q.id}-opt${i}`} className="flex-1 text-sm sm:text-base cursor-pointer font-normal leading-relaxed">{opt}</Label>
+                        <RadioGroupItem value={opt} id={`opt-${i}`} className="w-6 h-6 border-2" />
+                        <Label htmlFor={`opt-${i}`} className="flex-1 text-lg font-medium cursor-pointer leading-relaxed">
+                          {opt}
+                        </Label>
                       </div>
                     ))}
                   </RadioGroup>
                 )}
 
-                {(q.question_type === "paragraph" || q.question_type === "code") && (
+                {(currentQuestion.question_type === "paragraph" || currentQuestion.question_type === "code") && (
                   <Textarea
-                    className="min-h-[140px] sm:min-h-[180px] mt-3 bg-card border-border/50 focus-visible:ring-primary text-sm sm:text-base leading-relaxed resize-y"
-                    placeholder={q.question_type === "code" ? "Write your code here..." : "Enter your answer here..."}
-                    value={answers[q.id] || ""}
-                    onChange={(e) => handleAnswerChange(q.id, e.target.value)}
+                    className="min-h-[300px] p-8 bg-white border-none shadow-2xl rounded-[2rem] text-lg font-medium focus-visible:ring-primary/20 resize-none"
+                    placeholder={currentQuestion.question_type === "code" ? "Write your technical solution here..." : "Draft your response here..."}
+                    value={answers[currentQuestion.id] || ""}
+                    onChange={(e) => handleAnswerChange(currentQuestion.id, e.target.value)}
                   />
                 )}
               </div>
             </div>
           </div>
-        ))}
-      </main>
+
+          {/* Navigation Controls */}
+          <div className="absolute bottom-12 left-0 w-full px-12 flex justify-between pointer-events-none">
+            <Button 
+              variant="outline" 
+              className="h-14 px-8 rounded-2xl bg-white/80 backdrop-blur-md shadow-xl pointer-events-auto border-none font-bold"
+              disabled={currentQuestionIndex === 0}
+              onClick={() => setCurrentQuestionIndex(i => i - 1)}
+            >
+              <ChevronLeft className="w-6 h-6 mr-2" /> Previous
+            </Button>
+            
+            <div className="flex space-x-4 pointer-events-auto">
+              <Button 
+                variant="outline" 
+                className="h-14 px-8 rounded-2xl bg-white/80 backdrop-blur-md shadow-xl border-none font-bold text-amber-600"
+              >
+                <Flag className="w-5 h-5 mr-2" /> Review Later
+              </Button>
+              <Button 
+                className="h-14 px-8 rounded-2xl premium-gradient text-white font-bold shadow-xl"
+                onClick={() => {
+                  if (currentQuestionIndex < questions.length - 1) {
+                    setCurrentQuestionIndex(i => i + 1);
+                  } else {
+                    toast({ title: "Last Question", description: "You have reached the end of the assessment." });
+                  }
+                }}
+              >
+                {currentQuestionIndex === questions.length - 1 ? "Finish" : "Next Question"} <ChevronRight className="w-6 h-6 ml-2" />
+              </Button>
+            </div>
+          </div>
+        </main>
+
+        {/* Sidebar Question Palette */}
+        <aside className="w-80 border-l glass overflow-y-auto p-8 shrink-0 hidden lg:block">
+          <div className="space-y-8">
+            <div>
+              <h4 className="text-sm font-black uppercase tracking-widest text-muted-foreground mb-4">Question Palette</h4>
+              <div className="grid grid-cols-4 gap-3">
+                {questions.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentQuestionIndex(idx)}
+                    className={`w-12 h-12 rounded-xl flex items-center justify-center font-black transition-all
+                      ${idx === currentQuestionIndex 
+                        ? "premium-gradient text-white shadow-lg shadow-primary/30 scale-110" 
+                        : answers[questions[idx].id] 
+                          ? "bg-emerald-500/10 text-emerald-600 border border-emerald-500/20" 
+                          : "bg-surface-sunken text-muted-foreground hover:bg-muted"}`}
+                  >
+                    {idx + 1}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="pt-8 border-t space-y-4">
+              <h4 className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Status Legend</h4>
+              <div className="grid grid-cols-1 gap-3">
+                {[
+                  { label: "Completed", bg: "bg-emerald-500" },
+                  { label: "Active", bg: "bg-primary" },
+                  { label: "Remaining", bg: "bg-surface-sunken" },
+                ].map(item => (
+                  <div key={item.label} className="flex items-center space-x-3">
+                    <div className={`w-3 h-3 rounded-full ${item.bg}`} />
+                    <span className="text-xs font-bold text-muted-foreground">{item.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }
+

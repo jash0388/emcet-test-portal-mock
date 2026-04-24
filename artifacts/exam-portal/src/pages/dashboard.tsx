@@ -7,9 +7,10 @@ import { signOut, auth } from "@/lib/firebase";
 import { 
   LogOut, Activity, Target, ShieldAlert, Award, FileText, Clock, 
   PlayCircle, Shield, History, AlertTriangle, CheckCircle2, User,
-  ArrowRight, TrendingUp, BookOpen, Layout, Lock
+  ArrowRight, TrendingUp, BookOpen, Layout, Lock, Search, Filter,
+  ChevronRight, Calendar
 } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
@@ -17,118 +18,131 @@ import { Badge } from "@/components/ui/badge";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { format } from "date-fns";
 
-// --- Desktop UI Components (Old Style) ---
+// --- Desktop Dashboard (Premium) ---
 function DesktopDashboard({ user, profile, exams, submissions, stats, submittedExamMap, handleLogout, setLocation }: any) {
   const container = {
     hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.08 } }
+    show: { opacity: 1, transition: { staggerChildren: 0.1 } }
   };
   const item = {
-    hidden: { opacity: 0, y: 16 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.35, ease: "easeOut" } }
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground pb-20">
-      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-xl border-b border-border">
-        <div className="container max-w-6xl mx-auto px-4 h-14 sm:h-16 flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 min-w-0">
-            <img src="/logo.png" alt="Logo" className="w-6 h-6 object-contain rounded-md" />
-            <span className="font-semibold tracking-tight text-sm sm:text-base">SPHN Web Test</span>
-          </div>
-          <div className="flex items-center gap-2 sm:gap-4 min-w-0">
-            <div className="hidden sm:block text-right min-w-0">
-              <p className="text-xs text-muted-foreground truncate max-w-[180px]">{user.email}</p>
-              {profile && <p className="text-xs text-foreground font-medium truncate max-w-[180px]">{profile.college}</p>}
+    <div className="min-h-screen bg-background pb-20">
+      {/* Top Navbar */}
+      <nav className="sticky top-0 z-50 glass border-b">
+        <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 premium-gradient rounded-xl flex items-center justify-center shadow-lg shadow-primary/20">
+              <Shield className="w-6 h-6 text-white" />
             </div>
+            <div>
+              <span className="text-xl font-black tracking-tight">SPHN <span className="text-primary">PORTAL</span></span>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-4 pr-6 border-r border-border">
+              <div className="text-right">
+                <p className="text-sm font-bold">{profile?.full_name || user.email?.split("@")[0]}</p>
+                <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-bold">{profile?.name || "Student"}</p>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-surface-sunken border flex items-center justify-center">
+                <User className="w-5 h-5 text-muted-foreground" />
+              </div>
+            </div>
+            <Button variant="ghost" size="icon" onClick={handleLogout} className="rounded-xl hover:bg-destructive/10 hover:text-destructive">
+              <LogOut className="w-5 h-5" />
+            </Button>
           </div>
         </div>
-      </header>
+      </nav>
 
-      <main className="container max-w-6xl mx-auto px-4 mt-6 sm:mt-8">
-        <motion.div variants={container} initial="hidden" animate="show" className="space-y-8 sm:space-y-10">
-          <motion.div variants={item}>
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight">
-              Welcome back, {user?.email?.split("@")[0] || "Scholar"}
-            </h1>
-            <p className="text-muted-foreground text-sm mt-1">
-              {profile ? `Roll Number: ${profile.name}` : user.email}
-            </p>
-          </motion.div>
-
-          <motion.div variants={item}>
-            <h2 className="text-base sm:text-lg font-medium tracking-tight mb-3 sm:mb-4 flex items-center gap-2">
-              <Activity className="w-4 h-4 sm:w-5 sm:h-5 text-primary" /> Overview
-            </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-              {[
-                { label: "Exams Taken", value: stats?.totalAttempts ?? 0, icon: <Target className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> },
-                { label: "Avg. Score", value: stats?.averageScore != null ? `${Math.round(stats.averageScore)}%` : "--", icon: <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> },
-                { label: "High Score", value: stats?.highestScore != null ? `${Math.round(stats.highestScore)}%` : "--", icon: <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />, accent: true },
-                { label: "Violations", value: stats?.totalViolations ?? 0, icon: <ShieldAlert className="w-3.5 h-3.5 sm:w-4 sm:h-4" />, danger: true },
-              ].map((stat) => (
-                <Card key={stat.label} className={`bg-card/50 ${stat.danger ? "border-destructive/20" : "border-border"} relative overflow-hidden`}>
-                  <CardContent className="p-4 sm:p-6">
-                    <div className={`flex items-center justify-between mb-3 ${stat.danger ? "text-destructive/80" : "text-muted-foreground"}`}>
-                      <span className="text-xs sm:text-sm font-medium">{stat.label}</span>
-                      {stat.icon}
-                    </div>
-                    <div className={`text-2xl sm:text-3xl font-bold ${stat.danger ? "text-destructive" : stat.accent ? "text-primary" : ""}`}>
-                      {stat.value}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+      <main className="max-w-7xl mx-auto px-8 py-12">
+        <motion.div variants={container} initial="hidden" animate="show" className="space-y-12">
+          {/* Hero Section */}
+          <motion.div variants={item} className="flex justify-between items-end">
+            <div>
+              <h2 className="text-4xl font-black tracking-tighter">Academic Overview</h2>
+              <p className="text-muted-foreground mt-2 text-lg">Monitor your progress and upcoming assessments.</p>
+            </div>
+            <div className="flex space-x-3">
+              <Button className="rounded-2xl h-12 px-6 premium-gradient shadow-lg">
+                <Calendar className="w-4 h-4 mr-2" /> Schedule
+              </Button>
             </div>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8">
-            <motion.div variants={item} className="lg:col-span-2 space-y-3 sm:space-y-4">
-              <h2 className="text-base sm:text-lg font-medium tracking-tight flex items-center gap-2">
-                <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-primary" /> Available Exams
-              </h2>
+          {/* Stats Grid */}
+          <motion.div variants={item} className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {[
+              { label: "Assessments", value: stats?.totalAttempts ?? 0, icon: <FileText className="text-blue-600" />, bg: "bg-blue-500/5" },
+              { label: "Accuracy", value: stats?.averageScore != null ? `${Math.round(stats.averageScore)}%` : "0%", icon: <Target className="text-emerald-600" />, bg: "bg-emerald-500/5" },
+              { label: "Peak Performance", value: stats?.highestScore != null ? `${Math.round(stats.highestScore)}%` : "0%", icon: <Award className="text-amber-600" />, bg: "bg-amber-500/5" },
+              { label: "Integrity Score", value: stats?.totalViolations ?? 0, icon: <ShieldAlert className="text-rose-600" />, bg: "bg-rose-500/5", danger: true },
+            ].map((stat) => (
+              <Card key={stat.label} className="border-none shadow-xl shadow-black/[0.02] bg-white/50 backdrop-blur-sm group hover:scale-[1.02] transition-transform">
+                <CardContent className="p-8">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className={`p-3 rounded-2xl ${stat.bg}`}>{stat.icon}</div>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Real-time</div>
+                  </div>
+                  <div className="space-y-1">
+                    <div className={`text-3xl font-black ${stat.danger ? "text-rose-600" : "text-foreground"}`}>{stat.value}</div>
+                    <div className="text-sm font-bold text-muted-foreground uppercase tracking-tight">{stat.label}</div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            {/* Active Exams */}
+            <div className="lg:col-span-8 space-y-6">
+              <div className="flex items-center justify-between">
+                <h3 className="text-xl font-black flex items-center space-x-2">
+                  <PlayCircle className="w-6 h-6 text-primary" />
+                  <span>Available Assessments</span>
+                </h3>
+                <div className="flex items-center space-x-2 text-xs font-bold text-muted-foreground">
+                  <Filter className="w-4 h-4" />
+                  <span>All Subjects</span>
+                </div>
+              </div>
+
               {exams && exams.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {exams.map((exam: any) => {
                     const existingSubmissionId = submittedExamMap[exam.id];
                     const alreadyTaken = !!existingSubmissionId;
                     return (
-                      <Card key={exam.id} className={`bg-card border-border flex flex-col group relative overflow-hidden transition-colors ${alreadyTaken ? "opacity-80" : "hover:bg-card/80"}`}>
-                        <div className={`absolute top-0 left-0 w-1 h-full transition-colors ${alreadyTaken ? "bg-green-500/50" : "bg-primary/40 group-hover:bg-primary"}`} />
-                        <CardHeader className="pb-3 pl-5">
-                          <div className="flex justify-between items-start mb-2">
-                            {alreadyTaken
-                              ? <Badge variant="secondary" className="text-xs font-mono text-green-600 bg-green-500/10 border-green-500/20 border">COMPLETED</Badge>
-                              : <Badge variant="outline" className="text-xs font-mono bg-background">EXAM</Badge>
-                            }
-                            <div className="flex items-center text-xs text-muted-foreground font-mono">
-                              <Clock className="w-3 h-3 mr-1" />
-                              {exam.duration_minutes}m
+                      <Card key={exam.id} className={`overflow-hidden border-none shadow-2xl transition-all ${alreadyTaken ? "opacity-75 grayscale-[0.5]" : "hover:shadow-primary/10 hover:translate-y-[-4px]"}`}>
+                        <div className={`h-1.5 w-full ${alreadyTaken ? "bg-emerald-500" : "premium-gradient"}`} />
+                        <CardHeader className="p-6">
+                          <div className="flex justify-between items-start mb-4">
+                            <Badge variant={alreadyTaken ? "secondary" : "default"} className="rounded-lg px-2.5 py-1 text-[10px] font-black tracking-widest uppercase">
+                              {alreadyTaken ? "Completed" : "Active Now"}
+                            </Badge>
+                            <div className="flex items-center text-[10px] font-bold text-muted-foreground uppercase tracking-widest">
+                              <Clock className="w-3 h-3 mr-1.5 text-primary" />
+                              {exam.duration_minutes}m Duration
                             </div>
                           </div>
-                          <CardTitle className="text-base sm:text-lg leading-tight">{exam.title}</CardTitle>
-                          <CardDescription className="text-xs sm:text-sm line-clamp-2">
-                            {exam.description || "No description provided."}
+                          <CardTitle className="text-xl font-black leading-none mb-2">{exam.title}</CardTitle>
+                          <CardDescription className="text-sm line-clamp-2 leading-relaxed">
+                            {exam.description || "Comprehensive assessment designed to evaluate core competencies."}
                           </CardDescription>
                         </CardHeader>
-                        <CardContent className="pb-3 mt-auto pl-5">
-                          {!alreadyTaken && (
-                            <div className="flex items-center text-xs sm:text-sm text-muted-foreground">
-                              <AlertTriangle className="w-3 h-3 mr-1 text-destructive/70" />
-                              Max violations: <span className="text-foreground font-medium ml-1">{exam.max_violations}</span>
-                            </div>
-                          )}
-                        </CardContent>
-                        <CardFooter className="pl-5">
+                        <CardFooter className="p-6 pt-0">
                           {alreadyTaken ? (
-                            <Button className="w-full bg-green-500/10 text-green-600 hover:bg-green-500/20 border border-green-500/20 text-sm" onClick={() => setLocation(`/result/${existingSubmissionId}`)}>
-                              <CheckCircle2 className="w-4 h-4 mr-2" />
-                              View Result
+                            <Button className="w-full h-12 rounded-xl bg-emerald-500/10 text-emerald-600 hover:bg-emerald-500/20 font-bold border border-emerald-500/20" onClick={() => setLocation(`/result/${existingSubmissionId}`)}>
+                              <CheckCircle2 className="w-4 h-4 mr-2" /> Performance Report
                             </Button>
                           ) : (
-                            <Button className="w-full bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground border border-primary/20 text-sm" onClick={() => setLocation(`/exam/${exam.id}`)}>
-                              <PlayCircle className="w-4 h-4 mr-2" />
-                              Start Exam
+                            <Button className="w-full h-12 rounded-xl premium-gradient text-white font-bold shadow-lg shadow-primary/20" onClick={() => setLocation(`/exam/${exam.id}`)}>
+                              Begin Assessment <ArrowRight className="w-4 h-4 ml-2" />
                             </Button>
                           )}
                         </CardFooter>
@@ -137,59 +151,64 @@ function DesktopDashboard({ user, profile, exams, submissions, stats, submittedE
                   })}
                 </div>
               ) : (
-                <Card className="bg-background border-dashed border-border/50">
-                  <CardContent className="p-8 text-center text-muted-foreground">
-                    <Shield className="w-8 h-8 mx-auto mb-3 opacity-20" />
-                    <p className="text-sm">No active exams available.</p>
-                  </CardContent>
-                </Card>
+                <div className="py-20 flex flex-col items-center justify-center glass rounded-3xl border-dashed border-2">
+                  <div className="w-16 h-16 rounded-full bg-surface-sunken flex items-center justify-center mb-4">
+                    <BookOpen className="w-8 h-8 text-muted-foreground opacity-30" />
+                  </div>
+                  <p className="text-muted-foreground font-bold">No active examinations available.</p>
+                </div>
               )}
-            </motion.div>
+            </div>
 
-            <motion.div variants={item} className="space-y-3 sm:space-y-4">
-              <h2 className="text-base sm:text-lg font-medium tracking-tight flex items-center gap-2">
-                <History className="w-4 h-4 sm:w-5 sm:h-5 text-primary" /> History
-              </h2>
-              <Card className="bg-card/50 border-border">
-                <ScrollArea className="h-[300px] sm:h-[380px]">
+            {/* Recent History */}
+            <div className="lg:col-span-4 space-y-6">
+              <h3 className="text-xl font-black flex items-center space-x-2">
+                <History className="w-6 h-6 text-primary" />
+                <span>Recent History</span>
+              </h3>
+              <Card className="border-none shadow-2xl bg-white/90 overflow-hidden">
+                <ScrollArea className="h-[600px]">
                   {submissions && submissions.length > 0 ? (
                     <div className="divide-y divide-border/50">
                       {submissions.map((sub: any) => {
                         const pct = sub.total_marks ? Math.round((sub.score / sub.total_marks) * 100) : 0;
                         return (
-                          <div key={sub.id} className="p-4 hover:bg-muted/30 transition-colors">
-                            <div className="flex justify-between items-start gap-2 mb-1">
-                              <div className="min-w-0">
-                                <p className="font-medium text-sm leading-tight mb-0.5 truncate">
-                                  {sub.exams?.title ?? "Exam"}
-                                </p>
-                                <p className="text-xs text-muted-foreground font-mono">
-                                  {format(new Date(sub.submitted_at), "MMM d, yyyy HH:mm")}
-                                </p>
+                          <div key={sub.id} className="p-6 hover:bg-primary/[0.02] transition-colors group cursor-pointer" onClick={() => setLocation(`/result/${sub.id}`)}>
+                            <div className="flex justify-between items-start mb-3">
+                              <div className="flex-1 min-w-0 pr-4">
+                                <h4 className="font-bold text-sm truncate leading-none mb-2">{sub.exams?.title || "Assessment"}</h4>
+                                <div className="flex items-center text-[10px] text-muted-foreground font-bold uppercase tracking-widest">
+                                  <Calendar className="w-3 h-3 mr-1.5" />
+                                  {format(new Date(sub.submitted_at), "MMM dd, yyyy")}
+                                </div>
                               </div>
-                              <div className="text-right shrink-0">
-                                {sub.status === "completed" ? (
-                                  <span className={`font-bold text-sm ${pct >= 50 ? "text-primary" : "text-destructive"}`}>{pct}%</span>
-                                ) : sub.status === "terminated" ? (
-                                  <Badge variant="destructive" className="text-[10px]">TERMINATED</Badge>
-                                ) : null}
+                              <div className={`text-xl font-black ${pct >= 50 ? "text-emerald-500" : "text-rose-500"}`}>
+                                {pct}%
                               </div>
                             </div>
-                            <Button variant="link" size="sm" className="px-0 h-auto mt-1 text-xs text-muted-foreground hover:text-primary" onClick={() => setLocation(`/result/${sub.id}`)}>
-                              View Report →
-                            </Button>
+                            <div className="flex items-center justify-between">
+                              <div className="w-full bg-surface-sunken h-1.5 rounded-full overflow-hidden mr-4">
+                                <motion.div 
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${pct}%` }}
+                                  className={`h-full ${pct >= 50 ? "bg-emerald-500" : "bg-rose-500"}`}
+                                />
+                              </div>
+                              <ChevronRight className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                            </div>
                           </div>
                         );
                       })}
                     </div>
                   ) : (
-                    <div className="p-8 text-center text-muted-foreground text-sm">
-                      No submissions yet.
+                    <div className="py-20 text-center space-y-4">
+                      <TrendingUp className="w-12 h-12 text-muted-foreground opacity-10 mx-auto" />
+                      <p className="text-xs text-muted-foreground font-bold uppercase tracking-widest">No activity recorded yet</p>
                     </div>
                   )}
                 </ScrollArea>
               </Card>
-            </motion.div>
+            </div>
           </div>
         </motion.div>
       </main>
@@ -197,136 +216,118 @@ function DesktopDashboard({ user, profile, exams, submissions, stats, submittedE
   );
 }
 
-// --- Mobile UI Components (Premium Dark) ---
+// --- Mobile Dashboard (Premium) ---
 function MobileDashboard({ user, profile, exams, submissions, stats, submittedExamMap, handleLogout, setLocation }: any) {
   const availableExams = exams?.filter((e: any) => !submittedExamMap[e.id]) ?? [];
   const completedExams = exams?.filter((e: any) => !!submittedExamMap[e.id]) ?? [];
 
   return (
-    <div className="min-h-screen bg-background font-body text-foreground pb-28 relative overflow-x-hidden">
-      {/* Ambient glows */}
-      <div className="fixed top-0 left-0 -z-10 w-[300px] h-[300px]" style={{ background: "radial-gradient(circle at 20% 20%, rgba(59,109,240,0.10) 0%, transparent 60%)" }} />
-      <div className="fixed bottom-24 right-0 -z-10 w-[200px] h-[200px]" style={{ background: "radial-gradient(circle at 80% 80%, rgba(124,91,245,0.06) 0%, transparent 60%)" }} />
-
-      {/* Fixed Header */}
-      <header className="fixed top-0 w-full z-50 backdrop-blur-xl" style={{ background: "rgba(255,255,255,0.85)", borderBottom: "1px solid rgba(15,23,42,0.06)" }}>
-        <div className="flex items-center justify-between px-5 h-16 max-w-xl mx-auto">
-          <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg overflow-hidden" style={{ border: "1px solid rgba(15,23,42,0.08)" }}>
-              <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
-            </div>
-            <span className="text-base font-bold text-foreground font-headline tracking-tight">SPHN Web Test</span>
+    <div className="min-h-screen bg-background pb-28 relative">
+      <header className="px-6 h-20 flex items-center justify-between sticky top-0 z-50 glass border-b">
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 premium-gradient rounded-lg flex items-center justify-center">
+            <Shield className="w-5 h-5 text-white" />
           </div>
-          <button onClick={handleLogout} className="p-2 rounded-xl transition-colors" style={{ background: "rgba(15,23,42,0.04)" }}>
-            <LogOut className="w-4 h-4 text-muted-foreground" />
-          </button>
+          <span className="font-black tracking-tight">SPHN</span>
+        </div>
+        <div className="w-10 h-10 rounded-full bg-surface-sunken border flex items-center justify-center overflow-hidden">
+          <User className="w-5 h-5 text-muted-foreground" />
         </div>
       </header>
 
-      <main className="pt-20 px-5 max-w-xl mx-auto space-y-8">
-        {/* Welcome */}
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, ease: "easeOut" }} className="pt-4">
-          <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary mb-1">Student Dashboard</p>
-          <h1 className="font-headline text-3xl font-extrabold text-foreground tracking-tight">
-            Welcome, {user.email?.split("@")[0]}
-          </h1>
-          {profile && <p className="text-muted-foreground text-sm mt-1">Roll No: {profile.name}</p>}
-        </motion.div>
+      <main className="px-6 py-8 space-y-10">
+        <div>
+          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary mb-1">Academic Profile</p>
+          <h1 className="text-3xl font-black tracking-tighter">Welcome, {profile?.full_name?.split(" ")[0] || user.email?.split("@")[0]}</h1>
+        </div>
 
-        {/* Stats Row */}
-        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.05, ease: "easeOut" }} className="grid grid-cols-3 gap-3">
+        {/* Quick Stats */}
+        <div className="grid grid-cols-3 gap-4">
           {[
-            { label: "Taken", value: stats?.totalAttempts ?? 0 },
-            { label: "Avg", value: stats?.averageScore != null ? `${Math.round(stats.averageScore)}%` : "--" },
-            { label: "Best", value: stats?.highestScore != null ? `${Math.round(stats.highestScore)}%` : "--", accent: true },
+            { label: "Attempts", value: stats?.totalAttempts ?? 0 },
+            { label: "Avg %", value: stats?.averageScore != null ? `${Math.round(stats.averageScore)}` : "0" },
+            { label: "Best", value: stats?.highestScore != null ? `${Math.round(stats.highestScore)}` : "0" },
           ].map((s) => (
-            <div key={s.label} className="rounded-2xl p-4 text-center" style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.07)", boxShadow: "0 2px 8px rgba(15,23,42,0.04)" }}>
-              <p className={`text-xl font-bold ${s.accent ? "text-primary" : "text-foreground"}`}>{s.value}</p>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">{s.label}</p>
+            <div key={s.label} className="bg-white/50 backdrop-blur-sm border-none shadow-xl p-4 rounded-3xl text-center">
+              <div className="text-xl font-black text-primary">{s.value}</div>
+              <div className="text-[8px] font-black uppercase tracking-widest text-muted-foreground mt-1">{s.label}</div>
             </div>
           ))}
-        </motion.div>
+        </div>
 
-        {/* Available Exams */}
-        <motion.section initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }} className="space-y-4">
-          <h3 className="text-base font-bold text-foreground flex items-center gap-2">
-            <FileText className="w-4 h-4 text-primary" /> Available Assessments
+        {/* Exams */}
+        <section className="space-y-6">
+          <h3 className="text-lg font-black flex items-center space-x-2">
+            <PlayCircle className="w-5 h-5 text-primary" />
+            <span>Available Tests</span>
           </h3>
           {availableExams.length > 0 ? (
-            <div className="space-y-3">
-              {availableExams.map((exam: any, i: number) => (
-                <motion.div
-                  key={exam.id}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.15 + i * 0.05 }}
-                  className="rounded-2xl p-5 group transition-all duration-200 active:scale-[0.99]"
-                  style={{ background: "linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)", border: "1px solid rgba(59,109,240,0.15)", boxShadow: "0 4px 24px rgba(15,23,42,0.06)" }}
-                >
-                  <div className="flex justify-between items-center mb-3">
-                    <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg text-primary" style={{ background: "rgba(59,109,240,0.10)", border: "1px solid rgba(59,109,240,0.18)" }}>CORE PAPER</span>
-                    <div className="flex items-center gap-1 text-muted-foreground text-xs font-mono">
-                      <Clock className="w-3 h-3" />{exam.duration_minutes}m
+            <div className="space-y-4">
+              {availableExams.map((exam: any) => (
+                <Card key={exam.id} className="border-none shadow-2xl p-6 rounded-[2rem] bg-white/90" onClick={() => setLocation(`/exam/${exam.id}`)}>
+                  <div className="flex justify-between items-center mb-4">
+                    <Badge className="bg-primary/10 text-primary border-none text-[9px] font-black tracking-widest uppercase">Core</Badge>
+                    <div className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest flex items-center">
+                      <Clock className="w-3 h-3 mr-1" /> {exam.duration_minutes}m
                     </div>
                   </div>
-                  <h4 className="font-headline text-lg font-bold text-foreground mb-1">{exam.title}</h4>
-                  <p className="text-muted-foreground text-sm mb-5 line-clamp-2">{exam.description || "Comprehensive technical assessment."}</p>
-                  <button
-                    onClick={() => setLocation(`/exam/${exam.id}`)}
-                    className="w-full py-3.5 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98]"
-                    style={{ background: "linear-gradient(135deg, #3b6df0 0%, #2c56c9 100%)", boxShadow: "0 6px 20px rgba(59,109,240,0.32), 0 1px 0 rgba(255,255,255,0.2) inset" }}
-                  >
-                    Secure Start <PlayCircle className="w-4 h-4" />
-                  </button>
-                </motion.div>
+                  <h4 className="text-lg font-black leading-tight mb-2">{exam.title}</h4>
+                  <p className="text-xs text-muted-foreground mb-6 line-clamp-2">{exam.description || "Standard technical assessment."}</p>
+                  <Button className="w-full h-12 rounded-2xl premium-gradient text-white font-bold shadow-lg shadow-primary/20">
+                    Start Securely <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Card>
               ))}
             </div>
           ) : (
-            <div className="py-14 text-center rounded-2xl space-y-3" style={{ background: "#ffffff", border: "1px dashed rgba(15,23,42,0.12)" }}>
-              <BookOpen className="w-8 h-8 text-muted-foreground mx-auto opacity-30" />
-              <p className="text-muted-foreground text-sm font-medium">No tests available for now.</p>
-              <p className="text-[10px] text-primary font-bold uppercase tracking-widest">Stay tuned for updates!</p>
+            <div className="py-12 glass rounded-3xl text-center">
+              <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest">No active tests</p>
             </div>
           )}
-        </motion.section>
+        </section>
 
-        {/* Completed Exams */}
+        {/* History */}
         {completedExams.length > 0 && (
-          <motion.section initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4, delay: 0.2 }} className="space-y-4">
-            <h3 className="text-base font-bold text-foreground flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-primary" /> Completed
+          <section className="space-y-6">
+            <h3 className="text-lg font-black flex items-center space-x-2">
+              <History className="w-5 h-5 text-primary" />
+              <span>History</span>
             </h3>
-            <div className="space-y-2">
+            <div className="space-y-3">
               {completedExams.map((exam: any) => {
                 const subId = submittedExamMap[exam.id];
                 return (
-                  <button key={exam.id} onClick={() => setLocation(`/result/${subId}`)} className="w-full text-left rounded-2xl p-4 flex items-center justify-between transition-all active:scale-[0.99]" style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.07)", boxShadow: "0 1px 3px rgba(15,23,42,0.04)" }}>
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(59,109,240,0.10)" }}>
-                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                  <div key={exam.id} onClick={() => setLocation(`/result/${subId}`)} className="flex items-center justify-between p-4 bg-white/50 rounded-2xl shadow-lg">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                       </div>
-                      <span className="font-medium text-sm text-foreground truncate max-w-[180px]">{exam.title}</span>
+                      <span className="text-sm font-bold truncate max-w-[150px]">{exam.title}</span>
                     </div>
-                    <ArrowRight className="w-4 h-4 text-muted-foreground shrink-0" />
-                  </button>
+                    <ChevronRight className="w-4 h-4 text-muted-foreground" />
+                  </div>
                 );
               })}
             </div>
-          </motion.section>
+          </section>
         )}
       </main>
 
-      {/* Bottom Nav */}
-      <nav className="fixed bottom-0 left-0 w-full z-50 px-5 pb-6 pt-3" style={{ background: "linear-gradient(to top, rgba(247,249,252,0.98) 60%, rgba(247,249,252,0) 100%)" }}>
-        <div className="flex justify-around items-center rounded-2xl px-2 py-3 max-w-xl mx-auto" style={{ background: "rgba(255,255,255,0.95)", border: "1px solid rgba(15,23,42,0.08)", backdropFilter: "blur(20px)", boxShadow: "0 8px 32px rgba(15,23,42,0.08)" }}>
+      {/* Mobile Nav */}
+      <nav className="fixed bottom-0 left-0 w-full px-6 pb-8 pt-4 bg-gradient-to-t from-background via-background to-transparent z-40">
+        <div className="flex justify-around items-center glass p-2 rounded-3xl shadow-2xl border-white/40">
           {[
-            { icon: <Layout className="w-5 h-5" />, label: "Home", active: true, onClick: () => {} },
-            { icon: <Activity className="w-5 h-5" />, label: "Results", onClick: () => setLocation("/metrics") },
-            { icon: <User className="w-5 h-5" />, label: "Profile", onClick: () => setLocation("/profile") },
+            { icon: <Layout className="w-5 h-5" />, active: true, label: "Home" },
+            { icon: <Activity className="w-5 h-5" />, label: "Stats", onClick: () => setLocation("/metrics") },
+            { icon: <LogOut className="w-5 h-5" />, label: "Exit", onClick: handleLogout },
           ].map((nav) => (
-            <button key={nav.label} onClick={nav.onClick} className="flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-all active:scale-95" style={nav.active ? { background: "rgba(59,109,240,0.12)", color: "#3b6df0" } : { color: "rgba(15,23,42,0.45)" }}>
+            <button 
+              key={nav.label} 
+              onClick={nav.onClick}
+              className={`flex flex-col items-center p-3 rounded-2xl transition-all ${nav.active ? "bg-primary/10 text-primary" : "text-muted-foreground"}`}
+            >
               {nav.icon}
-              <span className="text-[9px] font-bold uppercase tracking-widest">{nav.label}</span>
+              <span className="text-[8px] font-black uppercase mt-1 tracking-widest">{nav.label}</span>
             </button>
           ))}
         </div>
@@ -335,7 +336,6 @@ function MobileDashboard({ user, profile, exams, submissions, stats, submittedEx
   );
 }
 
-// --- Combined Dashboard Component ---
 export default function Dashboard() {
   const isMobile = useIsMobile();
   const [, setLocation] = useLocation();
