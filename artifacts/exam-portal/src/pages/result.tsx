@@ -3,7 +3,7 @@ import { useSubmission, useExamQuestions } from "@/hooks/useExamData";
 import { 
   Shield, ChevronLeft, Award, ShieldAlert, CheckCircle2, 
   XCircle, AlertCircle, HelpCircle, Check, Info, User,
-  Clock, Target, Zap, Share2, Download
+  Clock, Target, Zap, Share2, Download, ArrowRight
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
