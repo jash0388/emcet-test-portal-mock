@@ -25,6 +25,20 @@ import { ArrowRight } from "lucide-react";
 export default function Result() {
   const { attemptId: submissionId } = useParams<{ attemptId: string }>();
   const [, setLocation] = useLocation();
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
 
   const { data: submission, isLoading: subLoading, error } = useSubmission(submissionId);
   const needsLiveQuestions = !!submission && !submission.question_snapshots?.length;
@@ -276,7 +290,12 @@ export default function Result() {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <motion.div 
+              variants={container}
+              initial="hidden"
+              animate="show"
+              className="space-y-4"
+            >
               {questions && questions.length > 0 ? (
                 questions.map((q, idx) => {
                   const studentAnswer = submission.student_answers?.[q.id];
@@ -341,7 +360,7 @@ export default function Result() {
                   </p>
                 </div>
               )}
-            </div>
+            </motion.div>
           </div>
 
           <div className="flex justify-center pt-6">
