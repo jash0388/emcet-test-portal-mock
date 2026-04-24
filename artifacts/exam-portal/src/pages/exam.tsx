@@ -484,22 +484,22 @@ export default function ExamTaking() {
 
         <div className="flex items-center space-x-8">
           {/* Section Tabs in Header */}
-          <div className="flex items-center bg-surface-sunken p-1 rounded-2xl border">
+          <div className="flex items-center bg-indigo-50 p-1.5 rounded-2xl border-2 border-indigo-200 shadow-inner">
             <Button
               variant={activePart === "A" ? "default" : "ghost"}
               size="sm"
-              className={`rounded-xl px-6 font-black tracking-widest uppercase transition-all ${activePart === "A" ? "premium-gradient text-white shadow-lg shadow-primary/20" : "text-muted-foreground hover:text-foreground"}`}
+              className={`rounded-xl px-8 font-black tracking-widest uppercase transition-all ${activePart === "A" ? "bg-indigo-600 text-white shadow-lg shadow-indigo-200" : "text-indigo-400 hover:text-indigo-600 hover:bg-indigo-100/50"}`}
               onClick={() => { setActivePart("A"); setCurrentQuestionIndex(0); }}
             >
-              Part A
+              Section A
             </Button>
             <Button
               variant={activePart === "B" ? "default" : "ghost"}
               size="sm"
-              className={`rounded-xl px-6 font-black tracking-widest uppercase transition-all ${activePart === "B" ? "premium-gradient text-white shadow-lg shadow-primary/20" : "text-muted-foreground hover:text-foreground"}`}
+              className={`rounded-xl px-8 font-black tracking-widest uppercase transition-all ${activePart === "B" ? "bg-indigo-600 text-white shadow-lg shadow-indigo-200" : "text-indigo-400 hover:text-indigo-600 hover:bg-indigo-100/50"}`}
               onClick={() => { setActivePart("B"); setCurrentQuestionIndex(15); }}
             >
-              Part B
+              Section B
             </Button>
           </div>
 
