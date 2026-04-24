@@ -1,6 +1,6 @@
 {
-  "buildCommand": "pnpm --filter @workspace/exam-portal run build",
-  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "cd artifacts/exam-portal && npm run build",
+  "installCommand": "cd artifacts/exam-portal && npm install",
   "outputDirectory": "artifacts/exam-portal/dist",
   "framework": "vite",
   "rewrites": [
