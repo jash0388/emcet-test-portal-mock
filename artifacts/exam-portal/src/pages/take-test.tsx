@@ -129,6 +129,7 @@ export default function TakeTest() {
         status: "completed",
         student_name: studentInfo.studentName,
         roll_number: studentInfo.studentPhone,
+        student_answers: currentAnswers,
       },
       {
         onSuccess: (sub) => {

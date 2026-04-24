@@ -68,14 +68,27 @@ export function useSubmission(submissionId: string | undefined) {
   return useQuery({
     queryKey: ["submission", submissionId],
     enabled: !!submissionId,
+    retry: 1,
     queryFn: async () => {
-      const { data, error } = await supabase
+      const { data: sub, error } = await supabase
         .from("exam_submissions")
-        .select("*, exams(title)")
+        .select("*")
         .eq("id", submissionId!)
-        .single();
+        .maybeSingle();
       if (error) throw error;
-      return data as SupabaseSubmission & { exams: { title: string } | null };
+      if (!sub) throw new Error("Submission not found");
+
+      let exam: { title: string } | null = null;
+      if (sub.exam_id) {
+        const { data: examData } = await supabase
+          .from("exams")
+          .select("title")
+          .eq("id", sub.exam_id)
+          .maybeSingle();
+        if (examData) exam = { title: examData.title };
+      }
+
+      return { ...(sub as SupabaseSubmission), exams: exam };
     },
   });
 }
