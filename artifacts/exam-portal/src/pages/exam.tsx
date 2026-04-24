@@ -138,6 +138,8 @@ export default function ExamTaking() {
         explanation: q.explanation ?? null,
       }));
 
+      console.log("Submitting with details:", { studentName, rollNumber, fatherName, fatherPhone, studentPhone });
+
       submitExam.mutate({
         user_id: user.uid,
         exam_id: exam.id,
@@ -463,7 +465,10 @@ export default function ExamTaking() {
             <div className="w-10 h-10 premium-gradient rounded-xl flex items-center justify-center">
               <Shield className="w-6 h-6 text-white" />
             </div>
-            <span className="text-xl font-black tracking-tight hidden sm:block">{exam.title}</span>
+            <div className="flex flex-col">
+              <span className="text-xl font-black tracking-tight hidden sm:block">{exam.title}</span>
+              <span className="text-[8px] font-black uppercase tracking-widest text-primary">v2.1 Build Final</span>
+            </div>
           </div>
           <div className="h-8 w-px bg-border hidden sm:block" />
           <div className="flex items-center space-x-3">
@@ -479,7 +484,7 @@ export default function ExamTaking() {
 
         <div className="flex items-center space-x-8">
           {/* Section Tabs in Header */}
-          <div className="hidden lg:flex items-center bg-surface-sunken p-1 rounded-2xl border">
+          <div className="flex items-center bg-surface-sunken p-1 rounded-2xl border">
             <Button
               variant={activePart === "A" ? "default" : "ghost"}
               size="sm"
