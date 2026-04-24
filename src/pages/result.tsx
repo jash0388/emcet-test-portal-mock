@@ -105,11 +105,13 @@ export default function Result() {
     return `${m}m ${s}s`;
   })();
 
+  const isAnswerCorrect = (q: { correct_answer: string | null }, ans: string | undefined) => {
+    if (!ans || !q.correct_answer) return false;
+    return ans.trim().toLowerCase() === q.correct_answer.trim().toLowerCase();
+  };
+
   const correctCount = questions
-    ? questions.filter((q) => {
-        const ans = studentAnswers[q.id];
-        return ans && q.correct_answer && ans.trim() === q.correct_answer.trim();
-      }).length
+    ? questions.filter((q) => isAnswerCorrect(q, studentAnswers[q.id])).length
     : 0;
 
   const examTitle = submission.exams?.title || "Mock Examination";
@@ -333,7 +335,7 @@ export default function Result() {
               {questions && questions.length > 0 ? (
                 questions.map((q, idx) => {
                   const studentAnswer = submission.student_answers?.[q.id];
-                  const isCorrect = studentAnswer === q.correct_answer;
+                  const isCorrect = isAnswerCorrect(q, studentAnswer);
                   
                   return (
                     <motion.div key={q.id} variants={item}>
