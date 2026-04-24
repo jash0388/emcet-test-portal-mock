@@ -205,19 +205,19 @@ function MobileDashboard({ user, profile, exams, submissions, stats, submittedEx
   return (
     <div className="min-h-screen bg-background font-body text-foreground pb-28 relative overflow-x-hidden">
       {/* Ambient glows */}
-      <div className="fixed top-0 left-0 -z-10 w-[300px] h-[300px]" style={{ background: "radial-gradient(circle at 20% 20%, rgba(79,126,245,0.12) 0%, transparent 60%)" }} />
-      <div className="fixed bottom-24 right-0 -z-10 w-[200px] h-[200px]" style={{ background: "radial-gradient(circle at 80% 80%, rgba(79,126,245,0.08) 0%, transparent 60%)" }} />
+      <div className="fixed top-0 left-0 -z-10 w-[300px] h-[300px]" style={{ background: "radial-gradient(circle at 20% 20%, rgba(59,109,240,0.10) 0%, transparent 60%)" }} />
+      <div className="fixed bottom-24 right-0 -z-10 w-[200px] h-[200px]" style={{ background: "radial-gradient(circle at 80% 80%, rgba(124,91,245,0.06) 0%, transparent 60%)" }} />
 
       {/* Fixed Header */}
-      <header className="fixed top-0 w-full z-50 backdrop-blur-xl" style={{ background: "rgba(8,8,15,0.85)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+      <header className="fixed top-0 w-full z-50 backdrop-blur-xl" style={{ background: "rgba(255,255,255,0.85)", borderBottom: "1px solid rgba(15,23,42,0.06)" }}>
         <div className="flex items-center justify-between px-5 h-16 max-w-xl mx-auto">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.1)" }}>
+            <div className="w-8 h-8 rounded-lg overflow-hidden" style={{ border: "1px solid rgba(15,23,42,0.08)" }}>
               <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
             </div>
             <span className="text-base font-bold text-foreground font-headline tracking-tight">SPHN Web Test</span>
           </div>
-          <button onClick={handleLogout} className="p-2 rounded-xl transition-colors" style={{ background: "rgba(255,255,255,0.05)" }}>
+          <button onClick={handleLogout} className="p-2 rounded-xl transition-colors" style={{ background: "rgba(15,23,42,0.04)" }}>
             <LogOut className="w-4 h-4 text-muted-foreground" />
           </button>
         </div>
@@ -240,7 +240,7 @@ function MobileDashboard({ user, profile, exams, submissions, stats, submittedEx
             { label: "Avg", value: stats?.averageScore != null ? `${Math.round(stats.averageScore)}%` : "--" },
             { label: "Best", value: stats?.highestScore != null ? `${Math.round(stats.highestScore)}%` : "--", accent: true },
           ].map((s) => (
-            <div key={s.label} className="rounded-2xl p-4 text-center" style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.07)" }}>
+            <div key={s.label} className="rounded-2xl p-4 text-center" style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.07)", boxShadow: "0 2px 8px rgba(15,23,42,0.04)" }}>
               <p className={`text-xl font-bold ${s.accent ? "text-primary" : "text-foreground"}`}>{s.value}</p>
               <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mt-1">{s.label}</p>
             </div>
@@ -261,10 +261,10 @@ function MobileDashboard({ user, profile, exams, submissions, stats, submittedEx
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.15 + i * 0.05 }}
                   className="rounded-2xl p-5 group transition-all duration-200 active:scale-[0.99]"
-                  style={{ background: "linear-gradient(145deg, rgba(19,19,31,0.9) 0%, rgba(13,13,22,0.95) 100%)", border: "1px solid rgba(79,126,245,0.15)", boxShadow: "0 4px 24px rgba(0,0,0,0.3)" }}
+                  style={{ background: "linear-gradient(145deg, #ffffff 0%, #f8fafc 100%)", border: "1px solid rgba(59,109,240,0.15)", boxShadow: "0 4px 24px rgba(15,23,42,0.06)" }}
                 >
                   <div className="flex justify-between items-center mb-3">
-                    <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg text-primary" style={{ background: "rgba(79,126,245,0.12)", border: "1px solid rgba(79,126,245,0.2)" }}>CORE PAPER</span>
+                    <span className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-lg text-primary" style={{ background: "rgba(59,109,240,0.10)", border: "1px solid rgba(59,109,240,0.18)" }}>CORE PAPER</span>
                     <div className="flex items-center gap-1 text-muted-foreground text-xs font-mono">
                       <Clock className="w-3 h-3" />{exam.duration_minutes}m
                     </div>
@@ -274,7 +274,7 @@ function MobileDashboard({ user, profile, exams, submissions, stats, submittedEx
                   <button
                     onClick={() => setLocation(`/exam/${exam.id}`)}
                     className="w-full py-3.5 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98]"
-                    style={{ background: "linear-gradient(135deg, #4f7ef5 0%, #3d6bd4 100%)", boxShadow: "0 4px 20px rgba(79,126,245,0.4), 0 1px 0 rgba(255,255,255,0.1) inset" }}
+                    style={{ background: "linear-gradient(135deg, #3b6df0 0%, #2c56c9 100%)", boxShadow: "0 6px 20px rgba(59,109,240,0.32), 0 1px 0 rgba(255,255,255,0.2) inset" }}
                   >
                     Secure Start <PlayCircle className="w-4 h-4" />
                   </button>
@@ -282,7 +282,7 @@ function MobileDashboard({ user, profile, exams, submissions, stats, submittedEx
               ))}
             </div>
           ) : (
-            <div className="py-14 text-center rounded-2xl space-y-3" style={{ background: "rgba(255,255,255,0.02)", border: "1px dashed rgba(255,255,255,0.08)" }}>
+            <div className="py-14 text-center rounded-2xl space-y-3" style={{ background: "#ffffff", border: "1px dashed rgba(15,23,42,0.12)" }}>
               <BookOpen className="w-8 h-8 text-muted-foreground mx-auto opacity-30" />
               <p className="text-muted-foreground text-sm font-medium">No tests available for now.</p>
               <p className="text-[10px] text-primary font-bold uppercase tracking-widest">Stay tuned for updates!</p>
@@ -300,9 +300,9 @@ function MobileDashboard({ user, profile, exams, submissions, stats, submittedEx
               {completedExams.map((exam: any) => {
                 const subId = submittedExamMap[exam.id];
                 return (
-                  <button key={exam.id} onClick={() => setLocation(`/result/${subId}`)} className="w-full text-left rounded-2xl p-4 flex items-center justify-between transition-all active:scale-[0.99]" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+                  <button key={exam.id} onClick={() => setLocation(`/result/${subId}`)} className="w-full text-left rounded-2xl p-4 flex items-center justify-between transition-all active:scale-[0.99]" style={{ background: "#ffffff", border: "1px solid rgba(15,23,42,0.07)", boxShadow: "0 1px 3px rgba(15,23,42,0.04)" }}>
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(79,126,245,0.12)" }}>
+                      <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={{ background: "rgba(59,109,240,0.10)" }}>
                         <CheckCircle2 className="w-4 h-4 text-primary" />
                       </div>
                       <span className="font-medium text-sm text-foreground truncate max-w-[180px]">{exam.title}</span>
@@ -317,14 +317,14 @@ function MobileDashboard({ user, profile, exams, submissions, stats, submittedEx
       </main>
 
       {/* Bottom Nav */}
-      <nav className="fixed bottom-0 left-0 w-full z-50 px-5 pb-6 pt-3" style={{ background: "linear-gradient(to top, rgba(8,8,15,0.98) 60%, rgba(8,8,15,0) 100%)" }}>
-        <div className="flex justify-around items-center rounded-2xl px-2 py-3 max-w-xl mx-auto" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(20px)" }}>
+      <nav className="fixed bottom-0 left-0 w-full z-50 px-5 pb-6 pt-3" style={{ background: "linear-gradient(to top, rgba(247,249,252,0.98) 60%, rgba(247,249,252,0) 100%)" }}>
+        <div className="flex justify-around items-center rounded-2xl px-2 py-3 max-w-xl mx-auto" style={{ background: "rgba(255,255,255,0.95)", border: "1px solid rgba(15,23,42,0.08)", backdropFilter: "blur(20px)", boxShadow: "0 8px 32px rgba(15,23,42,0.08)" }}>
           {[
             { icon: <Layout className="w-5 h-5" />, label: "Home", active: true, onClick: () => {} },
             { icon: <Activity className="w-5 h-5" />, label: "Results", onClick: () => setLocation("/metrics") },
             { icon: <User className="w-5 h-5" />, label: "Profile", onClick: () => setLocation("/profile") },
           ].map((nav) => (
-            <button key={nav.label} onClick={nav.onClick} className="flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-all active:scale-95" style={nav.active ? { background: "rgba(79,126,245,0.15)", color: "#4f7ef5" } : { color: "rgba(255,255,255,0.3)" }}>
+            <button key={nav.label} onClick={nav.onClick} className="flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-all active:scale-95" style={nav.active ? { background: "rgba(59,109,240,0.12)", color: "#3b6df0" } : { color: "rgba(15,23,42,0.45)" }}>
               {nav.icon}
               <span className="text-[9px] font-bold uppercase tracking-widest">{nav.label}</span>
             </button>

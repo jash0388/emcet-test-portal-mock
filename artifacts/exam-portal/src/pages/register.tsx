@@ -73,8 +73,8 @@ function DesktopRegister({ form, onSubmit, user, createProfile }: any) {
 // --- Mobile Register (Academic Atelier Style) ---
 function MobileRegister({ form, onSubmit, user, createProfile }: any) {
   const inputStyle = {
-    background: "rgba(255,255,255,0.05)",
-    border: "1px solid rgba(255,255,255,0.08)",
+    background: "#ffffff",
+    border: "1px solid rgba(15,23,42,0.10)",
     color: "inherit",
     width: "100%",
     borderRadius: "0.875rem",
@@ -84,21 +84,21 @@ function MobileRegister({ form, onSubmit, user, createProfile }: any) {
     transition: "all 0.2s",
   };
   const focusInput = (e: any) => {
-    e.target.style.borderColor = "rgba(79,126,245,0.6)";
-    e.target.style.boxShadow = "0 0 0 3px rgba(79,126,245,0.1)";
+    e.target.style.borderColor = "rgba(59,109,240,0.6)";
+    e.target.style.boxShadow = "0 0 0 3px rgba(59,109,240,0.12)";
   };
   const blurInput = (e: any) => {
-    e.target.style.borderColor = "rgba(255,255,255,0.08)";
+    e.target.style.borderColor = "rgba(15,23,42,0.10)";
     e.target.style.boxShadow = "none";
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col relative overflow-hidden font-body">
       {/* Glow */}
-      <div className="fixed top-0 left-1/2 -translate-x-1/2 -z-10 w-[320px] h-[320px] rounded-full" style={{ background: "radial-gradient(circle, rgba(79,126,245,0.13) 0%, transparent 70%)" }} />
+      <div className="fixed top-0 left-1/2 -translate-x-1/2 -z-10 w-[320px] h-[320px] rounded-full" style={{ background: "radial-gradient(circle, rgba(59,109,240,0.10) 0%, transparent 70%)" }} />
 
       <header className="w-full px-6 pt-14 pb-4 flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(255,255,255,0.1)" }}>
+        <div className="w-10 h-10 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(15,23,42,0.08)" }}>
           <img src="/logo.png" alt="Logo" className="w-full h-full object-contain" />
         </div>
         <span className="text-xl font-bold text-foreground font-headline tracking-tight">SPHN Web Test</span>
@@ -111,9 +111,9 @@ function MobileRegister({ form, onSubmit, user, createProfile }: any) {
             <p className="text-muted-foreground text-sm">Identity Enrollment</p>
           </div>
 
-          <div className="rounded-3xl p-6 pb-10 space-y-5" style={{ background: "linear-gradient(180deg, rgba(19,19,31,0.95) 0%, rgba(9,9,15,0.98) 100%)", border: "1px solid rgba(255,255,255,0.07)", boxShadow: "0 -8px 40px rgba(0,0,0,0.5)" }}>
+          <div className="rounded-3xl p-6 pb-10 space-y-5" style={{ background: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)", border: "1px solid rgba(15,23,42,0.07)", boxShadow: "0 -8px 40px rgba(15,23,42,0.06), 0 4px 24px rgba(15,23,42,0.04)" }}>
             {/* Current user chip */}
-            <div className="rounded-xl px-4 py-3 flex items-center gap-2" style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}>
+            <div className="rounded-xl px-4 py-3 flex items-center gap-2" style={{ background: "#f1f5f9", border: "1px solid rgba(15,23,42,0.06)" }}>
               <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Current User</span>
               <span className="text-xs font-bold text-foreground truncate flex-1 text-right">{user.email}</span>
             </div>
@@ -153,7 +153,7 @@ function MobileRegister({ form, onSubmit, user, createProfile }: any) {
                 <button
                   type="submit"
                   className="w-full py-4 rounded-xl font-bold text-white flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.98] mt-2"
-                  style={{ background: "linear-gradient(135deg, #4f7ef5 0%, #3d6bd4 100%)", boxShadow: "0 4px 20px rgba(79,126,245,0.4), 0 1px 0 rgba(255,255,255,0.1) inset" }}
+                  style={{ background: "linear-gradient(135deg, #3b6df0 0%, #2c56c9 100%)", boxShadow: "0 6px 20px rgba(59,109,240,0.32), 0 1px 0 rgba(255,255,255,0.2) inset" }}
                   disabled={createProfile.isPending}
                 >
                   {createProfile.isPending ? <RefreshCw className="animate-spin w-5 h-5" /> : "Secure Profile"}

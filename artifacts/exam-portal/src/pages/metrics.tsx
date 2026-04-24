@@ -35,7 +35,7 @@ export default function Metrics() {
   return (
     <div className={`min-h-screen ${isMobile ? "bg-background font-body text-foreground" : "bg-background text-foreground"} pb-24`}>
       {/* Header */}
-      <header className={`sticky top-0 z-50 ${isMobile ? "backdrop-blur-xl border-b" : "bg-background/80 backdrop-blur-md border-b border-border"}`} style={isMobile ? { background: "rgba(8,8,15,0.9)", borderColor: "rgba(255,255,255,0.06)" } : {}}>
+      <header className={`sticky top-0 z-50 ${isMobile ? "backdrop-blur-xl border-b" : "bg-background/80 backdrop-blur-md border-b border-border"}`} style={isMobile ? { background: "rgba(255,255,255,0.9)", borderColor: "rgba(15,23,42,0.06)" } : {}}>
         <div className="container max-w-2xl mx-auto px-6 h-16 flex items-center justify-between">
           <Button variant="ghost" size="sm" onClick={() => setLocation("/dashboard")} className="text-muted-foreground hover:text-foreground -ml-2">
             <ChevronLeft className="w-4 h-4 mr-1" />
@@ -70,7 +70,7 @@ export default function Metrics() {
                   <motion.div key={sub.id} variants={item} onClick={() => setLocation(`/result/${sub.id}`)}>
                     <Card className={`${isMobile ? "bg-surface-container-low border-transparent hover:bg-surface-container-lowest hover:premium-shadow-sm" : "bg-card hover:bg-muted/50"} transition-all cursor-pointer overflow-hidden border border-border group`}>
                       <CardContent className="p-5 flex items-center gap-4">
-                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0`} style={isTerminated ? { background: "rgba(239,68,68,0.1)", color: "#f87171" } : pct >= 50 ? { background: "rgba(79,126,245,0.12)", color: "#4f7ef5" } : { background: "rgba(251,146,60,0.1)", color: "#fb923c" }}>
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0`} style={isTerminated ? { background: "rgba(239,68,68,0.10)", color: "#dc2626" } : pct >= 50 ? { background: "rgba(59,109,240,0.10)", color: "#3b6df0" } : { background: "rgba(251,146,60,0.12)", color: "#ea580c" }}>
                            {isTerminated ? <ShieldAlert className="w-6 h-6" /> : <Award className="w-6 h-6" />}
                         </div>
                         
@@ -106,14 +106,14 @@ export default function Metrics() {
       </main>
 
       {isMobile && (
-        <nav className="fixed bottom-0 left-0 w-full z-50 px-5 pb-6 pt-3" style={{ background: "linear-gradient(to top, rgba(8,8,15,0.98) 60%, rgba(8,8,15,0) 100%)" }}>
-          <div className="flex justify-around items-center rounded-2xl px-2 py-3 max-w-xl mx-auto" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.08)", backdropFilter: "blur(20px)" }}>
+        <nav className="fixed bottom-0 left-0 w-full z-50 px-5 pb-6 pt-3" style={{ background: "linear-gradient(to top, rgba(247,249,252,0.98) 60%, rgba(247,249,252,0) 100%)" }}>
+          <div className="flex justify-around items-center rounded-2xl px-2 py-3 max-w-xl mx-auto" style={{ background: "rgba(255,255,255,0.95)", border: "1px solid rgba(15,23,42,0.08)", backdropFilter: "blur(20px)", boxShadow: "0 8px 32px rgba(15,23,42,0.08)" }}>
             {[
               { icon: <Layout className="w-5 h-5" />, label: "Home", onClick: () => setLocation("/dashboard") },
               { icon: <Activity className="w-5 h-5" />, label: "Results", active: true, onClick: () => {} },
               { icon: <User className="w-5 h-5" />, label: "Profile", onClick: () => setLocation("/profile") },
             ].map((nav) => (
-              <button key={nav.label} onClick={nav.onClick} className="flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-all active:scale-95" style={nav.active ? { background: "rgba(79,126,245,0.15)", color: "#4f7ef5" } : { color: "rgba(255,255,255,0.3)" }}>
+              <button key={nav.label} onClick={nav.onClick} className="flex flex-col items-center gap-1 px-6 py-2 rounded-xl transition-all active:scale-95" style={nav.active ? { background: "rgba(59,109,240,0.12)", color: "#3b6df0" } : { color: "rgba(15,23,42,0.45)" }}>
                 {nav.icon}
                 <span className="text-[9px] font-bold uppercase tracking-widest">{nav.label}</span>
               </button>
