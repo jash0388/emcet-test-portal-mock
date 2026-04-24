@@ -3,9 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "pnpm -r build"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "protobufjs"]
+    "build": "cd artifacts/exam-portal && npm run build"
   }
 }
