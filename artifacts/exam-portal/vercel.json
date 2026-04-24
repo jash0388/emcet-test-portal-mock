@@ -1,5 +1,6 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "cd ../.. && pnpm install --frozen-lockfile && pnpm --filter @workspace/exam-portal run build",
+  "installCommand": "echo skip",
   "outputDirectory": "dist",
   "framework": "vite"
 }
