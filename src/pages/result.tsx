@@ -255,20 +255,55 @@ export default function Result() {
           </div>
 
           {/* Candidate */}
-          <Card className="border border-blue-100 bg-white/90 backdrop-blur-sm rounded-2xl p-4 flex items-center space-x-4 shadow-sm">
-            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/30">
-              <User className="w-6 h-6 text-white" />
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
-                Candidate
-              </p>
-              <p className="font-black truncate">{submission.student_name}</p>
-              <p className="text-xs text-muted-foreground truncate">
-                {submission.roll_number}
-              </p>
-            </div>
-          </Card>
+          {(() => {
+            const candidate = (submission.student_answers as any)?.__candidate__ || {};
+            const studentName = candidate.student_name || submission.student_name;
+            const studentPhone = candidate.student_phone || submission.roll_number;
+            const fatherName = candidate.father_name || (submission as any).father_name;
+            const fatherPhone = candidate.father_phone || (submission as any).father_phone;
+            const college = candidate.college || (submission as any).college;
+            return (
+              <Card className="border border-blue-100 bg-white/90 backdrop-blur-sm rounded-2xl p-5 shadow-sm">
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/30">
+                    <User className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">
+                      Candidate
+                    </p>
+                    <p className="font-black truncate">{studentName}</p>
+                  </div>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                  {studentPhone && (
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-0.5">Student Number</p>
+                      <p className="font-bold truncate">{studentPhone}</p>
+                    </div>
+                  )}
+                  {fatherName && (
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-0.5">Father's Name</p>
+                      <p className="font-bold truncate">{fatherName}</p>
+                    </div>
+                  )}
+                  {fatherPhone && (
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-0.5">Father's Number</p>
+                      <p className="font-bold truncate">{fatherPhone}</p>
+                    </div>
+                  )}
+                  {college && (
+                    <div>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-0.5">College</p>
+                      <p className="font-bold truncate">{college}</p>
+                    </div>
+                  )}
+                </div>
+              </Card>
+            );
+          })()}
 
           {/* Review */}
           <div className="space-y-4">

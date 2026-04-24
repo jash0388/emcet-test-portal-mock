@@ -118,6 +118,14 @@ export default function TakeTest() {
       }
     }
 
+    const candidate = {
+      student_name: studentInfo.studentName,
+      student_phone: studentInfo.studentPhone,
+      father_name: studentInfo.fatherName,
+      father_phone: studentInfo.fatherPhone,
+      college: studentInfo.college,
+    };
+
     submitExam.mutate(
       {
         user_id: getOrCreateStudentId(),
@@ -129,11 +137,10 @@ export default function TakeTest() {
         status: "completed",
         student_name: studentInfo.studentName,
         roll_number: studentInfo.studentPhone,
-        student_phone: studentInfo.studentPhone,
-        father_name: studentInfo.fatherName,
-        father_phone: studentInfo.fatherPhone,
-        college: studentInfo.college,
-        student_answers: currentAnswers,
+        // All candidate details stored inside student_answers under a reserved
+        // "__candidate__" key so we don't depend on optional Supabase columns
+        // (father_name / father_phone / student_phone / college may not exist).
+        student_answers: { ...currentAnswers, __candidate__: candidate },
       },
       {
         onSuccess: (sub) => {
