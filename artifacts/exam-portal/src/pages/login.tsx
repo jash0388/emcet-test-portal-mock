@@ -73,20 +73,6 @@ export default function StudentInfoForm() {
             </div>
           </motion.div>
           
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="hidden md:flex items-center space-x-8 text-sm"
-          >
-            <div className="flex items-center space-x-2 text-muted-foreground">
-              <Clock className="w-4 h-4 text-primary" />
-              <span className="font-medium">180 Minutes</span>
-            </div>
-            <div className="flex items-center space-x-2 text-muted-foreground">
-              <Users className="w-4 h-4 text-primary" />
-              <span className="font-medium">180 Questions</span>
-            </div>
-          </motion.div>
         </div>
       </header>
 
