@@ -1,7 +1,7 @@
 {
-  "buildCommand": "cd artifacts/exam-portal && npm run build",
-  "installCommand": "cd artifacts/exam-portal && npm install",
-  "outputDirectory": "artifacts/exam-portal/dist",
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
