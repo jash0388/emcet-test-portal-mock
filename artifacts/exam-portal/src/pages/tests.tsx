@@ -224,12 +224,6 @@ export default function Tests() {
                           {exam.duration_minutes} minutes
                         </span>
                       </div>
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-muted-foreground font-bold uppercase tracking-widest">
-                          Max Violations
-                        </span>
-                        <span className="font-black text-rose-600">{exam.max_violations}</span>
-                      </div>
                     </div>
 
                     <Button
