@@ -62,7 +62,7 @@ export default function StudentInfoForm() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">SPHN EMCET MOCK TEST</h1>
-                <p className="text-sm text-gray-600">Engineering Entrance Examination</p>
+                <p className="text-sm text-gray-600">EMCET Entrance Examination</p>
               </div>
             </div>
             <div className="flex items-center space-x-4 text-sm text-gray-600">
@@ -108,12 +108,6 @@ export default function StudentInfoForm() {
                     <li>Desktop/Laptop recommended</li>
                     <li>Disable browser extensions</li>
                   </ul>
-                </div>
-                <div className="bg-blue-50 p-3 rounded-lg">
-                  <p className="text-blue-800 font-medium">Total Marks: 720</p>
-                  <p className="text-blue-600 text-xs">Physics: 60Q × 4M = 240</p>
-                  <p className="text-blue-600 text-xs">Chemistry: 60Q × 4M = 240</p>
-                  <p className="text-blue-600 text-xs">Mathematics: 60Q × 4M = 240</p>
                 </div>
               </CardContent>
             </Card>
