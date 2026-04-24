@@ -7,7 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
-import { AlertTriangle, Clock, Shield, Users, ArrowRight, Sparkles } from "lucide-react";
+import { AlertTriangle, Clock, Shield, Users, ArrowRight, Sparkles, Download } from "lucide-react";
+import { AdminDownloadDialog } from "@/components/AdminDownloadDialog";
 
 export default function StudentInfoForm() {
   const [, setLocation] = useLocation();
@@ -19,6 +20,7 @@ export default function StudentInfoForm() {
   const [college, setCollege] = useState("");
   const [agreeToTerms, setAgreeToTerms] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [adminOpen, setAdminOpen] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -261,13 +263,23 @@ export default function StudentInfoForm() {
       <footer className="w-full py-8 px-6 border-t glass mt-auto">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-muted-foreground gap-4">
           <p>© 2026 SPHN Educational Initiatives. All rights reserved.</p>
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap items-center justify-center gap-6">
             <a href="#" className="hover:text-primary transition-colors">Privacy Protocol</a>
             <a href="#" className="hover:text-primary transition-colors">Technical Support</a>
             <a href="#" className="hover:text-primary transition-colors">Terms of Engagement</a>
+            <button
+              type="button"
+              onClick={() => setAdminOpen(true)}
+              className="inline-flex items-center space-x-1.5 hover:text-primary transition-colors font-bold"
+            >
+              <Download className="w-3 h-3" />
+              <span>Download Results</span>
+            </button>
           </div>
         </div>
       </footer>
+
+      <AdminDownloadDialog open={adminOpen} onOpenChange={setAdminOpen} />
     </div>
   );
 }
