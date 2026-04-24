@@ -137,9 +137,12 @@ export default function TakeTest() {
         status: "completed",
         student_name: studentInfo.studentName,
         roll_number: studentInfo.studentPhone,
-        // All candidate details stored inside student_answers under a reserved
-        // "__candidate__" key so we don't depend on optional Supabase columns
-        // (father_name / father_phone / student_phone / college may not exist).
+        student_phone: studentInfo.studentPhone,
+        father_name: studentInfo.fatherName,
+        father_phone: studentInfo.fatherPhone,
+        // College column doesn't exist on exam_submissions in Supabase, so we
+        // also keep a full copy of candidate info in student_answers under a
+        // reserved "__candidate__" key (used by the result page).
         student_answers: { ...currentAnswers, __candidate__: candidate },
       },
       {
