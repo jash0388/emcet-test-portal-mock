@@ -42,7 +42,7 @@ export default function StudentInfoForm() {
       };
       localStorage.setItem("studentInfo", JSON.stringify(studentData));
       toast({ title: "Registration Complete", description: "Welcome to SPHN EMCET Mock Test!" });
-      setLocation("/exam");
+      setLocation("/tests");
     } catch (err: any) {
       toast({ variant: "destructive", description: "Failed to save information." });
     } finally {

@@ -43,7 +43,7 @@ export default function Result() {
             {error ? `Error: ${(error as Error).message}` : "The requested assessment data could not be retrieved."}
           </p>
         </div>
-        <Button variant="outline" onClick={() => setLocation("/dashboard")} className="rounded-2xl h-12 px-8">Back to Dashboard</Button>
+        <Button variant="outline" onClick={() => setLocation(localStorage.getItem("studentInfo") ? "/tests" : "/dashboard")} className="rounded-2xl h-12 px-8">Back to Tests</Button>
       </div>
     );
   }
@@ -68,9 +68,9 @@ export default function Result() {
 
       <header className="sticky top-0 z-50 glass border-b">
         <div className="max-w-4xl mx-auto px-8 h-20 flex items-center justify-between">
-          <Button variant="ghost" onClick={() => setLocation("/dashboard")} className="rounded-xl hover:bg-surface-sunken">
+          <Button variant="ghost" onClick={() => setLocation(localStorage.getItem("studentInfo") ? "/tests" : "/dashboard")} className="rounded-xl hover:bg-surface-sunken">
             <ChevronLeft className="w-5 h-5 mr-2" />
-            <span className="font-bold">Dashboard</span>
+            <span className="font-bold">Back</span>
           </Button>
           <div className="flex items-center space-x-3">
             <div className="p-2 rounded-xl bg-primary/10">
@@ -229,10 +229,10 @@ export default function Result() {
 
           <motion.div variants={item} className="flex justify-center pt-8">
             <Button 
-              onClick={() => setLocation("/dashboard")} 
+              onClick={() => setLocation(localStorage.getItem("studentInfo") ? "/tests" : "/dashboard")} 
               className="h-16 px-12 rounded-2xl premium-gradient text-white font-black shadow-2xl shadow-primary/20 text-lg group"
             >
-              Conclude Review <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              Take Another Test <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
           </motion.div>
 
