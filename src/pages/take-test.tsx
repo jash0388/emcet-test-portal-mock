@@ -110,11 +110,18 @@ export default function TakeTest() {
     const currentAnswers = answersRef.current;
 
     for (const q of questions) {
-      if (q.question_type === "mcq" && q.correct_answer) {
-        const given = currentAnswers[q.id];
-        if (given && given.trim() === q.correct_answer.trim()) {
+      if (!q.correct_answer) continue;
+      const given = currentAnswers[q.id];
+      if (!given) continue;
+      if (q.question_type === "mcq") {
+        if (given.trim() === q.correct_answer.trim()) {
           score += q.marks;
         }
+      } else {
+        // Paragraph / fill-in-the-blank: case-insensitive trimmed compare.
+        const a = given.trim().toLowerCase();
+        const b = q.correct_answer.trim().toLowerCase();
+        if (a === b) score += q.marks;
       }
     }
 
