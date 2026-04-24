@@ -84,6 +84,16 @@ export default function ExamTaking() {
   }, [profile, user]);
 
   useEffect(() => {
+    localStorage.setItem("studentInfo", JSON.stringify({ 
+      studentName, 
+      rollNumber, 
+      fatherName, 
+      fatherPhone, 
+      studentPhone 
+    }));
+  }, [studentName, rollNumber, fatherName, fatherPhone, studentPhone]);
+
+  useEffect(() => {
     if (!authLoading && !user) setLocation("/");
   }, [user, authLoading, setLocation]);
 
@@ -155,7 +165,7 @@ export default function ExamTaking() {
         },
       });
     },
-    [user, exam, questions, startTime, submitExam, setLocation, toast, studentName, rollNumber]
+    [user, exam, questions, startTime, submitExam, setLocation, toast, studentName, rollNumber, fatherName, fatherPhone, studentPhone]
   );
 
   // Timer countdown
