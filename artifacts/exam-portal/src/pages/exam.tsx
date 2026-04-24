@@ -3,7 +3,7 @@ import { useLocation, useParams } from "wouter";
 import { useAuth } from "@/hooks/useAuth";
 import { useProfile } from "@/hooks/useProfile";
 import { useExam, useExamQuestions, useSubmitExam, useMySubmissions } from "@/hooks/useExamData";
-import { AlertTriangle, Clock, ShieldAlert, CheckCircle2, User, Hash, ChevronRight, ChevronLeft, Flag } from "lucide-react";
+import { AlertTriangle, Clock, ShieldAlert, CheckCircle2, User, Hash, ChevronRight, ChevronLeft, Flag, Phone, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
@@ -31,6 +31,9 @@ export default function ExamTaking() {
   const [studentPhone, setStudentPhone] = useState("");
   const [nameError, setNameError] = useState("");
   const [rollError, setRollError] = useState("");
+  const [phoneError, setPhoneError] = useState("");
+  const [fatherNameError, setFatherNameError] = useState("");
+  const [fatherPhoneError, setFatherPhoneError] = useState("");
 
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [breachOverlay, setBreachOverlay] = useState(false);
@@ -242,6 +245,12 @@ export default function ExamTaking() {
     else setNameError("");
     if (!rollNumber.trim()) { setRollError("Roll number is required"); valid = false; }
     else setRollError("");
+    if (!studentPhone.trim()) { setPhoneError("Student phone is required"); valid = false; }
+    else setPhoneError("");
+    if (!fatherName.trim()) { setFatherNameError("Father's name is required"); valid = false; }
+    else setFatherNameError("");
+    if (!fatherPhone.trim()) { setFatherPhoneError("Father's phone is required"); valid = false; }
+    else setFatherPhoneError("");
     if (valid) setPhase("instructions");
   };
 
@@ -302,6 +311,50 @@ export default function ExamTaking() {
                   />
                 </div>
                 {rollError && <p className="text-xs text-rose-500 font-bold">{rollError}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Student Phone Number</Label>
+                <div className="relative">
+                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    className="h-14 pl-12 bg-surface-sunken border-none text-lg font-bold"
+                    placeholder="Enter phone number"
+                    type="tel"
+                    value={studentPhone}
+                    onChange={(e) => { setStudentPhone(e.target.value); setPhoneError(""); }}
+                  />
+                </div>
+                {phoneError && <p className="text-xs text-rose-500 font-bold">{phoneError}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Father's Name</Label>
+                <div className="relative">
+                  <Users className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    className="h-14 pl-12 bg-surface-sunken border-none text-lg font-bold"
+                    placeholder="Enter father's full name"
+                    value={fatherName}
+                    onChange={(e) => { setFatherName(e.target.value); setFatherNameError(""); }}
+                  />
+                </div>
+                {fatherNameError && <p className="text-xs text-rose-500 font-bold">{fatherNameError}</p>}
+              </div>
+
+              <div className="space-y-2">
+                <Label className="text-xs font-black uppercase tracking-widest text-muted-foreground">Father's Phone Number</Label>
+                <div className="relative">
+                  <Phone className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                  <Input
+                    className="h-14 pl-12 bg-surface-sunken border-none text-lg font-bold"
+                    placeholder="Enter father's phone number"
+                    type="tel"
+                    value={fatherPhone}
+                    onChange={(e) => { setFatherPhone(e.target.value); setFatherPhoneError(""); }}
+                  />
+                </div>
+                {fatherPhoneError && <p className="text-xs text-rose-500 font-bold">{fatherPhoneError}</p>}
               </div>
 
               <div className="p-4 rounded-2xl bg-primary/[0.03] border border-primary/10 space-y-2">
