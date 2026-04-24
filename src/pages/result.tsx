@@ -20,6 +20,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 import { QuestionContent } from "@/components/QuestionContent";
+import { ReviewCard } from "@/components/ReviewCard";
 
 export default function Result() {
   const { attemptId: submissionId } = useParams<{ attemptId: string }>();
@@ -29,14 +30,14 @@ export default function Result() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.02
       }
     }
   };
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
+    hidden: { opacity: 0, y: 8 },
+    show: { opacity: 1, y: 0, transition: { duration: 0.15 } }
   };
 
   const { data: submission, isLoading: subLoading, error } = useSubmission(submissionId);
@@ -336,57 +337,20 @@ export default function Result() {
                 questions.map((q, idx) => {
                   const studentAnswer = submission.student_answers?.[q.id];
                   const isCorrect = isAnswerCorrect(q, studentAnswer);
-                  
+
                   return (
                     <motion.div key={q.id} variants={item}>
-                      <Card className="border-none shadow-2xl bg-white/90 overflow-hidden group">
-                        <div className={`h-1.5 w-full ${studentAnswer ? (isCorrect ? "bg-emerald-500" : "bg-rose-500") : "bg-muted"}`} />
-                        <CardHeader className="p-8 pb-4">
-                          <div className="flex justify-between items-start mb-4">
-                            <span className="text-[10px] font-black uppercase tracking-widest text-primary bg-primary/5 px-2 py-1 rounded-lg border border-primary/10">
-                              Question {String(idx + 1).padStart(2, '0')}
-                            </span>
-                            <span className="text-xs font-bold text-muted-foreground">{q.marks} Points</span>
-                          </div>
-                          <div className="text-xl font-bold leading-relaxed">
-                            <QuestionContent content={q.question} />
-                          </div>
-                        </CardHeader>
-                        <CardContent className="p-8 pt-4 space-y-6">
-                          <div className="grid md:grid-cols-2 gap-4">
-                            <div className={`p-4 rounded-2xl border ${studentAnswer ? (isCorrect ? "bg-emerald-500/[0.03] border-emerald-500/10" : "bg-rose-500/[0.03] border-rose-500/10") : "bg-muted/10 border-border"}`}>
-                              <p className="text-[9px] font-black uppercase tracking-[0.2em] text-muted-foreground mb-2 flex items-center">
-                                <User className="w-3 h-3 mr-1.5" /> Your Submission
-                              </p>
-                                <p className={`font-bold ${studentAnswer ? (isCorrect ? "text-emerald-700" : "text-rose-700") : "text-muted-foreground"}`}>
-                                  {studentAnswer ? <QuestionContent content={studentAnswer} /> : "No Response"}
-                                </p>
-                            </div>
-                            <div className="p-4 rounded-2xl bg-primary/[0.03] border border-primary/10">
-                              <p className="text-[9px] font-black uppercase tracking-[0.2em] text-primary mb-2 flex items-center">
-                                <CheckCircle2 className="w-3 h-3 mr-1.5" /> Ideal Outcome
-                              </p>
-                                <p className="font-bold text-primary">
-                                  <QuestionContent content={q.correct_answer || ""} />
-                                </p>
-                            </div>
-                          </div>
-
-                          {q.explanation && (
-                            <div className="p-4 rounded-2xl bg-surface-sunken/50 border-dashed border flex items-start space-x-3">
-                              <Info className="w-4 h-4 text-muted-foreground mt-0.5 shrink-0" />
-                              <div>
-                                  <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-1">Analytical Insight</p>
-                                  <div className="text-sm text-muted-foreground leading-relaxed italic">
-                                    <QuestionContent content={q.explanation} />
-                                  </div>
-                              </div>
-                            </div>
-                          )}
-                        </CardContent>
-                      </Card>
+                      <ReviewCard
+                        index={idx}
+                        question={q.question}
+                        marks={q.marks}
+                        studentAnswer={studentAnswer}
+                        correctAnswer={q.correct_answer}
+                        isCorrect={isCorrect}
+                        explanation={q.explanation}
+                      />
                     </motion.div>
-                  )
+                  );
                 })
               ) : (
                 <div className="py-16 bg-white border-dashed border-2 border-slate-200 rounded-2xl flex flex-col items-center justify-center space-y-3">

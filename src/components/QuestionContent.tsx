@@ -5,14 +5,12 @@ interface QuestionContentProps {
   className?: string;
 }
 
-export const QuestionContent: React.FC<QuestionContentProps> = ({ content, className }) => {
-  // If content contains HTML tags (like <img> or <sub> or <sup>), render as HTML
-  // Otherwise render as plain text
+const QuestionContentInner: React.FC<QuestionContentProps> = ({ content, className }) => {
   const hasHtml = /<[a-z][\s\S]*>/i.test(content);
 
   if (hasHtml) {
     return (
-      <div 
+      <div
         className={className}
         dangerouslySetInnerHTML={{ __html: content }}
       />
@@ -21,3 +19,5 @@ export const QuestionContent: React.FC<QuestionContentProps> = ({ content, class
 
   return <div className={className}>{content}</div>;
 };
+
+export const QuestionContent = React.memo(QuestionContentInner);

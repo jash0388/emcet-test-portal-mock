@@ -28,6 +28,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { ExamTimer } from "@/components/ExamTimer";
 
 interface StudentInfo {
   studentName: string;
@@ -67,7 +68,6 @@ export default function TakeTest() {
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visited, setVisited] = useState<Set<number>>(new Set([0]));
-  const [timeLeft, setTimeLeft] = useState<number | null>(null);
   const [startTime, setStartTime] = useState<number>(() => Date.now());
 
   const submittedRef = useRef(false);
@@ -169,26 +169,8 @@ export default function TakeTest() {
     );
   }, [exam, questions, studentInfo, startTime, submitExam, setLocation, toast]);
 
-  // Start timer once entering in-progress
-  useEffect(() => {
-    if (exam && phase === "in-progress" && timeLeft === null) {
-      setTimeLeft(exam.duration_minutes * 60);
-      setStartTime(Date.now());
-    }
-  }, [exam, phase, timeLeft]);
-
-  // Tick timer
-  useEffect(() => {
-    if (phase !== "in-progress" || timeLeft === null) return;
-    if (timeLeft <= 0) {
-      handleSubmit();
-      return;
-    }
-    const t = setTimeout(() => setTimeLeft((p) => (p !== null ? p - 1 : null)), 1000);
-    return () => clearTimeout(t);
-  }, [timeLeft, phase, handleSubmit]);
-
   const handleStartTest = () => {
+    setStartTime(Date.now());
     setPhase("in-progress");
   };
 
@@ -203,11 +185,6 @@ export default function TakeTest() {
       return next;
     });
   };
-
-  const formatTime = (s: number) =>
-    `${Math.floor(s / 60)
-      .toString()
-      .padStart(2, "0")}:${(s % 60).toString().padStart(2, "0")}`;
 
   const answeredCount = useMemo(
     () => Object.values(answers).filter((v) => v && v.trim() !== "").length,
@@ -473,18 +450,11 @@ export default function TakeTest() {
                 {answeredCount}/{questions.length}
               </span>
             </div>
-            <div
-              className={`flex items-center space-x-2 px-4 py-2 rounded-xl font-mono font-black border ${
-                timeLeft !== null && timeLeft < 60
-                  ? "bg-rose-50 text-rose-700 border-rose-200"
-                  : timeLeft !== null && timeLeft < 300
-                  ? "bg-amber-50 text-amber-700 border-amber-200"
-                  : "bg-blue-50 text-blue-700 border-blue-200"
-              }`}
-            >
-              <Clock className="w-4 h-4" />
-              <span>{timeLeft !== null ? formatTime(timeLeft) : "--:--"}</span>
-            </div>
+            <ExamTimer
+              durationSeconds={exam.duration_minutes * 60}
+              onExpire={handleSubmit}
+            />
+
           </div>
         </div>
       </header>
