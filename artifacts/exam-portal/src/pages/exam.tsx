@@ -485,28 +485,32 @@ export default function ExamTaking() {
         </div>
       </header>
 
+      {/* Part Tabs Sub-header */}
+      <div className="bg-white border-b border-border/40 px-8 py-3 flex items-center space-x-4 z-40 sticky top-20 shadow-sm">
+        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mr-2">Exam Sections:</span>
+        <Button
+          variant={activePart === "A" ? "default" : "outline"}
+          size="sm"
+          className={`rounded-xl px-6 font-black tracking-widest uppercase transition-all ${activePart === "A" ? "premium-gradient shadow-lg shadow-primary/20" : "bg-surface-sunken/50 text-muted-foreground hover:text-foreground"}`}
+          onClick={() => { setActivePart("A"); setCurrentQuestionIndex(0); }}
+        >
+          Part A (Chemistry)
+        </Button>
+        <Button
+          variant={activePart === "B" ? "default" : "outline"}
+          size="sm"
+          className={`rounded-xl px-6 font-black tracking-widest uppercase transition-all ${activePart === "B" ? "premium-gradient shadow-lg shadow-primary/20" : "bg-surface-sunken/50 text-muted-foreground hover:text-foreground"}`}
+          onClick={() => { setActivePart("B"); setCurrentQuestionIndex(15); }}
+        >
+          Part B (Physics)
+        </Button>
+      </div>
+
       <div className="flex-1 flex overflow-hidden">
         {/* Main Question Area */}
         <main className="flex-1 overflow-y-auto p-12 bg-surface-sunken/50 relative">
           <div className="max-w-3xl mx-auto space-y-12 pb-24">
             
-            {/* Part Tabs */}
-            <div className="flex space-x-4 border-b border-border/50 pb-4">
-              <Button
-                variant={activePart === "A" ? "default" : "outline"}
-                className={`rounded-full px-8 font-black tracking-widest uppercase transition-all ${activePart === "A" ? "premium-gradient shadow-lg shadow-primary/20" : "bg-white/50 text-muted-foreground hover:text-foreground"}`}
-                onClick={() => { setActivePart("A"); setCurrentQuestionIndex(0); }}
-              >
-                Part A (Easy)
-              </Button>
-              <Button
-                variant={activePart === "B" ? "default" : "outline"}
-                className={`rounded-full px-8 font-black tracking-widest uppercase transition-all ${activePart === "B" ? "premium-gradient shadow-lg shadow-primary/20" : "bg-white/50 text-muted-foreground hover:text-foreground"}`}
-                onClick={() => { setActivePart("B"); setCurrentQuestionIndex(15); }}
-              >
-                Part B (Hard)
-              </Button>
-            </div>
 
             <div className="space-y-6">
               <div className="flex items-center justify-between">
