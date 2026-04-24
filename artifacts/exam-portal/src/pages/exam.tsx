@@ -478,6 +478,26 @@ export default function ExamTaking() {
         </div>
 
         <div className="flex items-center space-x-8">
+          {/* Section Tabs in Header */}
+          <div className="hidden lg:flex items-center bg-surface-sunken p-1 rounded-2xl border">
+            <Button
+              variant={activePart === "A" ? "default" : "ghost"}
+              size="sm"
+              className={`rounded-xl px-6 font-black tracking-widest uppercase transition-all ${activePart === "A" ? "premium-gradient text-white shadow-lg shadow-primary/20" : "text-muted-foreground hover:text-foreground"}`}
+              onClick={() => { setActivePart("A"); setCurrentQuestionIndex(0); }}
+            >
+              Part A
+            </Button>
+            <Button
+              variant={activePart === "B" ? "default" : "ghost"}
+              size="sm"
+              className={`rounded-xl px-6 font-black tracking-widest uppercase transition-all ${activePart === "B" ? "premium-gradient text-white shadow-lg shadow-primary/20" : "text-muted-foreground hover:text-foreground"}`}
+              onClick={() => { setActivePart("B"); setCurrentQuestionIndex(15); }}
+            >
+              Part B
+            </Button>
+          </div>
+
           <div className="flex items-center space-x-3 bg-white/50 backdrop-blur-sm py-2 px-4 rounded-2xl border shadow-sm">
             <Clock className={`w-5 h-5 ${timeLeft !== null && timeLeft < 300 ? "text-rose-500 animate-pulse" : "text-primary"}`} />
             <span className={`text-2xl font-mono font-black tracking-wider ${timeLeft !== null && timeLeft < 300 ? "text-rose-500" : ""}`}>
@@ -494,27 +514,6 @@ export default function ExamTaking() {
           </Button>
         </div>
       </header>
-
-      {/* Part Tabs Sub-header */}
-      <div className="bg-white border-b border-border/40 px-8 py-3 flex items-center space-x-4 z-40 sticky top-20 shadow-sm">
-        <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mr-2">Exam Sections:</span>
-        <Button
-          variant={activePart === "A" ? "default" : "outline"}
-          size="sm"
-          className={`rounded-xl px-6 font-black tracking-widest uppercase transition-all ${activePart === "A" ? "premium-gradient shadow-lg shadow-primary/20" : "bg-surface-sunken/50 text-muted-foreground hover:text-foreground"}`}
-          onClick={() => { setActivePart("A"); setCurrentQuestionIndex(0); }}
-        >
-          Part A (Chemistry)
-        </Button>
-        <Button
-          variant={activePart === "B" ? "default" : "outline"}
-          size="sm"
-          className={`rounded-xl px-6 font-black tracking-widest uppercase transition-all ${activePart === "B" ? "premium-gradient shadow-lg shadow-primary/20" : "bg-surface-sunken/50 text-muted-foreground hover:text-foreground"}`}
-          onClick={() => { setActivePart("B"); setCurrentQuestionIndex(15); }}
-        >
-          Part B (Physics)
-        </Button>
-      </div>
 
       <div className="flex-1 flex overflow-hidden">
         {/* Main Question Area */}
