@@ -20,7 +20,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 import { format } from "date-fns";
 import { QuestionContent } from "@/components/QuestionContent";
-import { ArrowRight } from "lucide-react";
 
 export default function Result() {
   const { attemptId: submissionId } = useParams<{ attemptId: string }>();

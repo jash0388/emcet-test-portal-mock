@@ -129,6 +129,10 @@ export default function TakeTest() {
         status: "completed",
         student_name: studentInfo.studentName,
         roll_number: studentInfo.studentPhone,
+        student_phone: studentInfo.studentPhone,
+        father_name: studentInfo.fatherName,
+        father_phone: studentInfo.fatherPhone,
+        college: studentInfo.college,
         student_answers: currentAnswers,
       },
       {
